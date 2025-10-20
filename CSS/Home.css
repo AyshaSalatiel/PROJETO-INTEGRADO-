@@ -1,0 +1,437 @@
+/*
+==================================================================================
+ARQUIVO: home.css
+CONTEÚDO: CARROSSEL, CARDS e SEÇÕES (Layouts e estilos que SÓ EXISTEM na HOME)
+A ideia é manter este arquivo focado na HOME, sem misturar com outros temas.
+==================================================================================
+*/
+
+/*
+==================================================================================
+1. CORES DE FUNDO DAS SEÇÕES
+==================================================================================
+*/
+
+/* -------------------- MODO CLARO -------------------- */
+
+/* Seção 1: Da Válvula ao Transistor */
+.section-content {
+    background-color: #C0C0C0;
+    transition: background-color 0.3s ease;
+    
+}
+
+/* Seção 2: Conteúdo do Site / Sobre */
+.info-section {
+    background-color: #D8D8D8;
+    transition: background-color 0.3s ease;
+    
+}
+
+/* Seção 3: Do Circuito Integrado à Lua */
+.section-lua {
+    background-color: #EAEAEA;
+    transition: background-color 0.3s ease;
+    
+}
+
+/* Seção 4: Cards de Navegação */
+.card-container {
+    background-color: #C0C0C0;
+    transition: background-color 0.3s ease;
+   
+}
+
+
+/* -------------------- MODO ESCURO -------------------- */
+
+/* Seção 1: Da Válvula ao Transistor */
+body.dark-mode .section-content {
+    background-color: #272727;
+}
+
+/* Seção 2: Conteúdo do Site / Sobre */
+body.dark-mode .info-section {
+    background-color: #1d1c1c;
+}
+
+/* Seção 3: Do Circuito Integrado à Lua */
+body.dark-mode .section-lua {
+    background-color: #131212;
+}
+
+/* Seção 4: Cards de Navegação */
+body.dark-mode .card-container {
+    background-color: #272727;
+}
+
+/*
+==================================================================================
+2. CLASSES DE REUTILIZAÇÃO
+==================================================================================
+*/
+
+/* --- BOTÕES DE LEIA MAIS REUTILIZÁVEIS --- */
+.read-more-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.read-more-btn:hover {
+    background-color: var(--original-blue-hover);
+    transform: translateY(-1px);
+    color: white;
+}
+
+.dark-mode .read-more-btn {
+    background-color: var(--dark-highlight-blue);
+}
+
+.dark-mode .read-more-btn:hover {
+    background-color: var(--dark-mode-blue-hover);
+}
+
+/* --- ESTILOS DE FUNDO REUTILIZÁVEIS (Para seções da Home) --- */
+
+/* Fundo 1 (Mais claro/Escuro médio) - COR PRINCIPAL MAIS CLARA */
+.bg-section-primary {
+    background-color: #DFDFDF; /* Light Mode */
+    color: #222;
+}
+body.dark-mode .bg-section-primary {
+    background-color: #2C2C2C; /* Dark Mode (Cinza mais claro) */
+    color: #fff;
+}
+
+/* Fundo 2 (Médio/Escuro mais claro) - COR INTERMEDIÁRIA */
+.bg-section-secondary {
+    background-color: #C0C0C0; /* Light Mode */
+    color: #111;
+}
+body.dark-mode .bg-section-secondary {
+    background-color: #1A1A1A; /* Dark Mode (Cinza médio, próximo ao footer) */
+    color: #fff;
+}
+
+/* Fundo 3 (Mais escuro/Fundo principal) - COR MAIS ESCURA */
+.bg-section-darkest {
+    background-color: #A0A0A0; /* Light Mode */
+    color: #111;
+}
+body.dark-mode .bg-section-darkest {
+    background-color: #121212; /* Dark Mode (Cinza mais escuro, fundo do body) */
+    color: #fff;
+}
+
+
+/*
+==================================================================================
+3. CONTEÚDO PRINCIPAL (CARROSSEL, CARDS, SEÇÕES) - EXCLUSIVO DA HOME
+==================================================================================
+*/
+
+/* --- CARROSSEL --- */
+#carouselExampleAutoplaying {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    position: relative; 
+    border-bottom: 10px solid white;
+    transition: border-bottom-color 0.3s;
+}
+
+body.dark-mode #carouselExampleAutoplaying {
+    border-bottom-color: white;
+}
+
+#carouselExampleAutoplaying .carousel-inner,
+#carouselExampleAutoplaying .carousel-item,
+#carouselExampleAutoplaying img {
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Oculta todas as legendas (carousel-caption) */
+#carouselExampleAutoplaying .carousel-caption {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+}
+
+/* ESTILOS DO TÍTULO ESTÁTICO DO CARROSSEL */
+.static-carousel-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 90%;
+    max-width: 1000px;
+    padding: 0 15px;
+    color: white; 
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 1.0);
+    z-index: 10; 
+    pointer-events: none; 
+    text-align: center;
+    margin: 0;
+}
+
+.static-carousel-title span { 
+    font-size: 2.5rem; 
+    font-weight: 800;
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: 100%;
+    align-items: center;
+}
+
+/* --- CARDS --- */
+.card-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    border-top: 3px solid white;
+    padding-top: 40px;
+    transition: border-top-color 0.3s;
+    flex-wrap: wrap; 
+}
+
+body.dark-mode .card-container {
+    border-top-color: white;
+}
+
+.card {
+    width: 18rem;
+    min-height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Cores de fundo gerenciadas pela classe .bg-section-primary ou default */
+    background: #fff;
+    margin: 40px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    /* Animação e transições */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out, background-color 0.3s, color 0.3s, box-shadow 0.3s ease, transform 0.3s;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-text {
+    flex-grow: 1;
+}
+
+.card .btn {
+    background-color: #444; /* Cor de botão do card (Modo Claro) */
+    border: none;
+    margin-top: auto;
+} 
+
+/* Ajustes de Card para Dark Mode */
+body.dark-mode .card {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.08);
+}
+body.dark-mode .card:hover {
+    box-shadow: 0 8px 16px rgba(255,255,255,0.15);
+}
+body.dark-mode .card-text, body.dark-mode .card-title {
+    color: #fff;
+}
+body.dark-mode .card .btn {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+body.dark-mode .card .btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+/*
+==================================================================================
+4. ESTILOS DE SEÇÕES (SECTION-CONTENT, INFO-SECTION, SECTION-LUA)
+==================================================================================
+*/
+
+/* Layout da Seção de Conteúdo (Válvula ao Transistor) */
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 60px 80px;
+    border-bottom: 9px solid white;
+    transition: border-bottom-color 0.3s;
+}
+
+body.dark-mode .section-content {
+    border-bottom-color: white;
+}
+
+.section-content img {
+    max-width: 45%;
+    height: 600px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.section-text {
+    max-width: 50%;
+    text-align: center;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- INFO SECTION (Layout) --- */
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 80px 60px;
+    text-align: center;
+    border-bottom: 9px solid white;
+}
+
+.info-box {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* --- SECTION LUA (Layout) --- */
+.section-lua {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 60px;
+}
+
+.lua-texto {
+    flex: 1;
+    text-align: center;
+}
+
+.lua-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.lua-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*
+==================================================================================
+5. RESPONSIVIDADE LOCAL (Ajustes de CONTEÚDO)
+==================================================================================
+*/
+
+@media (max-width: 1200px) {
+    .section-content, .section-lua {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Layout de conteúdo em coluna */
+    .section-content,
+    .section-lua,
+    .info-section {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px;
+        text-align: center;
+    }
+    
+    .section-content img {
+        max-width: 100%;
+        height: auto;
+        order: 1; 
+    }
+    
+    .section-text {
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .section-lua .lua-imagem {
+        max-width: 100%;
+        order: 1; 
+    }
+    
+    .section-lua .lua-texto {
+        max-width: 100%;
+        order: 2;
+    }
+
+    .static-carousel-title span {
+        font-size: 2rem;
+    }
+    
+    .info-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Títulos menores em mobile */
+    .section-text h2, .info-box h2, .lua-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-text p, .info-box p, .lua-texto p {
+        font-size: 1rem;
+    }
+    
+    .static-carousel-title span {
+        font-size: 1.5rem;
+    }
+    
+    .section-content, .info-section, .section-lua {
+        padding: 30px 15px;
+    }
+}

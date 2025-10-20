@@ -1,0 +1,131 @@
+/*
+==================================================================================
+ARQUIVO: Capa.css (OTIMIZADO)
+CONTEÚDO: Estilos EXCLUSIVOS para a seção de comparação de capas.
+          Todas as regras globais (Header, Menu, Footer, etc.) foram removidas.
+==================================================================================
+*/
+
+/*
+====================================
+1. ESTILOS: COMPARAÇÃO DE CAPAS
+====================================
+*/
+
+/* Seções Principais */
+.capa-introducao-section {
+    max-width: 900px;
+    margin: 40px auto;
+    /* Usará o fundo cinza definido em global.css (.Introducao ou body) */
+}
+
+.capa-comparacao-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: transparent; /* Permite que o body defina o fundo */
+}
+
+.capa-comparacao-section h2 {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: var(--dark-highlight-blue); /* Usa a variável do global.css */
+}
+
+/* Container para as Duas Capas Lado a Lado */
+.capa-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que as capas quebrem a linha em telas pequenas */
+}
+
+/* Estilo de cada Bloco de Capa (O "Card" da Capa) */
+.capa-bloco {
+    flex-basis: 350px; 
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    /* Fundo Escuro Padrão para Modo Escuro */
+    background-color: #1E1E1E; 
+}
+
+.capa-bloco h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #F0F0F0;
+}
+
+/* Wrapper e Imagem */
+.image-wrapper {
+    max-width: 300px; 
+    margin: 0 auto 15px auto;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.capa-imagem {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.capa-bloco p {
+    font-size: 1em;
+    color: #A0A0A0;
+    margin: 5px 0;
+}
+
+/* --- SEÇÃO DE EXPLICAÇÃO --- */
+
+.capa-explicacao-section {
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    padding: 30px;
+    border-radius: 12px;
+    /* A cor de fundo será definida externamente (pode ser .Introducao) */
+    min-height: auto; 
+}
+
+.explicacao-content {
+    text-align: justify;
+    padding: 0 10px;
+}
+
+.capa-explicacao-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: var(--dark-highlight-blue);
+}
+
+/*
+====================================
+2. MODO CLARO AJUSTES ESPECÍFICOS
+====================================
+*/
+
+/* O h2 em modo claro usará a variável primária */
+body:not(.dark-mode) .capa-comparacao-section h2,
+body:not(.dark-mode) .capa-explicacao-section h2 {
+    color: var(--primary-blue);
+}
+
+/* O card de comparação fica branco em modo claro */
+body:not(.dark-mode) .capa-bloco {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos e textos do card em cores escuras em modo claro */
+body:not(.dark-mode) .capa-bloco h3 {
+    color: #121212;
+}
+
+body:not(.dark-mode) .capa-bloco p {
+    color: #555;
+}

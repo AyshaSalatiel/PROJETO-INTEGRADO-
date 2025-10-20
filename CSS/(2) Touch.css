@@ -1,0 +1,134 @@
+/*
+==================================================================================
+ARQUIVO: touch.css (OTIMIZADO)
+CONTEÚDO: Estilos EXCLUSIVOS para o layout de slides verticais,
+          incluindo tipografia e cores específicas por seção (Introducao, etc.).
+==================================================================================
+*/
+
+/*
+====================================
+1. ESTRUTURA DOS SLIDES E TIPOGRAFIA
+====================================
+*/
+
+/* 1. Estilo de cada "slide" (Section) */
+section {
+    width: 100%;
+    min-height: 100vh; 
+    padding: 40px 10%; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Títulos (h1) em todos os slides (Modo Claro) */
+section h1 {
+    font-size: 3.5em; 
+    font-weight: 700;
+    color: #000000; /* Títulos pretos no modo claro */
+    margin-bottom: 0.8em;
+    transition: color 0.4s ease;
+}
+
+/* Parágrafos (p) em todos os slides (Modo Claro) */
+section p {
+    font-size: 1.4em; 
+    line-height: 1.6; 
+    font-weight: 400;
+    color: #333333; /* Texto preto suave no modo claro */
+    max-width: 1100px; 
+    margin-bottom: 1.5em;
+    transition: color 0.4s ease;
+}
+
+/* Destaque em negrito (strong) */
+section p strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+
+/*
+====================================
+2. AJUSTE ESPECÍFICO DE COR POR SLIDE
+====================================
+*/
+
+/* A seção "Introdução" (MODO CLARO) */
+.Introducao {
+    background-color: #E0E0E0; 
+}
+.Introducao h1, 
+.Introducao p {
+    color: #000000; 
+}
+
+/* MODO ESCURO GERAL (tipografia da página de slides) */
+body.dark-mode section h1 {
+    color: #FFFFFF;
+}
+
+body.dark-mode section p {
+    color: #D0D0D0;
+}
+
+body.dark-mode section p strong {
+    color: #FFFFFF;
+}
+
+
+/* Introdução (Dark Mode) */
+body.dark-mode .Introducao {
+    background-color: #696969; 
+}
+body.dark-mode .Introducao h1, 
+body.dark-mode .Introducao p {
+    color: #FFFFFF; 
+}
+
+
+/*
+====================================
+3. FUNCIONALIDADE DE TRADUÇÃO
+====================================
+*/
+
+.translated-text {
+    display: none;
+}
+body.translated .translated-text {
+    display: block;
+}
+body.translated .original-text {
+    display: none;
+}
+
+
+/*
+====================================
+4. RESPONSIVIDADE (MOBILE)
+====================================
+*/
+@media (max-width: 1200px) {
+    section p {
+        max-width: 900px;
+    }
+}
+@media (max-width: 768px) {
+    section {
+        padding: 30px 5%; 
+        min-height: auto; 
+    }
+    
+    section h1 {
+        font-size: 2.5em;
+    }
+
+    section p {
+        font-size: 1.1em;
+        max-width: 100%;
+    }
+}

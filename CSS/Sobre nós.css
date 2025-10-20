@@ -1,0 +1,199 @@
+/*
+====================================
+ESTILOS: NOSSA EQUIPE
+====================================
+*/
+
+/*
+====================================
+ESTILOS: INTRODUÇÃO DA EQUIPE (CARD)
+====================================
+*/
+
+.team-intro-card {
+    /* Centraliza o conteúdo dentro da largura máxima */
+    max-width: 1000px; 
+    margin: 40px auto; 
+    padding: 40px 30px;
+    
+    /* Estilo de Card (semelhante ao question-block do quiz) */
+    background-color: #282828; /* Fundo escuro sutil */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    border-left: 6px solid var(--primary-blue); /* Linha de destaque */
+    
+    /* Anula o min-height padrão das seções */
+    min-height: auto; 
+}
+
+.team-intro-card h1 {
+    color: var(--dark-highlight-blue); /* Cor de destaque para o título */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+.team-intro-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #D0D0D0;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* MODO CLARO AJUSTES */
+body:not(.dark-mode) .team-intro-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid var(--primary-blue);
+}
+
+body:not(.dark-mode) .team-intro-card h1 {
+    color: var(--primary-blue);
+}
+
+body:not(.dark-mode) .team-intro-card p {
+    color: #333333;
+}
+
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #121212; /* Fundo escuro como no print */
+    color: #F0F0F0;
+}
+
+/* 1. Título Principal */
+.team-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #F0F0F0;
+}
+
+/* 2. Container Flexbox para alinhar os membros */
+.team-members-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: center; /* Centraliza as colunas */
+    gap: 40px; /* Espaço entre as colunas/membros */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 3. Estilo de cada Card de Membro */
+.member-card {
+    flex: 1 1 250px; /* Cresce e encolhe, com tamanho base de 250px */
+    max-width: 300px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* 4. Foto do Membro */
+.member-photo {
+    width: 100%;
+    max-width: 250px; /* Limite a largura da foto */
+    height: 250px; 
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+    border-radius: 50%; /* Deixa a imagem redonda como no print */
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 5. Nome do Membro */
+.member-card h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #F0F0F0;
+}
+
+/* 6. Descrição/Função */
+.member-role {
+    font-size: 0.95em;
+    color: #A0A0A0;
+}
+
+/* MODO CLARO (Ajuste as cores, se necessário) */
+body:not(.dark-mode) .team-section {
+    background-color: #F8F8F8; /* Fundo claro */
+    color: #121212;
+}
+body:not(.dark-mode) .team-section h1,
+body:not(.dark-mode) .member-card h2 {
+    color: #121212;
+}
+/*
+====================================
+ESTILOS: AGRADECIMENTO E CONTATO (EXTRA)
+====================================
+*/
+
+.call-to-action-section {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #282828; /* Fundo escuro para contraste */
+    color: #F0F0F0;
+    margin-top: 50px;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.call-to-action-section h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.call-to-action-section p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+}
+
+.contact-info {
+    margin-top: 40px;
+    padding: 30px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #333;
+}
+
+.contact-info h3 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: #4CAF50; /* Verde de destaque */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.btn-contact:hover {
+    background-color: #408843;
+}
+
+/* MODO CLARO (Ajustes) */
+body:not(.dark-mode) .call-to-action-section {
+    background-color: #F0F0F0; /* Fundo cinza claro */
+    color: #121212;
+    border-top: 5px solid var(--primary-blue);
+}
+
+body:not(.dark-mode) .contact-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+body:not(.dark-mode) .contact-info h3 {
+    color: #121212;
+}

@@ -1,0 +1,325 @@
+/*
+====================================
+ESTILOS ESPECÍFICOS DO QUIZ
+====================================
+*/
+
+/* 1. Reset Básico (Melhor Prática) */
+*, *::before, *::after {
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+/* 2. Conteúdo principal do quiz - LARGURA AUMENTADA */
+.quiz-container {
+    max-width: 1000px; /* Aumenta a largura máxima */
+    margin: 60px auto 100px auto;
+    padding: 20px;
+    position: relative; /* Necessário para posicionamento do botão de topo, etc. */
+}
+
+/* 3. Estética do Header do Quiz (`.Introducao`) */
+.quiz-header-section {
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    text-align: center;
+    min-height: auto; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* No modo escuro, o background virá do Global.css ou da própria seção */
+}
+
+.quiz-header-section h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #00BFFF; /* Ciano/Azul */
+}
+
+.quiz-score-display {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#current-score {
+    color: #4CAF50; /* Verde */
+    font-size: 1.2em;
+}
+
+/* --- BARRA DE PROGRESSO --- */
+.progress-bar-container {
+    width: 80%;
+    max-width: 400px;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    margin: 15px auto 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #00BFFF; /* Ciano/Azul */
+    transition: width 0.5s ease-in-out;
+    border-radius: 5px;
+}
+
+/* --- LAYOUT DE SLIDES (Uma pergunta por vez) --- */
+#quiz-slides {
+    position: relative;
+    overflow: hidden; /* Garante que apenas o slide ativo seja visível */
+    min-height: 400px; /* Altura mínima para evitar 'pulos' */
+}
+
+.question-block {
+    /* TRANSFORMA CADA BLOCO EM UM SLIDE */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
+    
+    /* Estilos existentes */
+    background-color: #282828; /* Fundo escuro sutil para cada pergunta (Dark Mode) */
+    padding: 25px;
+    margin-bottom: 0; /* Remove margem desnecessária em slides */
+    border-radius: 8px;
+    border-left: 5px solid #00BFFF; /* Detalhe azul/ciano */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.question-block.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative; /* Traz o slide ativo para o fluxo normal */
+    transform: translateX(0);
+}
+
+.question-block h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+/* 5. Opções de Resposta (Label e Radio) */
+.option-label {
+    display: block;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, border 0.2s;
+    font-size: 1.1em;
+    border: 2px solid transparent; 
+}
+
+/* Garante que o input escondido não atrapalhe */
+.option-input {
+    display: none; 
+}
+
+/* Opções após a resposta (impedir novos cliques) */
+.question-answered .option-label {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+/* 6. REALCE DA OPÇÃO SELECIONADA (ANTES DO FEEDBACK) - DARK MODE */
+.option-label.selected:not(.correct):not(.incorrect) {
+    background-color: #4a4a4a; /* Fundo mais escuro */
+    border: 2px solid #00BFFF; /* Borda ciano (Dark Mode) */
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+/* 7. Feedback Visual (IMEDIATO) - DARK MODE */
+.option-label.correct {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    font-weight: 700;
+    border-color: #4CAF50;
+    animation: pulse-correct 0.3s ease-in-out;
+}
+
+.option-label.incorrect {
+    background-color: #F44336; /* Vermelho */
+    color: white;
+    font-weight: 700;
+    border-color: #F44336;
+    animation: pulse-incorrect 0.3s ease-in-out;
+}
+
+@keyframes pulse-correct {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse-incorrect {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Exibir a explicação */
+.explanation {
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    border-left: 3px solid #00BFFF;
+    color: #D0D0D0;
+    font-style: italic;
+    font-size: 0.95em;
+    display: none; 
+}
+
+/* 8. Botões e Resultados */
+.btn-submit, .btn-restart {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit {
+    background-color: #00BFFF; /* Ciano/Azul padrão para Dark Mode */
+    color: #1a1a1a;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #009ACD; /* Um tom mais escuro para hover no Dark Mode */
+}
+
+.btn-submit:disabled {
+    background-color: #6c757d;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.btn-restart {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.btn-restart:hover {
+    background-color: #408843;
+}
+
+.quiz-results {
+    background-color: #282828;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.quiz-results h2 {
+    color: #00BFFF;
+}
+
+.quiz-results strong {
+    font-size: 1.5em;
+    color: #4CAF50;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- MODO CLARO AJUSTES (Sobrescreve o Dark Mode) --- */
+
+body:not(.dark-mode) .quiz-header-section h1 {
+    color: var(--primary-blue);
+}
+
+body:not(.dark-mode) .progress-bar-container {
+    background-color: #ccc;
+}
+body:not(.dark-mode) .progress-bar {
+    background-color: var(--primary-blue);
+}
+
+body:not(.dark-mode) .question-block {
+    background-color: #ffffff;
+    border-left: 5px solid var(--primary-blue);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .question-block h3 {
+    color: #000000;
+}
+
+body:not(.dark-mode) .option-label {
+    background-color: #ededed;
+    color: #333333;
+    border-color: transparent;
+}
+
+body:not(.dark-mode) .option-label:hover {
+    background-color: #e0e0e0;
+}
+
+/* 6. REALCE DA OPÇÃO SELECIONADA (ANTES DO FEEDBACK) - CLARO */
+body:not(.dark-mode) .option-label.selected:not(.correct):not(.incorrect) {
+    background-color: #e5f4ff; /* Fundo mais claro para selecionado */
+    border: 2px solid var(--primary-blue); /* Borda AZUL */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* 7. Feedback Visual (IMEDIATO) - CORREÇÃO MODO CLARO */
+body:not(.dark-mode) .option-label.correct {
+    background-color: #4CAF50 !important; /* Verde */
+    color: white !important;
+    font-weight: 700;
+    border-color: #4CAF50 !important;
+}
+
+body:not(.dark-mode) .option-label.incorrect {
+    background-color: #F44336 !important; /* Vermelho */
+    color: white !important;
+    font-weight: 700;
+    border-color: #F44336 !important;
+}
+
+body:not(.dark-mode) .explanation {
+    background-color: #f0f0f0;
+    color: #333333;
+    border-left-color: var(--primary-blue);
+}
+
+body:not(.dark-mode) .quiz-results {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .quiz-results strong {
+    color: #4CAF50;
+}
+
+/* 8. Ajuste para o botão submit no modo claro */
+body:not(.dark-mode) .btn-submit {
+    background-color: var(--primary-blue); /* Usa a variável para a cor do header */
+    color: white; /* Cor do texto do botão no modo claro */
+}
+
+body:not(.dark-mode) .btn-submit:hover:not(:disabled) {
+    background-color: var(--primary-blue-darker); /* Se tiver uma variável para hover, use-a */
+}

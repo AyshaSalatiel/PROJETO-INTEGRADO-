@@ -1,0 +1,184 @@
+/*
+==================================================================================
+ARQUIVO: home-segundo-tema.css (OTIMIZADO)
+CONTEÚDO: Estilos específicos da página Home (Layout de Slides e Tipografia Única)
+==================================================================================
+*/
+
+
+/*
+====================================
+1. AJUSTES ESTRUTURAIS DE BASE
+(Sobrescreve o fundo base do Global.css para Branco Puro, usado nos slides)
+====================================
+*/
+body {
+    /* Fundo Branco Puro para o layout de slides (Modo Claro) */
+    background-color: #FFFFFF; 
+    /* Outras propriedades como fonte, transição, etc., são herdadas do Global.css */
+}
+
+/*
+====================================
+2. HEADER E BUSCA (Ajustes de Posicionamento)
+(Mantido apenas o posicionamento do container de busca que é específico)
+====================================
+*/
+#header-search-container {
+    /* Mantém o posicionamento relativo ao topo para o modo não-sticky */
+    top: 130px; 
+    left: 0; 
+    width: 100%;
+    
+    /* Cores e estilos de fundo/shadow são mantidos para garantir prioridade se necessário */
+    background-color: #6c6c6c; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #header-search-container {
+    background-color: #1E1E1E; 
+}
+
+#header-search-container.hidden {
+    top: -100px; 
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*
+====================================
+3. ESTILOS DE SLIDE (SECTION) E TIPOGRAFIA
+(Estrutura única para páginas com este layout visual)
+====================================
+*/
+
+/* Estilo de cada "slide" (Section) */
+section {
+    width: 100%;
+    min-height: 100vh; 
+    padding: 40px 10%; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Títulos (h1) nos slides */
+section h1 {
+    font-size: 3.5em; 
+    font-weight: 700;
+    color: #000000; /* Padrão Modo Claro */
+    margin-bottom: 0.8em;
+    transition: color 0.4s ease;
+}
+
+/* Parágrafos (p) nos slides */
+section p {
+    font-size: 1.4em; 
+    line-height: 1.6; 
+    font-weight: 400;
+    color: #333333; /* Padrão Modo Claro */
+    max-width: 1100px; 
+    margin-bottom: 1.5em;
+    transition: color 0.4s ease;
+}
+
+/* Destaque em negrito (strong) */
+section p strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+
+/*
+====================================
+4. CORES ESPECÍFICAS DE SLIDE (CLARO)
+====================================
+*/
+
+/* A seção "Introdução" (Modo Claro) */
+.Introducao {
+    background-color: #E0E0E0; 
+}
+.Introducao h1, 
+.Introducao p {
+    color: #000000; 
+}
+
+
+/*
+====================================
+5. CORES ESPECÍFICAS DE SLIDE (ESCURO)
+====================================
+*/
+
+/* MODO ESCURO GERAL para Tipografia (Ajusta texto em slides não customizados) */
+body.dark-mode section h1 {
+    color: #FFFFFF;
+}
+
+body.dark-mode section p {
+    color: #D0D0D0;
+}
+
+body.dark-mode section p strong {
+    color: #FFFFFF;
+}
+
+/* Introdução (Modo Escuro) */
+body.dark-mode .Introducao {
+    background-color: #696969; 
+}
+body.dark-mode .Introducao h1, 
+body.dark-mode .Introducao p {
+    color: #FFFFFF; 
+}
+
+
+/*
+====================================
+6. FUNCIONALIDADE DE TRADUÇÃO
+(Mantido por ser um toggle de display específico)
+====================================
+*/
+
+.translated-text {
+    display: none;
+}
+body.translated .translated-text {
+    display: block;
+}
+body.translated .original-text {
+    display: none;
+}
+
+
+/*
+====================================
+7. RESPONSIVIDADE
+(Mantido por ser específico para o layout de slides)
+====================================
+*/
+@media (max-width: 1200px) {
+    section p {
+        max-width: 900px;
+    }
+}
+@media (max-width: 768px) {
+    section {
+        padding: 30px 5%; 
+        min-height: auto; 
+    }
+    
+    section h1 {
+        font-size: 2.5em;
+    }
+
+    section p {
+        font-size: 1.1em;
+        max-width: 100%;
+    }
+}

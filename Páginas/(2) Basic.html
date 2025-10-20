@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dás válvulas aos transistores</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css ">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/(2) Basic.css"> 
+    <link rel="stylesheet" href="../CSS/Global.css"> 
+</head>
+
+<body>
+    <div id="search-results-overlay" style="display: none;">
+</div>
+    
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+    
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    <nav id="menu" class="menu">
+        <li><a href="Home.html" data-key="home">Home</a></li>
+    <ul>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(1) Home.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">    
+            <!-- AQUI DEVE FICAR OS SUBTEMAS DO TEMA 1 -->
+            </ul>
+        </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(2) Home.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">
+                <li><a href="(2) IBM-360.html" data-key="revolucao-transistor">IBM-360</a></li>
+                <li><a href="(2) Apollo.html" data-key="apollo-menu-item">Apollo</a></li>
+                <li><a href="(2) Touch.html" data-key="touch">Touch</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.Html" data-key="quiz">Quiz</a></li>
+    </ul>
+</nav>
+    
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+            <div id="search-suggestions" class="search-suggestions hidden"></div> 
+            <input
+                id="header-search-input"
+                type="text"
+                placeholder="Pesquisar..."
+                aria-label="Campo de busca"
+            />
+            <button type="submit" aria-label="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+
+  
+  <!--Contéudo-->
+
+  <section class="Introducao">
+    <h1>O Ano da Virada (1964)</h1>
+    <p>O ano de 1964 marcou uma das maiores viradas na história da tecnologia, solidificando o caminho para a era da computação moderna. Foi um período de inovações radicais que resolveram dois grandes problemas: a complexidade da programação e a incompatibilidade de hardware.</p>
+    <p>De um lado, a Dartmouth College, nos EUA, lançava o BASIC, uma linguagem de programação simplificada que tinha como objetivo tornar a informática acessível a todos, democratizando o conhecimento e o uso dos computadores. Do outro, a gigante IBM introduzia o System/360, uma arquitetura unificada de hardware que, pela primeira vez, permitia que programas fossem executados em diferentes máquinas da mesma linha, revolucionando o mercado e o conceito de compatibilidade.</p>
+    <p>Essas duas inovações, uma focada no usuário e outra na infraestrutura, não apenas impulsionaram o setor, como definiram os padrões que sustentam a computação até hoje.</p>
+</section>
+
+  <section>
+    <h1>Basic (1964)</h1>
+    <p>Em 1º de maio de 1964, os matemáticos John George Kemeny e Thomas Eugene Kurtz, da Dartmouth College, nos Estados Unidos, executaram o primeiro programa escrito em BASIC, marcando um dos momentos mais importantes da história da computação.</p>
+    <p>Tudo começou quando Kemeny conseguiu recursos para levar à universidade um computador General Electric GE-225, com a intenção de criar um sistema de tempo compartilhado que pudesse ser utilizado por vários usuários ao mesmo tempo. No entanto, surgiu um obstáculo: os alunos não dominavam as linguagens de programação existentes, o que dificultava sua participação no projeto.</p>
+    <p>Acreditando que, no futuro, o conhecimento em informática seria essencial, Kemeny e Kurtz começaram, ainda em 1956, a buscar linguagens de programação mais simples e didáticas, voltadas para iniciantes. Após alguns testes com linguagens chamadas Darsimco (Dartmouth Simplified Code) e Dope (Dartmouth Oversimplified Programming Experiment), eles iniciaram, em 1963, o desenvolvimento de uma nova alternativa.</p>
+    <p>No ano seguinte, com o apoio de alguns alunos e do professor Kurtz, surgiu uma linguagem que unia simplicidade e eficiência: o BASIC, sigla para “Beginner’s All-purpose Symbolic Instruction Code” (Código de Instruções Simbólicas de Uso Geral para Iniciantes). Junto com ela, nasceu também o Dartmouth Time Sharing System (DTSS), o primeiro sistema de tempo compartilhado comercialmente bem-sucedido da história.</p>
+    <p>O BASIC logo se destacou por ser uma linguagem de alto nível fácil de aprender, ideal para uso educacional, com comandos simples baseados no inglês comum. Essa facilidade fez com que ela se tornasse presente na maioria dos primeiros computadores pessoais das décadas de 1970 e 1980, quando ainda não existiam sistemas operacionais com mouse e interface gráfica. Para usar esses computadores, os usuários precisavam conhecer ao menos o básico dessa linguagem.</p>
+    <p>Kemeny e Kurtz nunca patentearam o BASIC, o que permitiu que diversas versões fossem criadas e amplamente adotadas por universidades, empresas e programadores independentes.</p>
+    <p>Uma dessas versões acabou mudando o rumo da história: foi o Altair BASIC, criado pela Microsoft para o microcomputador Altair 8800 — o primeiro interpretador da empresa. Esse sucesso abriu o caminho da Microsoft para o mercado dos computadores pessoais, e o BASIC da Microsoft passou a ser incluído em diversos modelos de PCs, inclusive no IBM PC, consolidando o papel da linguagem como uma das mais influentes da era da computação pessoal.</p>
+</section>
+
+   <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+
+  <footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel " target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="../Páginas/Home.html" data-key="home">Home</a>
+                <a href="../Páginas/Sobre.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="../Páginas/Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="../Páginas/Quiz.html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> <input id="footer-search-input" type="text" placeholder="Pesquisar..."> <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+            </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2025 Projeto Integrado. Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js " integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dás válvulas aos transistores</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css ">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Sobre nós.css">
+    <link rel="stylesheet" href="../CSS/Global.css">  
+</head>
+
+<body>
+    <div id="search-results-overlay" style="display: none;"></div>
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+    
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+       <li><a href="Home.html" data-key="home">Home</a></li> 
+    <ul>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(1) Home.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">    
+            <!-- AQUI DEVE FICAR OS SUBTEMAS DO TEMA 1 -->
+            </ul>
+        </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(2) Home.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">
+                <li><a href="(2) IBM-360.html" data-key="revolucao-transistor">IBM-360</a></li>
+                <li><a href="(2) Basic.html" data-key="primeira-geracao">Basic</a></li>
+                <li><a href="(2) Apollo.html" data-key="apollo-menu-item">Apollo</a></li>
+                <li><a href="(2) Touch.html" data-key="touch">Touch</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.Html" data-key="quiz">Quiz</a></li>
+    </ul>
+</nav>
+    
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+            <div id="search-suggestions" class="search-suggestions hidden"></div> 
+            <input
+                id="header-search-input"
+                type="text"
+                placeholder="Pesquisar..."
+                aria-label="Campo de busca"
+            />
+            <button type="submit" aria-label="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+
+  
+  <!--Contéudo-->
+
+  <section class="Introducao team-intro-card"> 
+    <h1>Conheça a Equipe</h1>
+    <p>O desenvolvimento deste projeto não foi apenas uma tarefa acadêmica, mas sim uma jornada imersiva de aprendizado e colaboração total. Somos um grupo de estudantes unidos pela fascinação em resgatar e apresentar os marcos tecnológicos que moldaram a era digital, focando na fascinante evolução dos circuitos integrados.</p>
+    <p>Nossa missão foi criar uma plataforma que fosse, ao mesmo tempo, informativa, intuitiva e visualmente agradável. Para alcançar essa meta, o esforço foi verdadeiramente colaborativo: todos os membros do grupo contribuíram ativamente nas linguagens HTML, CSS e JavaScript, garantindo a qualidade em todas as etapas do desenvolvimento front-end. No entanto, o projeto se beneficiou de forma crucial, pois cada membro assumiu um foco de destaque em áreas específicas – desde a pesquisa aprofundada e a curadoria dos textos, até a estruturação do código e o design visual.</p>
+    <p>Essa sinergia nos permitiu ir além da simples execução, garantindo a precisão histórica e técnica do conteúdo e a implementação impecável de funcionalidades interativas. O resultado é um produto que reflete não apenas o domínio das tecnologias utilizadas, mas também a nossa dedicação em transformar informações complexas em uma experiência digital fluida e envolvente.</p>
+</section>
+
+<section class="team-section">
+    <h1>Nossa Equipe</h1>
+    
+   <div class="team-members-container">     
+    <div class="member-card">
+        <img src="../Imagens/aysha.webp" alt="Foto de Aysha Salatiel" class="member-photo">
+        <h2>Aysha Salatiel</h2>
+        <p class="member-role">Contribuição em todo o desenvolvimento Front-end (HTML, CSS e JavaScript), com foco principal na Estrutura do Site (HTML).</p>
+    </div>
+    
+    <div class="member-card">
+        <img src="../Imagens/leo.webp" alt="Foto de Leonardo Klein" class="member-photo">
+        <h2>Leonardo Klein</h2>
+        <p class="member-role">Contribuição em todas as etapas de desenvolvimento (HTML, CSS e JavaScript), com foco principal na Implementação de Funcionalidades (JavaScript) e na pesquisa textual.</p>
+    </div>
+    
+    <div class="member-card">
+        <img src="../Imagens/clara.webp" alt="Foto de Maria Clara Alves" class="member-photo">
+        <h2>Maria Clara Alves</h2>
+        <p class="member-role">Colaboração no desenvolvimento geral (HTML, CSS e JavaScript), com foco principal na Pesquisa de Conteúdo e no suporte à estilização (CSS).</p>
+    </div>
+</div>
+</section>
+
+<section class="call-to-action-section">
+    <h2>Nosso Agradecimento</h2>
+    <p>Agradecemos por dedicar seu tempo para explorar a história que construímos. Esperamos que este projeto inspire você a se aprofundar ainda mais no incrível mundo da tecnologia.</p>
+    <div class="contact-info">
+        <h3>Fale Conosco</h3>
+        <p>Em caso de dúvidas ou sugestões, entre em contato através do nosso e-mail oficial.</p>
+        <a href="mailto:contato@exemplo.com.br" class="btn-contact">Enviar E-mail</a>
+    </div>
+</section>
+
+   <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+
+  <footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel " target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="../Páginas/Home.html" data-key="home">Home</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="../Páginas/Quiz.html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> <input id="footer-search-input" type="text" placeholder="Pesquisar..."> <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+            </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2025 Projeto Integrado. Todos os direitos reservados.
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js " integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="quiz">Quiz: Teste seus Conhecimentos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Quiz.css"> 
+</head>
+
+<body class="dark-mode"> 
+
+<div id="search-results-overlay" style="display: none;"></div>
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite"></div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+        <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <nav id="menu" class="menu">
+            <li><a href="Home.html" data-key="home">Home</a></li>
+        <ul>
+            <li class="dropdown-menu-item">
+                <div class="menu-item-wrapper">
+                    <a href="(1) Home.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                    <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                        <i class="bi bi-chevron-down"></i>
+                    </span>
+                </div>
+                <ul class="submenu">    
+                </ul>
+            </li>
+            
+            <li class="dropdown-menu-item">
+                <div class="menu-item-wrapper">
+                    <a href="(2) Home.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                    <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                        <i class="bi bi-chevron-down"></i>
+                    </span>
+                </div>
+                <ul class="submenu">
+                    <li><a href="(2) IBM-360.html" data-key="revolucao-transistor">IBM-360</a></li>
+                    <li><a href="(2) Basic.html" data-key="primeira-geracao">Basic</a></li>
+                    <li><a href="(2) Apollo.html" data-key="apollo-menu-item">Apollo</a></li>
+                    <li><a href="(2) Touch.html" data-key="touch">Touch</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+            <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        </ul>
+    </nav>
+        
+        <div class="header-buttons">
+            <form id="header-search-form" class="header-search-inline">
+                <div id="search-suggestions" class="search-suggestions hidden"></div> 
+                <input
+                    id="header-search-input"
+                    type="text"
+                    placeholder="Pesquisar..."
+                    aria-label="Campo de busca"
+                />
+                <button type="submit" aria-label="Buscar">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            <button 
+                id="translation-icon" 
+                aria-label="Alternar Idioma" 
+                title="Tradução (Clique para Inglês)">
+                <i class="bi bi-translate"></i>
+            </button>
+        </div>
+
+        <div class="logo">
+            <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+                <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            </a>
+        </div>
+    </header>
+
+    <main class="quiz-container">
+        
+        <section id="quiz-intro-section" class="Introducao quiz-header-section">
+            <h1>Desafio do Conhecimento</h1>
+            <p>Teste seus conhecimentos sobre a fascinante história da computação.</p>
+            <p class="intro-details">Este quiz contém **20 perguntas** com feedback imediato. Sua pontuação será calculada ao final.</p>
+            <button id="start-quiz-button" class="btn-submit btn-start-full">Começar Quiz</button>
+        </section>
+        
+        <div id="fullscreen-quiz-modal" class="quiz-main-content hidden">
+
+            <div id="quiz-internal-header" class="Introducao quiz-header-section quiz-internal-header">
+                <h1>Desafio do Conhecimento</h1> <p class="quiz-score-display">
+                    Score: <span id="current-score">0</span> |
+                    Pergunta: <span id="current-question-index">1</span> / <span id="total-questions">20</span>
+                </p>
+                <div id="progress-bar-container" class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div id="quiz-slides">
+                </div>
+
+            <button id="next-button" class="btn-submit" disabled>Próxima Pergunta</button>
+            <button id="submit-quiz-button" class="btn-submit hidden" disabled>Finalizar Quiz</button>
+
+            <section id="results-section" class="quiz-results hidden">
+                <h2>Resultados Finais</h2>
+                <p id="final-score">Você acertou <strong>X</strong> de 20 perguntas.</p>
+                <p id="feedback-message">Parabéns! Excelente conhecimento sobre a história da computação.</p>
+                <button id="restart-quiz-button" class="btn-restart">Tentar Novamente</button>
+            </section>
+        </div>
+        
+    </main>
+    
+    <button id="back-to-top" title="Voltar ao Topo" aria-label="Voltar ao Topo">
+        &#9650; </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section brand-info">
+                <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                    <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+                </a>
+                <div class="social-links">
+                    <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+                </div>
+            </div>
+            
+            <div class="footer-section footer-links-section">
+                <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                    <a href="Home.html" data-key="home">Home</a>
+                    <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                    <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                </nav>
+            </div>
+            
+            <div class="footer-section footer-search-section">
+                <h4 data-key="search-button">Busca</h4> 
+                <form id="footer-search-form" class="footer-search"> 
+                    <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                    <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                    </button>
+                </form> 
+            </div>
+        </div>
+        
+        <div class="footer-bottom" data-key="footer-copy">
+            &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+        </div>
+    </footer>
+    
+</div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JS/Global.js"></script> 
+<script src="../JS/Quiz.js"></script>
+
+</body>
+</html>
