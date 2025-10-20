@@ -349,7 +349,7 @@ body.dark-mode .section-content {
 
 @media (max-width: 1200px) {
     .section-content, .section-lua {
-        gap: 60px;
+        padding: 100px 60px;
     }
 }
 
@@ -382,6 +382,7 @@ body.dark-mode .section-content {
     
     .section-lua .lua-texto {
         max-width: 100%;
+        font-size: 2rem;
         order: 2;
     }
 
