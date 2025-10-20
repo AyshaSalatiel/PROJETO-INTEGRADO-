@@ -339,30 +339,7 @@ body.dark-mode .section-content {
 }
 
 /* --- SECTION LUA (Layout) --- */
-.section-lua {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    padding: 80px 60px;
-}
 
-.lua-texto {
-    flex: 1;
-    text-align: center;
-}
-
-.lua-imagem {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.lua-imagem img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
 
 /*
 ==================================================================================
