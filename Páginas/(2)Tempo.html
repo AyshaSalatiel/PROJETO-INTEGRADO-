@@ -94,34 +94,32 @@
         </a>
     </div>
   </header>
-    
-  <div class="conteudo-principal">
-  <div class="basic">
-    <h1>BASIC (1961)</h1>
+        
+    <div class="conteudo-principal">
+  <section class="compartilhamento-tempo">
+    <h1>Compartilhamento de Tempo e o CTSS</h1>
 
-    <div class="introducao-basic">
-      <p>Em 1º de maio de 1964, os matemáticos John George Kemeny e Thomas Eugene Kurtz, da Dartmouth College, executaram o primeiro programa escrito em BASIC, marcando um dos momentos mais importantes e democratizantes da história da computação. O projeto nasceu da visão de que todo estudante, independentemente da área de estudo, deveria ter acesso à computação, superando a elitização imposta pelos computadores centralizados.</p>
+    <div class="tempo-compartilhado">
+      <h2>Compartilhamento de Tempo (1961)</h2>
+      <p>No começo da década de 1960, o aumento exponencial no número de pesquisadores, engenheiros e cientistas que precisavam usar computadores levou ao surgimento e à rápida experimentação com os chamados sistemas de tempo compartilhado (Time-Sharing Systems). Este avanço representou uma ruptura fundamental com o modelo anterior de processamento em lote (batch processing), que era lento e não interativo, exigindo longas esperas para a submissão e obtenção dos resultados dos programas.</p>
+      <p>O Time-Sharing, por outro lado, permitia que vários usuários utilizassem o mesmo computador central (mainframe) simultaneamente de forma interativa através de terminais remotos (como teletipos). O sistema operacional gerenciava a alocação dos recursos, dividindo o tempo de processamento da CPU em pequenos intervalos (fatias de tempo) e alternando rapidamente entre os programas de cada usuário. Essa técnica criava a ilusão de que cada pessoa tinha o computador dedicado, chegando, em alguns casos, a centenas de pessoas conectadas simultaneamente. A principal motivação era aumentar a produtividade no desenvolvimento de software e na pesquisa.</p>
     </div>
 
-    <div class="origem-dtss">
-      <h2>Origem do DTSS e contexto</h2>
-      <p>Kemeny conseguiu recursos substanciais, incluindo uma doação da National Science Foundation, para levar à universidade um computador General Electric GE-225 (posteriormente substituído pelo GE-235, mais rápido), com o objetivo de criar um sistema de tempo compartilhado para múltiplos usuários — o Dartmouth Time Sharing System (DTSS).</p>
-      <p>Um desafio surgiu: os alunos não dominavam linguagens complexas da época, como FORTRAN ou ALGOL, dificultando o uso do sistema.</p>
+    <div class="ctss-legado">
+      <h2>O Pioneirismo do CTSS e o Legado de Fernando Corbató</h2>
+      <p>Um dos primeiros e mais influentes exemplos desse avanço foi o CTSS (Compatible Time-Sharing System), criado no prestigiado MIT (Massachusetts Institute of Technology) sob a liderança do cientista da computação Fernando Corbató (que, por esse trabalho, viria a receber o Prêmio Turing de 1990). O sistema foi demonstrado pela primeira vez em novembro de 1961 e desenvolvido a partir de um poderoso, mas caro, computador IBM 7090 modificado, e, depois, de uma versão mais moderna, o IBM 7094.</p>
+      <p>Para viabilizar a alternância de usuários e a estabilidade, foram necessárias modificações de hardware para implementar a crucial proteção de memória, garantindo que os dados e processos de um usuário não pudessem ser acessados ou corrompidos por outros. A inovação técnica do CTSS o estabeleceu como o primeiro sistema de tempo compartilhado de propósito geral.</p>
     </div>
 
-    <div class="desenvolvimento-basic">
-      <h2>Desenvolvimento do BASIC</h2>
-      <p>Cientes de que o conhecimento em informática seria essencial para o futuro, Kemeny e Kurtz começaram, em 1956, a buscar linguagens mais simples e didáticas, voltadas para iniciantes e uso interativo. Após testes com Darsimco e Dope, linguagens rudimentares e ainda presas ao processamento em lote, iniciaram em 1963 o desenvolvimento de uma alternativa que tornasse a programação tão fácil quanto escrever em inglês.</p>
-      <p>No ano seguinte, com apoio de alunos como John McGeachie e Michael Busch, e de Kurtz, surgiu o BASIC (Beginner’s All-purpose Symbolic Instruction Code), unindo simplicidade e eficiência. Ao mesmo tempo, nasceu o DTSS, o primeiro sistema de tempo compartilhado comercialmente bem-sucedido, utilizando uma arquitetura de dois processadores (GE-235 e Datanet-30).</p>
-    </div>
-
-    <div class="impacto-basic">
-      <h2>Impacto e legado</h2>
-      <p>O BASIC destacou-se por ser uma linguagem de alto nível interpretada, fácil de aprender, ideal para uso educacional e interativo, com comandos simples baseados no inglês comum (PRINT, GOTO, IF...THEN). Sua portabilidade tornou-a padrão na maioria dos primeiros microcomputadores pessoais das décadas de 1970 e 1980.</p>
-      <p>Kemeny e Kurtz decidiram não patentear o BASIC, distribuindo-o gratuitamente para escolas e empresas. Isso permitiu o surgimento de diversas versões, amplamente adotadas em universidades, empresas e por programadores independentes. Uma dessas versões, o Altair BASIC, criado pela recém-fundada Microsoft para o microcomputador Altair 8800, abriu caminho para o sucesso da empresa e consolidou o BASIC como uma das linguagens mais influentes da era da computação pessoal.</p>
+    <div class="inovacoes-impacto">
+      <h2>Inovações Essenciais e o Impacto Duradouro</h2>
+      <p>O CTSS deu origem a programas e conceitos que se tornaram importantes para a história da computação moderna. Entre eles, destacam-se o RUNOFF, um dos primeiros softwares usados para formatar e processar textos a partir de comandos em um arquivo (sendo o precursor dos modernos processadores de texto, como o troff do Unix), e um sistema rudimentar de troca de mensagens entre usuários, que é inequivocamente considerado o precursor direto do e-mail (correio eletrônico).</p>
+      <p>Além disso, o trabalho no CTSS é amplamente creditado por Corbató ter implementado o conceito de senhas (passwords) para proteger o acesso e os arquivos dos usuários, marcando a gênese da segurança digital. Este projeto pioneiro funcionou no MIT até 1973 e foi a base para o Project MAC (Machine-Aided Cognition), marcando um passo fundamental na evolução dos sistemas operacionais multitarefa, da comunicação digital interativa e, posteriormente, servindo de inspiração direta para o desenvolvimento do Multics e, indiretamente, do Unix.</p>
     </div>
   </section>
 </main>
+
+  
 
     <button id="back-to-top" title="Voltar ao Topo">
         &#9650; 
