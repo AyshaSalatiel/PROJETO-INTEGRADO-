@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="home">Introdução-CIAAL</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+</head>
+
+<body>
+  <!--MENU-->
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(1) Home.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">    
+            <!-- AQUI DEVE FICAR OS SUBTEMAS DO TEMA 1 -->
+            </ul>
+        </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(1)CIAL.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="submenu">
+                <li><a href="(2)Basic.html" data-key="revolucao-transistor">Basic</a></li>
+                <li><a href="(3)Tempo.html" data-key="primeira-geracao">Compartilhamento de Tempo</a></li>
+                <li><a href="(4)IBM-360.html" data-key="apollo-menu-item">IBM-360</a></li>
+                <li><a href="(5)Micro.html" data-key="touch">Microprocessadores</a></li>
+                <li><a href="(6)Micro.html" data-key="touch">Apollo Guidance Computer</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.Html" data-key="quiz">Quiz</a></li>
+    </ul>
+
+</nav>
+<!--Botões do Header-->
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<!--Logo e  Carrosel-->
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+  </header>
+        
+  <div class="content-section">
+    <h1>Microprocessador (1968)</h1>
+    <p>
+        O desenvolvimento do microprocessador — uma CPU contida em um único chip ou em um pequeno conjunto de chips — 
+        representa um marco fundamental na história da computação moderna. No entanto, sua paternidade é amplamente 
+        debatida, já que diversos projetos surgiram quase simultaneamente. Entre os principais candidatos estão o 
+        CADC (Central Air Data Computer) da Garrett AiResearch, o chipset 4004 da Intel (o primeiro microprocessador 
+        comercial), o TMS 1000 da Texas Instruments e o chip AL1 da Four-Phase Systems, frequentemente citado como 
+        um precursor essencial.
+    </p>
+</div>
+
+<div class="content-section">
+    <h2>O Pioneirismo Secreto: CADC do F-14 (1968-1970)</h2>
+    <p>
+        Em 1968, a Garrett AiResearch foi contratada para desenvolver um computador digital para o caça supersônico 
+        F-14 Tomcat, da Marinha dos Estados Unidos. O sistema deveria controlar em tempo real a geometria variável das 
+        asas e os dados de voo. Sob a liderança dos designers Ray Holt e Steve Geller, surgiu o CADC (Central Air Data Computer), 
+        utilizando o chipset MP944 baseado na tecnologia MOS.
+    </p>
+    <p>
+        O MP944 era considerado extremamente avançado para a época: tratava-se de um conjunto de chips formando um 
+        “multi-microprocessador paralelo de 20 bits, em pipeline”, com recursos de processamento paralelo e digital 
+        que só seriam populares mais de uma década depois. Além de cerca de 20 vezes menor e mais confiável que os sistemas 
+        mecânicos concorrentes, ele foi usado operacionalmente nos primeiros modelos do F-14.
+    </p>
+    <p>
+        O projeto permaneceu em sigilo por quase três décadas, pois se tratava de tecnologia militar. Somente em 1997 
+        os documentos foram liberados, permitindo ao público conhecer o sistema. Desde então, discute-se se o CADC 
+        pode ser considerado o primeiro microprocessador funcional, mesmo não sendo um chip único, mas sim um chipset 
+        totalmente integrado e operacional antes do lançamento do Intel 4004.
+    </p>
+</div>
+
+<div class="content-section">
+    <h2>Ray Holt e o Reconhecimento Tardio</h2>
+    <p>
+        Ray Holt, formado em 1968 pela California Polytechnic University, foi um dos principais arquitetos do CADC. 
+        Somente em 1998, após seu pedido, os documentos foram liberados pela Marinha, permitindo que o projeto entrasse 
+        para a história da computação. Especialistas como Parab et al. (2007) defendem que o MP944 deve ser reconhecido 
+        como um microprocessador pioneiro devido ao seu design completo e funcional.
+    </p>
+</div>
+
+<div class="content-section">
+    <h2>Four-Phase Systems AL1 (1969): Um Precursor na Lógica Fatiada</h2>
+    <p>
+        Em 1969, Lee Boysel projetou o AL1 para a Four-Phase Systems, um chip de fatia de 8 bits (bit-slice) que 
+        integrava uma ULA (Unidade Lógica e Aritmética) e oito registradores. Três AL1s em paralelo formavam uma CPU 
+        de 24 bits utilizada em terminais inteligentes comerciais.
+    </p>
+    <p>
+        O AL1 utilizava a inovadora técnica de lógica de quatro fases, permitindo maior densidade de transistores e 
+        melhor velocidade em relação aos padrões da época. Com mais de 1.000 portas lógicas (aproximadamente 4.000 
+        transistores) e rodando a 1 MHz, ele era mais complexo e rápido que os futuros Intel 4004 e 8008.
+    </p>
+    <p>
+        Na década de 1990, o AL1 ganhou destaque em um litígio de patentes contra a Texas Instruments, comprovando-se 
+        em tribunal que seu design já incorporava conceitos considerados inovadores na época, influenciando 
+        diretamente o reconhecimento histórico de arquiteturas de microprocessadores.
+    </p>
+</div>
+
+    <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+
+</body>
+</html>

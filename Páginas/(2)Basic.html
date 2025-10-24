@@ -12,16 +12,16 @@
 </head>
 
 <body>
-<!--MENU-->
-  <div id="search-results-overlay" style="display: none;">
-   </div>
+  <!--MENU-->
+<div id="search-results-overlay" style="display: none;">
+</div>
 
-  <div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
-   </div>
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
 
 <div id="main-content-wrapper"> 
 
- <header>
+    <header>
     <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
         <i class="bi bi-list"></i>
     </button>
@@ -33,10 +33,6 @@
                 <a href="(1) Home.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
                 <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
                     <i class="bi bi-chevron-down"></i>
-                <li><a href="(2) IBM-360.html" data-key="revolucao-transistor">IBM-360</a></li>
-                <li><a href="(2) Basic.html" data-key="primeira-geracao">Basic</a></li>
-                <li><a href="(2) Apollo.html" data-key="apollo-menu-item">Apollo</a></li>
-                <li><a href="(2) Touch.html" data-key="touch">Touch</a></li>
                 </span>
             </div>
             <ul class="submenu">    
@@ -46,17 +42,17 @@
         
         <li class="dropdown-menu-item">
             <div class="menu-item-wrapper">
-                <a href="CIAL-Introdução.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <a href="(1)CIAL.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
                 <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
                     <i class="bi bi-chevron-down"></i>
                 </span>
             </div>
             <ul class="submenu">
-                 <li><a href="CIAL-Introdução.html" data-key="CIAL-Introdução">Introdução-CI</a></li>
-                <li><a href="(2)Tempo.html" data-key="Compartilhamento de Tempo">Compartilhamento de Tempo</a></li>
-                <li><a href="(2) Basic.html" data-key="primeira-geracao">Basic</a></li>
-                <li><a href="(2) Apollo.html" data-key="apollo-menu-item">Apollo</a></li>
-                <li><a href="(2) Touch.html" data-key="touch">Touch</a></li>
+                <li><a href="(2)Basic.html" data-key="revolucao-transistor">Basic</a></li>
+                <li><a href="(3)Tempo.html" data-key="primeira-geracao">Compartilhamento de Tempo</a></li>
+                <li><a href="(4)IBM-360.html" data-key="apollo-menu-item">IBM-360</a></li>
+                <li><a href="(5)Micro.html" data-key="touch">Microprocessadores</a></li>
+                <li><a href="(6)Micro.html" data-key="touch">Apollo Guidance Computer</a></li>
             </ul>
         </li>
         
@@ -66,6 +62,7 @@
     </ul>
 
 </nav>
+
 <!--Botões do Header-->
     <div class="header-buttons">
         <form id="header-search-form" class="header-search-inline">
@@ -96,45 +93,32 @@
   </header>
     
   <div class="conteudo-principal">
-  <div class="ibm360">
-    <h1>IBM-360 (1964)</h1>
+  <div class="basic">
+    <h1>BASIC (1961)</h1>
 
-    <div class="introducao-ibm360">
-      <p>O System/360, lançado pela IBM em 7 de abril de 1964, foi uma iniciativa revolucionária de engenharia e comercialização que redefiniu a forma como os computadores eram projetados, comercializados e utilizados globalmente. Seu impacto foi tão significativo que o CEO da IBM, Thomas Watson Jr., o descreveu como uma \"aposta no valor de US$ 5 bilhões\" — o maior investimento privado da história até então.</p>
-      <p>Jim Collins, autor de De Feito para Vencer, destacou-o como uma das três maiores realizações empresariais da história, ao lado do Modelo T da Ford e do Boeing 707. A IBM investiu quatro anos e US$ 5 bilhões para substituir todas as suas linhas de produtos existentes por uma nova arquitetura unificada.</p>
-      <p>O System/360 não apenas representou um avanço tecnológico, mas também uma mudança estratégica, pois transformou a IBM em referência global em inovação e confiabilidade, moldando o mercado de computação corporativa para décadas.</p>
+    <div class="introducao-basic">
+      <p>Em 1º de maio de 1964, os matemáticos John George Kemeny e Thomas Eugene Kurtz, da Dartmouth College, executaram o primeiro programa escrito em BASIC, marcando um dos momentos mais importantes e democratizantes da história da computação. O projeto nasceu da visão de que todo estudante, independentemente da área de estudo, deveria ter acesso à computação, superando a elitização imposta pelos computadores centralizados.</p>
     </div>
 
-    <div class="problema-incompatibilidade">
-      <h2>O Problema da Incompatibilidade</h2>
-      <p>Antes do System/360, cada novo modelo de computador exigia que programas antigos fossem descartados e reescritos, pois o software era exclusivo de um conjunto de hardware. Isso gerava custos proibitivos e dificultava a expansão tecnológica das empresas.</p>
-      <p>O System/360 introduziu o conceito de arquitetura de computadores, separando o conjunto de instruções (software) da implementação do hardware. Isso permitiu compatibilidade entre diferentes modelos da linha, tornando o ambiente escalável, reduzindo custos e protegendo investimentos em software.</p>
+    <div class="origem-dtss">
+      <h2>Origem do DTSS e contexto</h2>
+      <p>Kemeny conseguiu recursos substanciais, incluindo uma doação da National Science Foundation, para levar à universidade um computador General Electric GE-225 (posteriormente substituído pelo GE-235, mais rápido), com o objetivo de criar um sistema de tempo compartilhado para múltiplos usuários — o Dartmouth Time Sharing System (DTSS).</p>
+      <p>Um desafio surgiu: os alunos não dominavam linguagens complexas da época, como FORTRAN ou ALGOL, dificultando o uso do sistema.</p>
     </div>
 
-    <div class="desenvolvimento-projeto">
-      <h2>Desenvolvimento e Equipe</h2>
-      <p>Para criar o System/360, a IBM formou a força-tarefa SPREAD (System Programming, Research, Engineering and Development) em 1961, trabalhando em segredo em Greenwich, Connecticut. O projeto enfrentou grande resistência interna, pois poderia tornar obsoletos produtos existentes e deslocar clientes, mas foi aprovado após intenso debate no "Relatório SPREAD".</p>
-      <p>O arquiteto principal foi Gene Amdahl, enquanto Fred Brooks liderou o desenvolvimento do software, cunhando o termo “arquitetura de computadores”. Bob Evans e Erich Bloch também desempenharam papéis fundamentais. A equipe foi reconhecida com a primeira Medalha Nacional de Tecnologia dos EUA, e Brooks documentou os desafios de gerenciamento no livro <em>The Mythical Man-Month</em>.</p>
-      <p>O projeto também introduziu uma abordagem inédita de colaboração interdisciplinar entre engenheiros de hardware, software e marketing, definindo padrões que seriam seguidos em futuros projetos tecnológicos.</p>
+    <div class="desenvolvimento-basic">
+      <h2>Desenvolvimento do BASIC</h2>
+      <p>Cientes de que o conhecimento em informática seria essencial para o futuro, Kemeny e Kurtz começaram, em 1956, a buscar linguagens mais simples e didáticas, voltadas para iniciantes e uso interativo. Após testes com Darsimco e Dope, linguagens rudimentares e ainda presas ao processamento em lote, iniciaram em 1963 o desenvolvimento de uma alternativa que tornasse a programação tão fácil quanto escrever em inglês.</p>
+      <p>No ano seguinte, com apoio de alunos como John McGeachie e Michael Busch, e de Kurtz, surgiu o BASIC (Beginner’s All-purpose Symbolic Instruction Code), unindo simplicidade e eficiência. Ao mesmo tempo, nasceu o DTSS, o primeiro sistema de tempo compartilhado comercialmente bem-sucedido, utilizando uma arquitetura de dois processadores (GE-235 e Datanet-30).</p>
     </div>
 
-    <div class="arquitetura-tecnica">
-      <h2>Arquitetura e Tecnologia</h2>
-      <p>A arquitetura do System/360 foi baseada na Solid Logic Technology (SLT), um híbrido entre transistores discretos e circuitos integrados. Ela atendia desde usuários científicos a comerciais, com seis modelos de processadores (Modelo 30 ao 70) e 54 dispositivos periféricos.</p>
-      <p>O projeto formalizou o byte de 8 bits, substituindo os antigos bytes de 6 e 4 bits, criando um padrão universal. A memória central variava de 8 mil a 524 mil caracteres, podendo expandir até 8 milhões, permitindo escalabilidade sem reprogramação completa.</p>
-      <p>Além disso, o System/360 introduziu o conceito de compatibilidade em toda a linha de produtos, permitindo upgrades progressivos de desempenho sem comprometer softwares existentes, o que foi um avanço revolucionário na época.</p>
-    </div>
-
-    <div class="impacto-comercial">
-      <h2>Impacto Comercial e Cultural</h2>
-      <p>O System/360 trouxe ganhos de produtividade e eficiência, consolidando a computação corporativa moderna. Empresas podiam iniciar com modelos básicos e expandir conforme a necessidade, protegendo seus investimentos em software e reduzindo custos operacionais.</p>
-      <p>O impacto comercial foi imediato: em apenas um mês após o lançamento, mais de mil unidades foram encomendadas. O System/360 se tornou o padrão da indústria, estabelecendo a hegemonia da IBM por cerca de 20 anos.</p>
-      <p>Além do impacto comercial, o System/360 influenciou a cultura corporativa e tecnológica, promovendo o desenvolvimento de software mais padronizado e estimulando a inovação em hardware. Produtos derivados, como System/370, 390 e zSeries, ainda representavam mais da metade da receita da IBM em 1989, consolidando sua importância histórica e duradoura.</p>
-      <p>O sucesso do System/360 também serviu de inspiração para futuras gerações de engenheiros e arquitetos de computadores, mostrando que investimentos ousados em tecnologia podem gerar impacto global e duradouro.</p>
+    <div class="impacto-basic">
+      <h2>Impacto e legado</h2>
+      <p>O BASIC destacou-se por ser uma linguagem de alto nível interpretada, fácil de aprender, ideal para uso educacional e interativo, com comandos simples baseados no inglês comum (PRINT, GOTO, IF...THEN). Sua portabilidade tornou-a padrão na maioria dos primeiros microcomputadores pessoais das décadas de 1970 e 1980.</p>
+      <p>Kemeny e Kurtz decidiram não patentear o BASIC, distribuindo-o gratuitamente para escolas e empresas. Isso permitiu o surgimento de diversas versões, amplamente adotadas em universidades, empresas e por programadores independentes. Uma dessas versões, o Altair BASIC, criado pela recém-fundada Microsoft para o microcomputador Altair 8800, abriu caminho para o sucesso da empresa e consolidou o BASIC como uma das linguagens mais influentes da era da computação pessoal.</p>
     </div>
   </section>
 </main>
-
 
     <button id="back-to-top" title="Voltar ao Topo">
         &#9650; 
