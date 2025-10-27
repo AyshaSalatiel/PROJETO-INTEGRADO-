@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Releitura da Capa</title>
+    <title data-key="home">Introdução-CIAAL</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/Capa.css"> 
     <link rel="stylesheet" href="../CSS/Global.css">
+  
+    <style>
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+    </style>
 </head>
 
 <body>
@@ -68,21 +85,21 @@
     </ul>
 
 </nav>
-    
+
+<!--Botões do Header-->
     <div class="header-buttons">
         <form id="header-search-form" class="header-search-inline">
-            <div id="search-suggestions" class="search-suggestions hidden"></div> 
-            <input
-                id="header-search-input"
-                type="text"
-                placeholder="Pesquisar..."
-                aria-label="Campo de busca"
-            />
-            <button type="submit" aria-label="Buscar">
-                <i class="bi bi-search"></i>
-            </button>
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
         </form>
-
         <button 
             id="translation-icon" 
             aria-label="Alternar Idioma" 
@@ -90,63 +107,47 @@
             <i class="bi bi-translate"></i>
         </button>
     </div>
-
+<!--Logo e  Carrosel-->
     <div class="logo">
         <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
             <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
         </a>
     </div>
-</header>
-
-  
-  <!--Contéudo-->
-
-  <section class="Introducao capa-introducao-section">
-    <h1>A Nossa Releitura</h1>
-    <p>Inspirados pelo livro **"História da Computação"** de Raul Sidnei Wazlawick, decidimos criar uma releitura visual que encapsula a trajetória tecnológica desde as suas origens até a era digital. O objetivo foi traduzir a complexidade da evolução da computação em um design impactante e didático.</p>
-</section>
-
-<hr class="section-divider">
-
-<section class="capa-comparacao-section">
-    <h2>Comparação Visual</h2>
+  </header>
+        
+   <div class="tema-disco">
     
-    <div class="capa-container">
-        
-        <div class="capa-bloco original">
-            <h3>Capa Original</h3>
-            <div class="image-wrapper">
-                <img src="../Imagens/Capa Original.jpg" alt="Capa Original do livro História da Computação" class="capa-imagem">
-            </div>
-            <p><strong>Obra:</strong> História da Computação</p>
-            <p><strong>Autor:</strong> Raul Sidnei Wazlawick</p>
-        </div>
-        
-        <div class="capa-bloco releitura">
-            <h3>Nossa Releitura</h3>
-            <div class="image-wrapper">
-                <img src="../Imagens/Releitura da Capa.png" alt="Releitura artística da capa do livro, mostrando a evolução da tecnologia." class="capa-imagem">
-            </div>
-            <p><strong>Equipe:</strong> Arthur, Aysha, Leonardo, Maria Clara</p>
-            <p><strong>Conceito:</strong> Evolução e Inovação</p>
-        </div>
-        
+    <div class="introducao-tema">
+        <h2 id="disco-magnetico">Disco Magnético (1956)</h2>
+        <p>Em uma data que entrou para a história da tecnologia, 14 de setembro de 1956, a <strong>IBM</strong> revelou ao mundo o <strong>IBM 350 Disk Storage Unit</strong>, reconhecido como o primeiro disco rígido (HD) comercial. Esta unidade não era vendida separadamente, mas sim uma parte essencial do seu novo computador, o <strong>IBM 305 RAMAC</strong>. Foi esse sistema que inaugurou a era da tecnologia de armazenamento em discos magnéticos, o conceito básico que, surpreendentemente, ainda é usado nos HDs dos nossos computadores hoje.</p>
+        <p>Para os padrões atuais, as especificações físicas dessa invenção são surpreendentes. A unidade era um verdadeiro colosso, com um tamanho comparável a duas geladeiras lado a lado e um peso que ultrapassava facilmente uma tonelada.</p>
+        <p>A magia acontecia dentro da caixa gigante: o sistema era composto por uma pilha de 50 discos magnéticos gigantes, cada um medindo 24 polegadas (cerca de 61 centímetros) de diâmetro. Esses discos giravam a uma velocidade considerável para a época, 1200 rotações por minuto (RPM).</p>
     </div>
-</section>
 
-<hr class="section-divider">
-
-<section class="capa-explicacao-section Introducao">
-    <h2>O Conceito por Trás da Releitura</h2>
-    
-    <div class="explicacao-content">
-        <p>A nossa releitura foi inteiramente pensada na **evolução da tecnologia**. O arco desenhado pelo dedo indica a progressão histórica, começando do **Ábaco** (a ferramenta mais antiga de cálculo) e seguindo através de marcos importantes da computação (máquinas de somar, computadores de grande porte) até o **Microchip** e, finalmente, a **Nuvem** (Cloud Computing), que representa a computação moderna e a conectividade.</p>
-        <p>O elemento central, a **Lâmpada Acesa**, simboliza a **Inovação** e o nascimento de novas ideias. Ela está posicionada no centro superior para representar os **"pontos de ouro"** de cada invenção, chamando a atenção do observador e reforçando que a história da computação é uma sucessão constante de descobertas e *insights*.</p>
-        <p>A direção do dedo no design tem a função primária de **guiar o olhar** da pessoa, direcionando-o da base histórica (o Ábaco) em linha ascendente até o futuro (a Nuvem), ilustrando visualmente o progresso ininterrupto da tecnologia.</p>
+    <div class="conteudo-tema">
+        <p>Em vez de ter uma cabeça de leitura para cada disco, a máquina utilizava dois braços que se moviam com precisão, subindo e descendo para selecionar o disco e se deslocando horizontalmente para encontrar a informação exata gravada. Esse complexo movimento lhe rendeu o apelido curioso de 'baloney slicer' (fatiador de salame).</p>
+        <p>Em termos de capacidade, o IBM 350 podia armazenar o equivalente a 3,75 megabytes (MB) de dados formatados. Embora pareça minúsculo hoje – o espaço de um pequeno arquivo de texto – na época, era uma capacidade extraordinária, que podia substituir o volume de cerca de 62.500 cartões perfurados. A velocidade para retirar essa informação era de 8.800 caracteres por segundo.</p>
+        <p>A grande vantagem tecnológica do RAMAC era o acesso aleatório (Random Access). Diferente das fitas, onde era preciso "rebobinar" (acesso sequencial) para encontrar um dado específico, o sistema de discos permitia que a máquina "saltasse" diretamente para a informação desejada. Isso tornava o acesso aos dados exponencialmente mais rápido, levando cerca de 600 milissegundos (menos de um segundo) para encontrar a informação, algo impensável antes.</p>
+        <p>O custo do sistema completo IBM 305 RAMAC era elevado, sendo oferecido por meio de aluguel por cerca de $3.200 dólares por mês em 1956, o que demonstra que essa tecnologia era voltada para grandes empresas. O primeiro cliente a receber essa maravilha da engenharia foi a Zellerbach Paper Company em São Francisco.</p>
+        <p>O lançamento do IBM 350 não só solucionou problemas de contabilidade e controle para grandes empresas, mas também solidificou o princípio de armazenamento em discos que é a espinha dorsal dos Hard Disk Drives (HDDs) modernos. Embora tenha sido oficialmente desativado em 1969, o legado desse gigante é inegável, sendo a fundação de toda a indústria de armazenamento digital que conhecemos.</p>
     </div>
-</section>
+</div>
 
-   <button id="back-to-top" title="Voltar ao Topo">
+ <div class="video-container">
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://youtu.be/aTkL4FQL2FI" 
+    title="Disco Magnético" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+
+    <button id="back-to-top" title="Voltar ao Topo">
         &#9650; 
     </button>
     
@@ -181,8 +182,7 @@
         </div>
     </div>
         
-
-  <footer>
+<footer>
     <div class="footer-container">
         
         <div class="footer-section brand-info">
@@ -190,34 +190,37 @@
                 <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
             </a>
             <div class="social-links">
-                <a href="https://github.com/AyshaSalatiel " target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
             </div>
         </div>
         
         <div class="footer-section footer-links-section">
             <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
-                <a href="../Páginas/Home.html" data-key="home">Home</a>
-                <a href="../Páginas/Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
-                <a href="../Páginas/Quiz.html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
             </nav>
         </div>
         
         <div class="footer-section footer-search-section">
             <h4 data-key="search-button">Busca</h4> 
-            <form id="footer-search-form" class="footer-search"> <input id="footer-search-input" type="text" placeholder="Pesquisar..."> <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
-            </button>
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
             </form> 
         </div>
     </div>
     
     <div class="footer-bottom" data-key="footer-copy">
-        &copy; 2025 Projeto Integrado. Todos os direitos reservados.
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
     </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js " integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="../JS/Global.js"></script>
- 
+
 </body>
 </html>

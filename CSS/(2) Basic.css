@@ -1,130 +1,42 @@
-/* ARQUIVO: basic.css
-ESTILOS BASE DOS SLIDES (SECTIONS) E CORES ESPECÍFICAS DE SEÇÃO/TEMA
-*/
+ .introducao {
+            background-color: #666; 
+            padding: 80px 10%;
+        }
 
-/* 1. ESTILOS BASE E ESTRUTURA DOS SLIDES */
+        .introducao h1 {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #fff;
+        }
 
-body {
-    background-color: #FFFFFF;
-    color: #000000;
-    font-family: 'Public Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
+        .introducao p {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
 
-section {
-    width: 100%;
-    min-height: 100vh;
-    padding: 40px 10%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
+        /* Seções normais */
+        .conteudo-principal {
+            padding: 80px 10%;
+        }
 
-section h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 0.8em;
-    transition: color 0.4s ease;
-}
+        .conteudo-principal h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
 
-section p {
-    font-size: 1.4em;
-    line-height: 1.6;
-    font-weight: 400;
-    color: #333333;
-    max-width: 1100px;
-    margin-bottom: 1.5em;
-    transition: color 0.4s ease;
-}
+        .conteudo-principal h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
 
-section p strong {
-    font-weight: 700;
-    color: #000000;
-}
-
-
-/* 2. AJUSTES ESPECÍFICOS DE COR POR SLIDE (TEMA CLARO) */
-
-.Introducao {
-    background-color: #E0E0E0;
-}
-
-.Introducao h1,
-.Introducao p {
-    color: #000000;
-}
-
-
-/* 3. MODO ESCURO (Dark Mode) - AJUSTES DE SLIDE */
-
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
-body.dark-mode section h1 {
-    color: #FFFFFF;
-}
-
-body.dark-mode section p {
-    color: #D0D0D0;
-}
-
-body.dark-mode section p strong {
-    color: #FFFFFF;
-}
-
-/* CORES ESPECÍFICAS NO MODO ESCURO */
-
-body.dark-mode .Introducao {
-    background-color: #696969;
-}
-
-body.dark-mode .Introducao h1,
-body.dark-mode .Introducao p {
-    color: #FFFFFF;
-}
-
-
-/* 4. FUNCIONALIDADE DE TRADUÇÃO */
-
-.translated-text {
-    display: none;
-}
-
-body.translated .translated-text {
-    display: block;
-}
-
-body.translated .original-text {
-    display: none;
-}
-
-
-/* 5. RESPONSIVIDADE (MOBILE) DE SLIDES */
-@media (max-width: 1200px) {
-    section p {
-        max-width: 900px;
-    }
-}
-@media (max-width: 768px) {
-    section {
-        padding: 30px 5%;
-        min-height: auto;
-    }
-
-    section h1 {
-        font-size: 2.5em;
-    }
-
-    section p {
-        font-size: 1.1em;
-        max-width: 100%;
-    }
-}
+        .conteudo-principal p {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
