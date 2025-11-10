@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. ELEMENTOS DO DOM
     const introSection = document.getElementById('quiz-intro-section');
     const startButton = document.getElementById('start-quiz-button');
-    // Renomeado para 'quizMainContent' para refletir que não é mais um modal fixo
     const quizMainContent = document.getElementById('fullscreen-quiz-modal'); 
     const quizSlidesContainer = document.getElementById('quiz-slides');
     const nextButton = document.getElementById('next-button');
@@ -139,6 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalQuestionsDisplay = document.getElementById('total-questions');
     const progressBar = document.getElementById('progress-bar');
     
+    // NOVO: Elemento Footer
+    const mainFooter = document.getElementById('main-footer');
+
     // 3. VARIÁVEIS DE ESTADO
     let currentQuestionIndex = 0; 
     let score = 0; 
@@ -353,6 +355,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (quizInternalHeader) {
             quizInternalHeader.scrollIntoView({ behavior: 'smooth' });
         }
+        
+        // NOVO: Esconde o footer (o quiz finalizado fica na mesma tela do quiz em andamento)
+        if (mainFooter) {
+             mainFooter.classList.remove('hidden-footer');
+        }
     };
 
     // 12. FUNÇÃO PARA INICIAR O QUIZ 
@@ -362,7 +369,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Exibe o conteúdo principal do quiz
         quizMainContent.classList.remove('hidden');
         
-        // O body não precisa de overflow hidden, pois não estamos usando fixed
+        // NOVO: Mostra o footer quando o quiz começa
+        if (mainFooter) {
+            mainFooter.classList.remove('hidden-footer');
+        }
         
         // Garante que o quiz está renderizado e na primeira pergunta
         renderQuiz(); 
@@ -370,19 +380,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 13. FUNÇÃO PARA REINICIAR O QUIZ
     const restartQuiz = () => {
-        // Oculta o modal de resultados
+        // Oculta o modal de resultados e o conteúdo principal do quiz
         resultsSection.classList.add('hidden');
-        // Exibe o contêiner de slides
-        quizSlidesContainer.classList.remove('hidden');
+        quizMainContent.classList.add('hidden');
         
-        // Reinicializa e re-renderiza o quiz
-        renderQuiz(); 
+        // Exibe a introdução
+        introSection.classList.remove('hidden');
         
-        // Rola para o topo do quiz
-        const quizInternalHeader = document.getElementById('quiz-internal-header');
-        if (quizInternalHeader) {
-            quizInternalHeader.scrollIntoView({ behavior: 'smooth' });
+        // NOVO: Esconde o footer novamente ao voltar para a introdução
+        if (mainFooter) {
+            mainFooter.classList.add('hidden-footer');
         }
+        
+        // Rola para o topo da página para ver a introdução
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // O renderQuiz não é chamado aqui, pois ele é chamado dentro de startQuiz.
+        // Se a próxima ação for iniciar novamente, ele será chamado.
     };
 
 
@@ -391,6 +405,9 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', nextQuestion);
     restartButton.addEventListener('click', restartQuiz);
 
-    // 15. SETUP INICIAL: Apenas a Introdução é visível
-    quizMainContent.classList.add('hidden'); 
+    // 15. SETUP INICIAL: Oculta o conteúdo principal e esconde o footer na tela de introdução
+    quizMainContent.classList.add('hidden');
+    if (mainFooter) {
+        mainFooter.classList.add('hidden-footer');
+    }
 });

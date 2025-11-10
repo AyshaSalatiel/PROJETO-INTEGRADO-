@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title-ferranti"> Ferranti Mark I</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Global2.css">
+
+    <style>
+                 
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;          
+    margin: 50px auto;
+    flex-wrap: wrap;          
+    max-width: 1200px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 370px;         
+    height: 250px;           
+    object-fit: cover;      
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .gallery img {
+        max-width: 90%;
+        height: auto;
+    }
+}        
+    </style>
+</head>
+
+<body>
+<div id="search-results-overlay" style="display: none;">
+</div>
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor </a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+             <ul class="submenu">    
+<li><a href="(6.2) Simon.html" data-key="simon-kit">Simon, o primeiro kit pessoal</a></li>
+<li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+<li><a href="(6.4) UNIVAC.html" data-key="primeiro-comercial">Primeiro computadores comerciais</a></li>
+<li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+<li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+<li><a href="(6.16) Disco Magnético.html" data-key="disco-magnetico">Disco Magnético</a></li>
+</ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+                <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="compartilhamento-tempo">Compartilhamento de Tempo</a></li>
+                <li><a href="(7.13) BASIC.html" data-key="basic">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="ibm360">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="arpanet">Arpanet</a></li> 
+                <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo-guidance">Apollo Guidance Computer</a></li>
+</ul>
+        
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            data-key="search-placeholder"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" data-key="search-button-label" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            data-key="translation-title"
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+        
+    </div>
+<div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+        
+      <section id="content">
+    <div class="introducao">
+        <h1>Ferranti Mark 1: O Primeiro Computador Comercial do Mundo</h1>
+        <p>O <strong>Ferranti Mark 1</strong> detém um lugar de destaque na história como o <strong>primeiro computador eletrônico de uso geral disponível comercialmente no mundo</strong>. Sua criação não foi apenas um avanço tecnológico, mas também um marco na colaboração entre a academia e a indústria, fundamental para a rápida disseminação do poder da computação.</p>
+        <p>Seu lançamento formal, com a primeira máquina entregue em <strong>fevereiro de 1951</strong>, representou a transição da computação de um projeto puramente experimental para uma ferramenta comercialmente viável. Este evento estabeleceu o Reino Unido como um pioneiro na era da tecnologia da informação e abriu as portas para o mercado global de computadores.</p>
+        <p>Ao formalizar a ligação entre a Universidade de Manchester e a <strong>Ferranti Ltd.</strong>, o governo britânico garantiu que o computador eletrônico seria disponibilizado o mais rápido possível no Reino Unido e no exterior, impulsionando a computação como um produto, e não apenas uma pesquisa.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Origem e a Colaboração entre Academia e Indústria</h2>
+        <p>A história do Mark 1 começa em <strong>1948</strong>, quando o cientista-chefe do governo britânico iniciou um contrato crucial com a <strong>Ferranti Ltd.</strong>. O objetivo era ambicioso: produzir uma versão comercial do inovador <strong>Manchester Mark 1</strong>, um projeto liderado na Universidade de Manchester pelo Professor <strong>Freddie Williams</strong> e por <strong>Tom Kilburn</strong>.</p>
+        <p>Essa parceria foi essencial. O <em>Manchester Mark 1</em> serviu como protótipo direto, mas a Ferranti foi responsável pela engenharia de produção e pela industrialização do projeto. Essa ligação entre a universidade, que fornecia o conhecimento de ponta, e a indústria, que possuía a capacidade de produção, tornou-se um modelo para o desenvolvimento tecnológico de alta velocidade.</p>
+        <p>O trabalho de aprimoramento foi uma colaboração intensa, com contribuições notáveis de membros-chave da Universidade que se juntaram à Ferranti em <strong>1949</strong>, como <strong>Geoff Tootill</strong> e, especialmente, <strong>Alec Robinson</strong>. Eles garantiram que a versão comercial não fosse apenas uma cópia, mas uma máquina significativamente melhorada e mais rápida.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Arquitetura, Memória e Aceleração de Hardware</h2>
+        <p>A arquitetura do Ferranti Mark 1 baseou-se estritamente no Manchester Mark 1, mas incorporou diversas melhorias significativas. Dentre elas, destacam-se o aumento na capacidade dos registradores <strong>B-line</strong>, dos tubos de raios catódicos (CRT) e, principalmente, do <strong>tambor magnético</strong> de memória secundária, que foi substancialmente redesenhado.</p>
+        <p>A <strong>memória principal de acesso aleatório</strong> era organizada em <strong>oito páginas</strong> de CRT, com cada página armazenando $64 \times 20$-bits de "linhas" endereçáveis. O Mark 1 utilizava aritmética serial de $40$-bits, com instruções de hardware para adição, subtração e multiplicação (com um acumulador de comprimento duplo). A memória de apoio, o tambor magnético, tinha uma capacidade inicial de <strong>$512$ páginas</strong>, oito vezes maior que a versão anterior do Manchester Mark 1, com um tempo de revolução de cerca de $30$ milissegundos.</p>
+        <p>O grande avanço no desempenho deveu-se a <strong>Alec Robinson</strong>, que redesenhou o multiplicador da máquina. Ele transformou o circuito de essencialmente serial para um modelo muito mais paralelo, o que resultou em um aumento de velocidade da ordem de <strong>cinco vezes</strong> em média para a operação de multiplicação. Combinado com o aumento da velocidade básica de instrução (de $\approx 1,8$ ms para $1,2$ ms), isso praticamente <strong>dobrou a velocidade geral</strong> da máquina para aplicações científicas.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Programação Complexa e a Versão Mark 1*</h2>
+        <p>O sistema de programação inicial do Ferranti Mark 1 era notoriamente complexo. Exigia que os programadores trabalhassem na <strong>base $32$</strong> (agrupamentos de $5$-bits), o que tornava a codificação uma tarefa árdua. Era necessário memorizar os $32$ caracteres não intuitivos associados às teclas do **teleimpressor** de entrada e seus equivalentes em fita de papel perfurada de $5$-furos.</p>
+        <p>A <strong>entrada</strong> de dados era feita por essa fita perfurada, e a <strong>saída</strong> ia para um perfurador de fita ou diretamente para um **teleimpressor** para impressão on-line. Essa dependência de códigos de baixo nível e convenções não intuitivas tornava a programação acessível apenas a um grupo altamente especializado, dificultando a adoção generalizada.</p>
+        <p>Em resposta a essas dificuldades e após a venda das duas primeiras máquinas, a Ferranti lançou uma versão aprimorada, o <strong>Mark 1*</strong>. Embora mantivesse a arquitetura fundamental, o Mark 1* tinha um <strong>conjunto de instruções revisado</strong>, eliminando a maioria das idiossincrasias e irritações do código de ordem e das convenções de programação originais, incentivando o desenvolvimento de software mais inteligente.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Sucesso de Vendas e Aplicações Pioneiras</h2>
+        <p>Entre <strong>1951 e 1957</strong>, a Ferranti vendeu publicamente <strong>nove unidades</strong> do Mark 1 e Mark 1* (além de possíveis vendas a agências governamentais). Esse número, embora pequeno pelos padrões atuais, foi um sucesso comercial significativo para a época, comprovando o potencial de mercado dos computadores eletrônicos.</p>
+        <p>O potencial de mercado era global: <strong>três dessas máquinas foram vendidas para o exterior</strong> (Canadá, Holanda e Itália), provando que o conceito de computação de uso geral tinha apelo internacional. O primeiro Mark 1, entregue à Universidade de Manchester, serviu fielmente até ser substituído apenas em <strong>1958</strong>, demonstrando sua longevidade e utilidade.</p>
+        <p>Um folheto de vendas da Ferranti de <strong>1952</strong> destacava a versatilidade pioneira do computador para diversas aplicações, como determinantes e matrizes, equações diferenciais, tabulação de funções, problemas lógicos (como xadrez) e, de forma importante, até mesmo <strong>aplicações comerciais</strong> (como cálculo de salários), consolidando o Mark 1 como o marco inicial na era da computação comercial versátil.</p>
+        <div class="gallery">
+            <img src="https://images.squarespace-cdn.com/content/v1/5b295a02d274cb909a64a1a8/1549987186929-8W82Y21GQOC8J89YTKN2/PLW1+knitting+20161206_135710.jpg" alt="">
+            <img src="https://cdn.britannica.com/25/23625-050-21D61CC5/Tom-Kilburn-console-Ferranti-Mark-I-computer-1950.jpg" alt="">
+            <img src="https://msumediaproject.wordpress.com/wp-content/uploads/2015/04/f1-ferranti-mark-i-console.jpg?w=680" alt="">
+        </div>
+    </div>
+</section>
+  
+<button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                data-key="translation-title"
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+  
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" data-key="search-placeholder" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button-label" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+</body>
+</html>

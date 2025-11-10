@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="home">Compartilhamento de Tempo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Global2.css">
+</head>
+
+  <body>
+<!--MENU-->
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+  <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="Home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor </a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+           <ul class="submenu">    
+             <li><a href="(6.2) Simon.html" data-key="disco">Simon, o primeiro kit pessoal</a></li>
+             <li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+             <li><a href="(6.4) UNIVAC.html" data-key="disco">Primeiro computadores comerciais</a></li>
+             <li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+             <li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+             <li><a href="(6.16) Disco Magnético.html" data-key="disco">Disco Magnético</a></li>
+            </ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+                <li><a href="(7.13) BASIC.html" data-key="revolucao-transistor">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="apollo guidance">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="Arpanet">Arpanet</a></li> 
+                <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo guidance">Apollo Guidance Computer</a></li>
+                </ul> </li>
+        
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<!--Botões do Header-->
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<!--Logo e  Carrosel-->
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>  
+        
+    <section id="content">
+     <div class="introducao">
+    <h1>Compartilhamento de Tempo (1961)</h1>
+    <p>No começo da década de 1960, o aumento exponencial no número de pesquisadores, engenheiros e cientistas que precisavam usar computadores levou ao surgimento e à rápida experimentação com os chamados sistemas de tempo compartilhado (<em>Time-Sharing Systems</em>).</p>
+    <p>Este avanço representou uma ruptura fundamental com o modelo anterior de processamento em lote (<em>batch processing</em>), que era lento e não interativo, exigindo longas esperas para a submissão e obtenção dos resultados dos programas.</p>
+    <p>O <strong>Time-Sharing</strong> permitia que vários usuários utilizassem o mesmo computador central (<em>mainframe</em>) simultaneamente de forma interativa através de terminais remotos (como teletipos). O sistema operacional gerenciava a alocação dos recursos, dividindo o tempo de processamento da CPU em pequenos intervalos (fatias de tempo) e alternando rapidamente entre os programas de cada usuário.</p>
+    <p>Essa técnica criava a ilusão de que cada pessoa tinha o computador dedicado, chegando, em alguns casos, a centenas de pessoas conectadas simultaneamente. A principal motivação era aumentar a produtividade no desenvolvimento de software e na pesquisa, tornando os computadores mais acessíveis e eficientes.</p>
+  </div>
+
+  <div class="subtema">
+    <h2>O Pioneirismo do CTSS e o Legado de Fernando Corbató</h2>
+    <p>Um dos primeiros e mais influentes exemplos desse avanço foi o <strong>CTSS (Compatible Time-Sharing System)</strong>, criado no prestigiado <strong>MIT (Massachusetts Institute of Technology)</strong> sob a liderança do cientista da computação <strong>Fernando Corbató</strong>.</p>
+    <p>Corbató e sua equipe buscavam tornar o uso dos computadores mais democrático e eficiente, permitindo que diversos usuários pudessem acessar o sistema ao mesmo tempo sem interferirem uns nos outros. Essa visão foi essencial para o desenvolvimento de ambientes colaborativos e interativos.</p>
+    <p>O sistema foi demonstrado pela primeira vez em novembro de 1961 e desenvolvido a partir de um poderoso, mas caro, computador IBM 7090 modificado, e, posteriormente, em uma versão mais moderna, o IBM 7094. Para que o sistema funcionasse, foram necessárias inovações de software e hardware que possibilitassem a alternância segura entre os usuários.</p>
+    <p>Entre essas inovações, a <strong>proteção de memória</strong> foi fundamental. Ela impedia que um usuário tivesse acesso aos dados de outro, garantindo a estabilidade e a segurança do sistema. Essa ideia, introduzida no CTSS, se tornou uma das bases de todos os sistemas operacionais modernos. O sucesso do projeto levou Corbató a receber o <strong>Prêmio Turing</strong> em 1990.</p>
+  </div>
+
+  <div class="subtema">
+    <h2>Inovações Essenciais e o Impacto Duradouro</h2>
+    <p>O <strong>CTSS</strong> deu origem a programas e conceitos que marcaram profundamente a história da computação. Um dos mais notáveis foi o <strong>RUNOFF</strong>, um dos primeiros softwares usados para formatar e processar textos a partir de comandos em um arquivo, tornando-se o precursor direto dos modernos processadores de texto como o <em>troff</em> do Unix.</p>
+    <p>Outro marco importante foi o desenvolvimento de um sistema rudimentar de troca de mensagens entre usuários do CTSS. Esse mecanismo permitia a comunicação digital interna e é considerado o primeiro passo para o surgimento do <strong>e-mail</strong> (correio eletrônico), transformando a maneira como pessoas trocavam informações em ambientes computacionais.</p>
+    <p>Além disso, Corbató implementou no CTSS o conceito de <strong>senhas (passwords)</strong> para proteger o acesso dos usuários, marcando o início da segurança digital. Essa ideia simples, mas poderosa, permanece como um dos pilares da proteção de dados até hoje.</p>
+    <p>O projeto CTSS funcionou no MIT até 1973 e serviu como base para o <strong>Project MAC (Machine-Aided Cognition)</strong>, que ampliou as pesquisas sobre interação homem-máquina. Seu legado influenciou diretamente o desenvolvimento do <strong>Multics</strong> e, indiretamente, do <strong>Unix</strong>, dois sistemas que moldaram a computação moderna e inspiraram os sistemas operacionais atuais.</p>
+
+    <div class="gellery">
+     <img src="https://timereshared.com/images/ctss/ibm-7094.jpg" alt="">
+     <img src="https://www.columbia.edu/cu/computinghistory/ibm7094b.jpg" alt="">
+     <img src="https://assets.mitmuseum.mit.edu/iiifimg3/61448883/full/800,/0/default.jpg" alt="">
+    </div>
+  </div>
+ </section>
+</div>
+
+    <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+</body>
+</html>

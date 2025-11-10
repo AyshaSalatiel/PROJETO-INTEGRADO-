@@ -1,0 +1,165 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url(../Imagens/IBM-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Seção principal */
+#disco-magnetico {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    max-width: 1350px;
+    margin: 90px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.introducao-tema, .introducao, .info-box {
+    background-color: #e8e8e8;
+    padding: 60px 70px; 
+    text-align: left; 
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* 1. Estilo Título H1 (Grande e Sublinhado) */
+.introducao-tema h1, .introducao h1, .info-box h1 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif;
+    display: inline-block;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* 2. Estilo Título H2 (Linha Lateral e Tipografia) */
+.introducao-tema h2, .introducao h2, .info-box h2, .subtema h2 {
+    font-size: 2rem; 
+    color: #000;
+    margin-top: 30px; 
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 5px solid #000; /* Linha lateral */
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif; 
+    text-align: left; 
+}
+
+/* 3. Parágrafos da Introdução */
+.introducao-tema p, .introducao p, .info-box p {
+    font-size: 1.3rem;
+    color: #444;
+    max-width: 100%; 
+    margin: 0 0 15px 0; 
+    text-align: justify;
+}
+
+/* Subtemas (Conteúdo interno) */
+.subtema {
+    padding: 50px 70px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff; 
+    text-align: justify;
+}
+
+/* Fundo alternado entre subtemas */
+#disco-magnetico .subtema:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Parágrafos dos Subtemas */
+.subtema p {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+/* 4. Estilo para o Vídeo (Responsivo e Centralizado) */
+.video-container {
+    padding: 50px 70px;
+    text-align: center;
+    background-color: #e8e8e8; /* Fundo cinza para destacar */
+}
+
+.video-container iframe {
+    /* Centraliza o iframe e o torna responsivo */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Mantém as proporções 16:9 se o iframe não estiver definido */
+    aspect-ratio: 16 / 9;
+}
+
+/* Outros elementos de texto */
+strong {
+    color: #000;
+    font-weight: 700;
+}
+
+em {
+    color: #666;
+}
+
+/* Estilos de Imagem (Reutilizados do código anterior) */
+.image-gallery, .gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: stretch;
+    gap: 30px; 
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+/* Imagens sem linha/sombra */
+.image-gallery img, .gallery img { 
+    display: block;
+    flex: 1 1 calc(33.33% - 20px); 
+    max-width: 350px; 
+    min-width: 250px; 
+    aspect-ratio: 16 / 10;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0; 
+    box-shadow: none; 
+    transition: none; 
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .introducao-tema, .introducao, .info-box, .subtema, .video-container {
+        padding: 40px 35px;
+    }
+
+    .introducao-tema h1, .introducao h1, .info-box h1 {
+        font-size: 2rem;
+    }
+
+    .introducao-tema h2, .introducao h2, .info-box h2, .subtema h2 {
+        font-size: 1.6rem;
+    }
+
+    .introducao-tema p, .introducao p, .info-box p, .subtema p {
+        font-size: 1.1rem;
+    }
+    
+    .video-container iframe {
+        width: 100%;
+        height: 200px; 
+    }
+}

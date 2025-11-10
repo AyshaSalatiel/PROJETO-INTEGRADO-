@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    min-height: 60vh;
+    min-height: 10vh;
     gap: 60px;
-    padding: 400px 100px 100px 80px;
+    padding: 120px 110px 100px 30px;
     position: relative; /* ensure absolute children position correctly */
+     border-bottom: 15px solid white;
 }
 
 .section-lua .lua-conteudo {
@@ -19,16 +20,16 @@
 
 .section-lua .lua-conteudo .titulo-lua {
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
-    max-width: 600px;
+    max-width: 700px;
     text-align: left;
 }
 
 .section-lua .lua-conteudo .texto-lua {
     color: white;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 1.6;
     max-width: 700px;
     text-align: left;
@@ -145,4 +146,156 @@
         pointer-events: none;
     }
 }
+
+/*Valvulas*/
  
+.valvulas-ao-transistor {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    min-height: 10vh;
+    gap: 60px;
+    padding: 180px 110px 100px 30px;
+    position: relative;
+    border-bottom: 15px solid white;
+}
+
+.valvulas-ao-transistor .valvulas-aos-transistores {
+    flex: 1;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* conteúdo à direita */
+    text-align: right;
+    gap: 10px;
+}
+
+.valvulas-ao-transistor .valvulas-aos-transistores .titulo-ibm {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 700px;
+    text-align: right;
+}
+
+.valvulas-ao-transistor .valvulas-aos-transistores .texto-lua {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: right;
+}
+
+.valvulas-ao-transistor .valvulas-aos-transistores .leia-mais-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.valvulas-ao-transistor img {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 10px;
+}
+.valvulas-ao-transistor .gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.653), rgba(0, 0, 0, 0.1));
+    z-index: 30;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .valvulas-ao-transistor {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 40px 20px;
+        gap: 20px;
+        min-height: 60vh;
+    }
+
+    .valvulas-ao-transistor img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        z-index: 10;
+    }
+
+    .valvulas-ao-transistor .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.15));
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores {
+        width: 100%;
+        padding: 10px 0;
+        z-index: 30;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores .titulo-ibm {
+        font-size: 2.2rem;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores .texto-lua {
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores .leia-mais-btn {
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    .valvulas-ao-transistor {
+        padding: 40px 16px 30px 16px;
+        gap: 12px;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores .titulo-ibm {
+        font-size: 1.8rem;
+    }
+
+    .valvulas-ao-transistor .valvulas-aos-transistores .texto-lua {
+        font-size: 1rem;
+    }
+
+    .valvulas-ao-transistor .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
+        z-index: 20;
+        pointer-events: none;
+    }
+}
+

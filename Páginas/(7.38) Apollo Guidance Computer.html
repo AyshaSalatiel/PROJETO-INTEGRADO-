@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="home">Apollo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Global2.css">
+    
+</head>
+
+<body>
+  <body>
+<!--MENU-->
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="Home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor </a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+             <ul class="submenu">    
+             <li><a href="(6.2) Simon.html" data-key="disco">Simon, o primeiro kit pessoal</a></li>
+             <li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+             <li><a href="(6.4) UNIVAC.html" data-key="disco">Primeiro computadores comerciais</a></li>
+             <li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+             <li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+             <li><a href="(6.16) Disco Magnético.html" data-key="disco">Disco Magnético</a></li>
+            </ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+                <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="primeira-geracao">Compartilhamento de Tempo</a></li>
+                <li><a href="(7.13) BASIC.html" data-key="revolucao-transistor">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="apollo guidance">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="Arpanet">Arpanet</a></li> 
+                </ul> </li>
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<!--Botões do Header-->
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<!--Logo e  Carrosel-->
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+        
+  <section id="content">
+      <div class="introducao">
+        <h1>Apollo Guidance Computer (1969)</h1>
+        <p>O Projeto Apollo, iniciado com o objetivo audacioso de levar o homem à Lua e trazê-lo de volta em segurança antes do fim da década de 60, foi um dos maiores catalisadores para a engenharia e a computação moderna. Anunciado em 1961 pelo presidente John F. Kennedy, o empreendimento exigiu uma capacidade de cálculo e controle da espaçonave sem precedentes, em um ambiente de severas restrições de peso e volume.</p>
+        <p>Neste contexto de inovações e desafios monumentais, surgiu o **Apollo Guidance Computer (AGC)**. Lançado a bordo da missão Apollo 8 em 1968, o AGC não era apenas uma peça de hardware; ele era o cérebro digital que forneceu a navegação inercial (PGNCS) e o guia autônomo, essenciais para a jornada translunar e a órbita lunar.</p>
+        <p>O que torna o AGC um marco na história da tecnologia é a sua arquitetura: ele foi o primeiro computador da história a ser construído quase inteiramente com **circuitos integrados (microchips)**. Essa adoção pioneira da microeletrônica, ainda uma tecnologia incipiente na época, permitiu que a máquina fosse suficientemente compacta, leve e confiável para operar no espaço, superando a limitação dos pesados computadores eletromecânicos da era anterior.</p>
+        <p>A história do AGC é a história de um "salto tecnológico" decisivo, desenvolvido pelo MIT em parceria com a indústria. Sem a sua capacidade de processamento em tempo real, gerenciada através de seu sistema operacional primitivo (EMSI) e acessível via interface DSKY, a conquista da Lua não teria sido possível. Este computador não apenas garantiu o sucesso de Apollo, mas também estabeleceu os fundamentos para a computação embarcada moderna.</p>
+    </div>
+
+ <div class="subtema">
+    <h2>Origem da Missão e o Desafio Tecnológico</h2>
+        <p>Em 21 de dezembro de 1968, a NASA fez história ao lançar a missão Apollo 8, tornando-se a primeira agência espacial a entrar em órbita lunar com humanos a bordo. A bordo da espaçonave, estava o **Apollo Guidance Computer (AGC)**, um marco revolucionário da engenharia: o primeiro computador da história a ser construído quase inteiramente com circuitos integrados, ou microchips.</p>
+        <p>Este computador foi essencialmente o cérebro da missão, responsável por fornecer a navegação inercial (PGNCS) e guiar os astronautas durante toda a jornada até a Lua. Sua performance e confiabilidade marcaram um dos marcos mais significativos da engenharia computacional do século XX e o nascimento da computação moderna embarcada, um campo que hoje é onipresente.</p>
+        <p>A origem desse feito ambicioso remonta a 25 de maio de 1961, quando o então presidente dos Estados Unidos, **John F. Kennedy**, anunciou ao Congresso americano um objetivo nacional ousado: levar um homem à Lua e trazê-lo de volta com segurança antes do fim da década. Essa declaração deu o pontapé inicial no Projeto Apollo, um dos empreendimentos tecnológicos mais complexos e desafiadores já realizados pela humanidade.</p>
+        <p>Para que essa meta fosse atingida, era necessário superar inúmeros desafios, tanto técnicos quanto operacionais. O maior deles era a necessidade de realizar cálculos precisos e constantes de navegação, orientação e controle da espaçonave em tempo real, desde o lançamento na Terra até o pouso na Lua. Sem uma solução automatizada, o risco de erro humano e o atraso na comunicação baseada em terra seriam altíssimos e comprometeriam irremediavelmente o sucesso do projeto.</p>
+</div>
+
+  <div class="subtema">
+    <h2>A Necessidade da Computação Digital e a Inovação em Microchips</h2>
+        <p>Diante dos desafios, tornou-se essencial o desenvolvimento de um sistema automatizado de bordo, capaz de executar esses cálculos de forma confiável, compacta e eficiente. No entanto, os computadores eletromecânicos ou analógicos utilizados até então pela NASA não ofereciam nem a capacidade de processamento, nem a precisão necessária para uma missão tão crítica. A conclusão era clara: a <strong>computação digital</strong> era a única resposta viável.</p>
+        <p>Além da capacidade de processamento, havia limitações físicas severas impostas pela engenharia aeroespacial: o equipamento precisava ser extremamente leve, muito pequeno (com um volume restrito de apenas 0,057 metros cúbicos) e consumir o mínimo de energia. Tais restrições impediam o uso dos computadores tradicionais da época, que frequentemente ocupavam salas inteiras, tornando a miniaturização uma prioridade absoluta.</p>
+        <p>Foi nesse contexto que o MIT (Instituto de Tecnologia de Massachusetts), através do seu Laboratório Charles Stark Draper, assumiu a tarefa monumental de desenvolver as novas tecnologias necessárias, muitas das quais ainda não existiam. A parceria com fabricantes como a Fairchild Semiconductor Corporation foi crucial para transformar a teoria em realidade embarcada.</p>
+        <p>Com base na experiência do MIT no desenvolvimento de computadores digitais transistorizados, como o Polaris, os engenheiros logo perceberam que a única maneira de atingir as severas restrições físicas era através da <strong>microeletrônica</strong>. A grande inovação surgiu com a proposta revolucionária de usar <strong>circuitos integrados (ICs)</strong> de silício, ou chips, que haviam sido inventados por Robert Noyce e Jack Kilby poucos anos antes e ainda não eram amplamente utilizados em aplicações críticas e de alto risco.</p>
+</div>
+
+<div class="subtema">
+    <h2>Arquitetura do AGC e seu Legado Operacional</h2>
+        
+        <p>Convencer a NASA a adotar essa tecnologia emergente, que ainda era vista por alguns como não comprovada e de baixa confiabilidade, foi um processo difícil, mas se mostrou inevitável para o sucesso da missão. Após intensos testes, pesquisas e aperfeiçoamentos, foi possível construir um computador compacto e robusto que atendia a todas as exigências rigorosas da missão espacial.</p>
+        <p>Assim nasceu o Apollo Guidance Computer (AGC): o primeiro computador digital portátil a utilizar cerca de <strong>4.100 circuitos integrados</strong>, operando no padrão RTL (Resistor-Transistor Logic). O AGC possuía uma arquitetura robusta de 16 bits, otimizada para as tarefas de navegação e controle necessárias para a jornada translunar.</p>
+        <p>Sua memória era particularmente notável: ele contava com 2.048 palavras de memória RAM (leitura e escrita) de núcleo magnético (*magnetic core memory*) e 36.864 palavras de memória ROM (somente leitura), conhecida como <strong>Core Rope Memory</strong> (memória de corda de núcleo). Esta ROM era programada manualmente de forma permanente, passando fios através (ou em torno) de pequenos núcleos magnéticos, garantindo que o software crucial não fosse alterado.</p>
+        <p>O AGC era operado através de uma interface chamada <strong>DSKY</strong> (*Display and Keyboard*), que permitia aos astronautas inserirem comandos (códigos de verbos e substantivos) e ler informações diretamente da máquina. O termo AGC EMSI refere-se à versão construída para o Módulo de Comando (CM), sendo EMSI a sigla para *"Executive and Monitor System I"*, o sistema de software embarcado responsável por gerenciar as operações críticas da missão (como cálculos de trajetória e controle de atitude) através de um primitivo, mas eficaz, sistema operacional de prioridade de tarefas. Esse "salto tecnológico" foi decisivo: sem ele, o objetivo de levar e trazer o homem da Lua com segurança simplesmente não teria sido possível de ser cumprido.</p>
+ 
+      <div class="gellery">
+        <img src="https://static.righto.com/images/agc-bitcoin/agc-photo.jpg " alt="">
+        <img src="https://static.righto.com/images/agc-cpu/agc-with-scope.jpg" alt="">
+        <img src="https://apollo11space.com/wp-content/uploads/2025/04/The-Apollo-Guidance-Computer-How-a-32KB-Computer-and-3-Critical-Seconds-Saved-the-Moon-Landing.jpg" alt="">
+      </div>
+</div>
+  </section>
+
+    <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+</body>
+</html>

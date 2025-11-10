@@ -1,199 +1,218 @@
-/*
-====================================
-ESTILOS: NOSSA EQUIPE
-====================================
-*/
+/* ========================================================================= */
+/* 6. ESTILOS ESPECÍFICOS DA PÁGINA SOBRE NÓS (EQUIPE E CONTATO) */
+/* (ATUALIZADO PARA LARGURA, ANIMAÇÕES E ALINHAMENTO) */
+/* ========================================================================= */
 
-/*
-====================================
-ESTILOS: INTRODUÇÃO DA EQUIPE (CARD)
-====================================
-*/
+/* ---------------------- */
+/*   SEÇÃO EQUIPE (.subtema.Equipe)   */
+/* ---------------------- */
 
-.team-intro-card {
-    /* Centraliza o conteúdo dentro da largura máxima */
-    max-width: 1000px; 
-    margin: 40px auto; 
-    padding: 40px 30px;
-    
-    /* Estilo de Card (semelhante ao question-block do quiz) */
-    background-color: #282828; /* Fundo escuro sutil */
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    border-left: 6px solid var(--primary-blue); /* Linha de destaque */
-    
-    /* Anula o min-height padrão das seções */
-    min-height: auto; 
+.subtema.Equipe {
+  text-align: center;
+  padding: 80px var(--padding-horizontal);
+  background-color: transparent; 
+  border-top: 1px solid var(--cor-borda); 
+  border-bottom: none;
 }
 
-.team-intro-card h1 {
-    color: var(--dark-highlight-blue); /* Cor de destaque para o título */
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2.2em;
+.Equipe h1 {
+  font-size: 2.5rem; 
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--cor-texto-principal);
+  font-family: 'Merriweather', 'Georgia', serif;
+  padding-left: 12px;
+  border-left: 5px solid var(--cor-destaque); 
+  text-align: left; 
+  margin: 0 auto 50px auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
-.team-intro-card p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #D0D0D0;
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-/* MODO CLARO AJUSTES */
-body:not(.dark-mode) .team-intro-card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid var(--primary-blue);
-}
-
-body:not(.dark-mode) .team-intro-card h1 {
-    color: var(--primary-blue);
-}
-
-body:not(.dark-mode) .team-intro-card p {
-    color: #333333;
-}
-
-.team-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #121212; /* Fundo escuro como no print */
-    color: #F0F0F0;
-}
-
-/* 1. Título Principal */
-.team-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: #F0F0F0;
-}
-
-/* 2. Container Flexbox para alinhar os membros */
 .team-members-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
-    justify-content: center; /* Centraliza as colunas */
-    gap: 40px; /* Espaço entre as colunas/membros */
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Ajuste sutil no espaçamento */
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch; /* NOVO: Garante que os cards tenham a mesma altura */
 }
 
-/* 3. Estilo de cada Card de Membro */
+/* Cards da Equipe */
 .member-card {
-    flex: 1 1 250px; /* Cresce e encolhe, com tamanho base de 250px */
-    max-width: 300px;
-    padding: 15px;
-    text-align: center;
+  background-color: var(--cor-fundo-principal); 
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+  /* AUMENTO DA LARGURA */
+  width: 350px; 
+  
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  border: 1px solid var(--cor-borda); 
 }
 
-/* 4. Foto do Membro */
+.dark-mode .member-card {
+  background-color: var(--cor-cinza-escuro);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+}
+
+.member-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  border-color: var(--cor-destaque);
+}
+
+/* Foto da pessoa (Aumentada e com animação) */
 .member-photo {
-    width: 100%;
-    max-width: 250px; /* Limite a largura da foto */
-    height: 250px; 
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
-    border-radius: 50%; /* Deixa a imagem redonda como no print */
-    margin-bottom: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  /* TAMANHO AUMENTADO */
+  width: 180px; 
+  height: 180px; 
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--cor-destaque-secundaria); 
+  margin-bottom: 25px; 
+  box-shadow: 0 0 0 3px var(--cor-fundo-principal); 
+  
+  /* ANIMAÇÃO NA IMAGEM */
+  transition: transform 0.6s ease-in-out;
+  cursor: pointer;
 }
 
-/* 5. Nome do Membro */
+/* Interação ao passar o mouse sobre a imagem */
+.member-photo:hover {
+  transform: scale(1.05) rotate(3deg); /* Zoom suave e rotação */
+  border-color: var(--cor-destaque);
+}
+
+/* Nome do Membro (Garantindo que fique em uma linha) */
 .member-card h2 {
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #F0F0F0;
+  font-size: 1.7rem; 
+  color: var(--cor-destaque); 
+  margin-bottom: 10px; 
+  font-weight: 700;
+  font-family: 'Public Sans', sans-serif;
+  position: relative;
+  text-align: center;
+  white-space: nowrap; /* NOVO: Impede a quebra de linha do nome */
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  
+  /* Linha decorativa removida do H2, será movida para o H3 */
+  padding-left: 0;
+  border-left: none;
 }
 
-/* 6. Descrição/Função */
+/* Tag h3 (Colaboração) - Adicionada e alinhada à esquerda */
+.member-card h3 {
+  font-size: 1.1rem;
+  color: var(--cor-texto-secundario);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  width: 100%; /* Ocupa a largura total do card */
+  padding-left: 15px; /* Alinhamento esquerdo */
+  margin-top: 5px;
+  margin-bottom: 15px;
+  
+  /* Linha vertical à esquerda para o título "Colaboração" */
+  border-left: 4px solid var(--cor-borda); 
+}
+
+/* Papel ou função (Descrição) */
 .member-role {
-    font-size: 0.95em;
-    color: #A0A0A0;
+  font-size: 0.95rem;
+  color: var(--cor-texto-principal); 
+  line-height: 1.6;
+  text-align: justify; /* Ajustado para Justify */
+  font-weight: 400;
+  padding-top: 0;
+  margin-top: 0;
+  
+  /* GARANTINDO MESMA ALTURA */
+  flex-grow: 1; /* NOVO: Permite que o elemento cresça para preencher o espaço restante */
 }
 
-/* MODO CLARO (Ajuste as cores, se necessário) */
-body:not(.dark-mode) .team-section {
-    background-color: #F8F8F8; /* Fundo claro */
-    color: #121212;
-}
-body:not(.dark-mode) .team-section h1,
-body:not(.dark-mode) .member-card h2 {
-    color: #121212;
-}
-/*
-====================================
-ESTILOS: AGRADECIMENTO E CONTATO (EXTRA)
-====================================
-*/
-
-.call-to-action-section {
-    padding: 80px 40px;
-    text-align: center;
-    background-color: #282828; /* Fundo escuro para contraste */
-    color: #F0F0F0;
-    margin-top: 50px;
-    border-top: 5px solid var(--primary-blue);
-}
-
-.call-to-action-section h2 {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-}
-
-.call-to-action-section p {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    font-size: 1.1em;
-}
-
+/* BLOCO DE CONTATO (Fale Conosco) */
 .contact-info {
-    margin-top: 40px;
-    padding: 30px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #333;
+  margin-top: 40px;
 }
 
 .contact-info h3 {
-    color: #fff;
-    font-size: 1.5em;
-    margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: var(--cor-texto-secundario); 
+  margin-bottom: 10px;
+  font-family: 'Public Sans', sans-serif;
+}
+
+.contact-info p {
+  color: var(--cor-texto-principal);
+  font-size: 1rem;
+  margin-bottom: 25px;
 }
 
 .btn-contact {
-    display: inline-block;
-    background-color: #4CAF50; /* Verde de destaque */
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s;
-    margin-top: 15px;
+  display: inline-block;
+  padding: 14px 30px; 
+  background-color: var(--cor-destaque); 
+  color: var(--cor-fundo-principal); 
+  text-decoration: none;
+  border-radius: 8px; 
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid var(--cor-destaque); 
 }
 
 .btn-contact:hover {
-    background-color: #408843;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-destaque);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
-/* MODO CLARO (Ajustes) */
-body:not(.dark-mode) .call-to-action-section {
-    background-color: #F0F0F0; /* Fundo cinza claro */
-    color: #121212;
-    border-top: 5px solid var(--primary-blue);
+/* ========================================================================= */
+/* 7. RESPONSIVIDADE (AJUSTADA PARA AS NOVAS LARGURAS) */
+/* ========================================================================= */
+
+@media (max-width: 1250px) {
+  /* Ajuste para telas menores manterem 3 cards */
+  .team-members-container {
+      gap: 30px;
+  }
+  .member-card {
+      width: 300px; 
+  }
 }
 
-body:not(.dark-mode) .contact-info {
-    background-color: #fff;
-    border: 1px solid #ccc;
+@media (max-width: 1000px) {
+  /* Quando não couber 3, eles quebram para 1 ou 2 por linha */
+  .member-card {
+      width: 85%; 
+      max-width: 450px;
+  }
+  .member-photo {
+      width: 160px; 
+      height: 160px; 
+  }
 }
 
-body:not(.dark-mode) .contact-info h3 {
-    color: #121212;
+@media (max-width: 768px) {
+  .Equipe h1, .Contato h2 { font-size: 2rem; }
+  
+  /* Usando a variável de padding-mobile, se definida globalmente */
+  .subtema.Equipe, .subtema.Contato {
+      padding: 50px 30px; /* Exemplo: ajuste o padding para mobile */
+  }
+
+  .member-card {
+      width: 100%; 
+      max-width: none;
+      padding: 30px 20px;
+  }
 }

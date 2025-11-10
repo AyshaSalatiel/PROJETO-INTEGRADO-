@@ -20,16 +20,16 @@ CONTEÚDO: VARIÁVEIS, ESTRUTURA, HEADER, MENU, FOOTER, UTILITÁRIOS (Tudo que �
     --header-bg-light: #6c6c6c; /* Cor de fundo do seu header no modo claro */
     
     /* NOVAS VARIÁVEIS DE FUNDO ESPECÍFICAS POR SEÇÃO (MODO CLARO) */
-    --fundo-sec1-claro: #F0F0F0;    /* Ex: Cinza Claro */
-    --fundo-sec2-claro: #FFFFFF;    /* Ex: Branco Puro */
-    --fundo-sec3-claro: #E8E8E8;    /* Ex: Cinza Intermediário (Ligeiramente diferente da 1) */
-    --fundo-sec4-claro: #FDFDFD;    /* Ex: Quase Branco (Ligeiramente diferente da 2) */
+    --fundo-sec1-claro: #F0F0F0; /* Ex: Cinza Claro */
+    --fundo-sec2-claro: #FFFFFF; /* Ex: Branco Puro */
+    --fundo-sec3-claro: #E8E8E8; /* Ex: Cinza Intermediário (Ligeiramente diferente da 1) */
+    --fundo-sec4-claro: #FDFDFD; /* Ex: Quase Branco (Ligeiramente diferente da 2) */
 
     /* NOVAS VARIÁVEIS DE FUNDO ESPECÍFICAS POR SEÇÃO (MODO ESCURO) */
-    --fundo-sec1-escuro: #121212;   /* Ex: Preto Padrão */
-    --fundo-sec2-escuro: #1A1A1A;   /* Ex: Cinza Escuro Padrão */
-    --fundo-sec3-escuro: #0D0D0D;   /* Ex: Mais Escuro que o 1 */
-    --fundo-sec4-escuro: #242424;   /* Ex: Mais Claro que o 2 */
+    --fundo-sec1-escuro: #121212; /* Ex: Preto Padrão */
+    --fundo-sec2-escuro: #1A1A1A; /* Ex: Cinza Escuro Padrão */
+    --fundo-sec3-escuro: #0D0D0D; /* Ex: Mais Escuro que o 1 */
+    --fundo-sec4-escuro: #242424; /* Ex: Mais Claro que o 2 */
 
     /* Cores de Fundo do Layout Principal (Modo Escuro) */
     --site-bg-dark: #121212; /* Fundo Principal Escuro (Preto/Muito Escuro) */
@@ -56,7 +56,7 @@ CONTEÚDO: VARIÁVEIS, ESTRUTURA, HEADER, MENU, FOOTER, UTILITÁRIOS (Tudo que �
 
 /*
 ==================================================================================
-2. ESTRUTURA E ESTILOS GERAIS (BODY, TÍTULOS, P) - REGRAS DE COR ATUALIZADAS
+2. ESTRUTURA E ESTILOS GERAIS (BODY, TÍTULOS, P) - FONTES INTER E MERRIWEATHER
 ==================================================================================
 */
 html, body {
@@ -64,11 +64,12 @@ html, body {
 }
 
 body {
-    font-family: 'Public Sans', sans-serif;
+    /* 🟢 FONTE PRINCIPAL: Inter (Sans-serif) para corpo de texto */
+    font-family: 'Inter', sans-serif;
     background-color: var(--site-bg-light); /* Fundo Principal Claro */
     color: #000; 
     transition: all 0.3s ease;
-    padding-top: 130px !important; 
+    padding-top: 130px; /* !important removido para evitar problemas */
 }
 
 body.dark-mode {
@@ -77,7 +78,8 @@ body.dark-mode {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Public Sans', sans-serif;
+    /* 🟢 FONTE TÍTULOS: Merriweather (Serif) */
+    font-family: 'Merriweather', serif;
     font-weight: 700;
     color: #000; 
     margin-top: 0; 
@@ -88,8 +90,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-text h2,
 .info-box h2,
 .lua-texto h2 {
+    /* Garante o peso 900 para títulos de seção */
+    font-family: 'Merriweather', serif; 
     font-size: 2.8rem;
-    font-weight: bold;
+    font-weight: 900; 
     margin-bottom: 0; 
     padding-bottom: 0;
     text-align: center;
@@ -119,17 +123,31 @@ body.dark-mode .card-title {
 .section-text p,
 .info-box p,
 .lua-texto p {
+    /* Herda Inter do body, mas reforça o peso */
+    font-family: 'Inter', sans-serif; 
     font-size: 1.3rem;
     line-height: 1.8;
     margin-bottom: 15px; 
-    font-weight: normal;
+    font-weight: 400;
     color: inherit; /* Herda a cor do body (preto no claro, branco no escuro) */
+}
+
+/* 🛑 CORREÇÃO CRÍTICA DE PESO DE FONTE: Garante o peso normal (400) para o conteúdo principal. */
+p.texto-lua {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400 !important;
 }
 
 body.dark-mode .section-text p,
 body.dark-mode .info-section p,
 body.dark-mode .lua-texto p {
     color: #fff;
+}
+
+
+/* Garante que os cards usem a fonte de texto Inter */
+.card-text {
+    font-family: 'Inter', sans-serif;
 }
 
 /*
@@ -287,6 +305,8 @@ body.dark-mode .header-search-inline:focus-within {
 
 /* O Campo de Texto (Input) - MODO CLARO (CRÍTICO: Inclui a correção da linha preta) */
 .header-search-inline input[type="text"] {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     flex-grow: 1;
     padding: 0 15px; 
     background-color: white; 
@@ -304,6 +324,8 @@ body.dark-mode .header-search-inline:focus-within {
 
 /* Input no Dark Mode (CRÍTICO: Inclui a correção da linha preta) */
 body.dark-mode .header-search-inline input {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     background: #1A1A1A;
     color: #F0F0F0;
     border-right: none !important; 
@@ -348,36 +370,6 @@ body.dark-mode .header-search-inline button:hover {
     display: inline-block !important;
 }
 
-/* --- ESTILO DO MODAL DE BUSCA (Aparece com JS) (Mantido) --- */
-#search-results-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: white;
-    z-index: 9999;
-    padding: 40px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#search-results-overlay h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-#search-results-overlay a {
-    color: var(--dark-highlight-blue);
-    text-decoration: none;
-    padding: 5px 0;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-
 /*
 ==================================================================================
 4. MENU LATERAL (NAV#MENU) (LIMPO E CORRIGIDO)
@@ -409,7 +401,13 @@ body.dark-mode .menu {
     transform: translateX(0); 
 }
 
-.menu ul{list-style: none; padding: 0; margin: 0;}
+.menu ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    /* 🟢 FONTE: Inter para o menu */
+    font-family: 'Inter', sans-serif; 
+}
 .menu li{position: relative; display: block; width: 100%;}
 
 .dropdown-menu-item .menu-item-wrapper{
@@ -454,11 +452,11 @@ body.dark-mode .menu {
     box-shadow: inset 0 0 10px rgba(138, 180, 248, 0.05);
 }
 
-.menu-main-link i{
+.menu-item-wrapper .menu-main-link i{
     font-size: 1.2em; margin-right: 12px;
     color: #6a6a6a; transition: color 0.3s ease;
 }
-.menu-main-link:hover i,
+.menu-item-wrapper .menu-main-link:hover i,
 .dropdown-menu-item.active .menu-main-link i { 
     color: var(--dark-highlight-blue);
 }
@@ -488,6 +486,8 @@ body.dark-mode .menu {
 }
 
 .submenu a{
+    /* 🟢 FONTE: Inter para sublinks */
+    font-family: 'Inter', sans-serif;
     display: block; 
     font-size: 1.05em; 
     color: #a0a0a0; 
@@ -519,6 +519,8 @@ footer {
     padding: 40px 20px 20px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s;
+    /* Adiciona a fonte Inter ao container principal para garantir a herança */
+    font-family: 'Inter', sans-serif;
 }
 
 body.dark-mode footer {
@@ -538,8 +540,11 @@ body.dark-mode footer {
 }
 
 .footer-section h4 {
+    /* 🟢 GARANTIDO: Inter para títulos do footer ("LINKS RÁPIDOS", "BUSCA") */
+    font-family: 'Inter', sans-serif; /* FONTE ALTERADA DE MERRIWEATHER PARA INTER */
     color: var(--primary-blue);
     font-size: 1.15em;
+    font-weight: 700; /* Garante que fique em negrito, como na imagem */
     margin-bottom: 15px;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
@@ -548,6 +553,11 @@ body.dark-mode footer {
 }
 
 body.dark-mode .footer-section h4 {
+    color: var(--dark-highlight-blue);
+    border-bottom-color: white;
+}
+
+.footer-section h4 {
     color: var(--dark-highlight-blue);
     border-bottom-color: white;
 }
@@ -608,6 +618,8 @@ body.dark-mode .social-links a:hover {
 }
 
 .footer-links-list a {
+    /* 🟢 FONTE: Inter para links do footer */
+    font-family: 'Inter', sans-serif;
     color: var(--menu-text-color);
     text-decoration: none;
     font-size: 1em;
@@ -670,6 +682,8 @@ body.dark-mode form.footer-search:focus-within {
 
 /* O Campo de Texto (Input) - (CRÍTICO: Inclui a correção da linha preta) */
 form.footer-search input[type="text"] {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     flex-grow: 1;
     padding: 0 15px; 
     border: none; 
@@ -690,6 +704,8 @@ form.footer-search input[type="text"] {
 
 /* MODO ESCURO: Mantém o Fundo Escuro (CRÍTICO: Inclui a correção da linha preta) */
 body.dark-mode form.footer-search input[type="text"] {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     background-color: #1A1A1A; 
     color: #CCCCCC; 
     margin-right: -1px; 
@@ -737,6 +753,8 @@ form.footer-search button i.bi-search {
 
 /* --- DIREITOS AUTORAIS --- */
 .footer-bottom {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid white;
@@ -753,7 +771,7 @@ body.dark-mode .footer-bottom {
 
 /*
 ==================================================================================
-6. BOTÕES FLUTUANTES (VOLTAR AO TOPO E ACESSIBILIDADE) (Mantido)
+6. BOTÕES FLUTUANTES (VOLTAR AO TOPO E ACESSIBILIDADE)
 ==================================================================================
 */
 
@@ -876,6 +894,8 @@ body.dark-mode #accessibility-options {
 /* Estilo dos Botões e Selects */
 #accessibility-options button,
 #accessibility-options select {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     background-color: #f0f0f0;
     color: #121212;
     border: 1px solid #ccc;
@@ -891,6 +911,8 @@ body.dark-mode #accessibility-options {
 
 body.dark-mode #accessibility-options button,
 body.dark-mode #accessibility-options select {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     background-color: #121212;
     color: #eee;
     border-color: #555;
@@ -975,7 +997,7 @@ body.dark-mode #speed-rate {
 
 /*
 ==================================================================================
-7. ANIMAÇÃO E TOAST (Mantido)
+7. ANIMAÇÃO E TOAST
 ==================================================================================
 */
 
@@ -1015,13 +1037,15 @@ body.dark-mode #speed-rate {
 }
 
 .toast-message p {
+    /* 🟢 FONTE: Inter */
+    font-family: 'Inter', sans-serif;
     margin: 0;
     font-size: 1em;
 }
 
 /*
 ==================================================================================
-8. RESPONSIVIDADE GLOBAL (Ajustes de HEADER/FOOTER/MENU) (Mantido)
+8. RESPONSIVIDADE GLOBAL (Ajustes de HEADER/FOOTER/MENU)
 ==================================================================================
 */
 
@@ -1141,5 +1165,226 @@ body.dark-mode #speed-rate {
         width: 90%;
         max-width: 300px;
         padding-top: 80px; 
+    }
+}
+
+/* ================================================================= */
+/* 1. CONTAINER DA BUSCA EM TEMPO REAL (#search-suggestions) */
+/* ================================================================= */
+
+/* Container das Sugestões (Modo CLARO: Padrão) */
+#search-suggestions {
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    z-index: 1000; 
+    width: 100%;
+    max-height: 250px; 
+    overflow-y: auto;
+    
+    /* Estilo do menu no MODO CLARO */
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    border: 1px solid #ddd; /* Borda cinza clara */
+    background-color: #ffffff; /* Fundo Branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Modo ESCURO */
+.dark-mode #search-suggestions {
+    border: 1px solid #444; 
+    background-color: #2b2b2b; /* Fundo Escuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Item de Sugestão */
+.suggestion-item {
+    border-bottom: 1px solid #eee; /* Linha divisória clara */
+}
+
+.dark-mode .suggestion-item {
+    border-bottom: 1px solid #333; /* Linha divisória escura */
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000000; /* Texto Preto no Modo Claro */
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dark-mode .suggestion-item a {
+    color: #f0f0f0; /* Texto Branco no Modo Escuro */
+}
+
+.suggestion-item a:hover,
+.suggestion-item a:focus {
+    background-color: #f0f0f0; /* Hover cinza claro */
+    color: #007bff; 
+}
+
+.dark-mode .suggestion-item a:hover,
+.dark-mode .suggestion-item a:focus {
+    background-color: #444; /* Hover cinza escuro */
+    color: #007bff; 
+}
+
+/* Esconder/Mostrar */
+#search-suggestions.hidden {
+    display: none;
+}
+
+/* ================================================================= */
+/* 2. OVERLAY GERAL DE RESULTADOS (#search-results-overlay) */
+/* ================================================================= */
+
+/* Estilização do overlay e caixa de resultados */
+#search-results-overlay {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o overlay */
+    display: none; 
+    justify-content: center;
+    align-items: center; /* Padrão: Centralizado verticalmente (para o Header) */
+    z-index: 9999;
+}
+
+/* Caixa interna de resultados */
+#search-results-box {
+    /* MODO CLARO: Padrão */
+    background: #ffffff; /* Fundo Branco */
+    color: #000000; /* Texto Preto */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modo ESCURO: Aplica estilos escuros à caixa */
+.dark-mode #search-results-box {
+    background: #2b2b2b;
+    color: #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo da lista de resultados */
+#search-results-list {
+    list-style: none;
+    padding: 10px 0; /* Removi padding lateral para usar padding do result-button */
+    margin: 0;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.search-result-item {
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo do link de resultado (O "Botão" de Resultado) */
+.result-button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ddd; /* Borda clara */
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    
+    /* MODO CLARO: Fundo Branco, Texto Preto */
+    background-color: #ffffff; 
+    color: #000000; 
+}
+
+/* Hover no Modo Claro */
+.result-button:hover,
+.result-button:focus {
+    background-color: #f0f0f0;
+    border-color: #007bff;
+    color: #007bff;
+}
+
+/* Modo ESCURO */
+.dark-mode .result-button {
+    background-color: #3b3b3b;
+    color: #f0f0f0; 
+    border-color: #555;
+}
+
+.dark-mode .result-button:hover,
+.dark-mode .result-button:focus {
+    background-color: #4a4a4a;
+    border-color: #007bff;
+    color: #007bff;
+}
+
+/* ================================================================= */
+/* ESTILOS PARA O OVERLAY DE RESULTADOS DE BUSCA (Footer) */
+/* (BLOCO CORRIGIDO PARA ALINHAR NA PARTE INFERIOR DIREITA) */
+/* ================================================================= */
+
+/* Quando a classe 'from-footer' está presente no overlay: */
+#search-results-overlay.from-footer {
+    /* Alinha o conteúdo (o box de resultados) à parte inferior do viewport */
+    align-items: flex-end; 
+    
+    /* CRÍTICO: Alinha o conteúdo (o box de resultados) à direita do viewport */
+    justify-content: flex-end; 
+    
+    /* Remove padding inferior desnecessário */
+    padding-bottom: 0; 
+    padding-top: 50px; /* Mantém padding superior para segurança */
+}
+
+/* Estiliza a caixa de resultados quando acionada pelo footer */
+#search-results-overlay.from-footer #search-results-box {
+    text-align: left; 
+    
+    /* 🟢 Distância do rodapé: 50px (Levanta o box acima do footer) */
+    margin-bottom: 50px; 
+    
+    /* 🟢 Distância da lateral direita: 40px (Alinhamento com o padding do footer) */
+    margin-right: 40px; 
+    
+    /* 🟢 Largura do Box: Fixada para se parecer com o campo de busca do footer (350px) */
+    width: 90%; 
+    max-width: 350px; /* Alinha com a largura máxima do campo de busca */
+    
+    max-height: 80vh; 
+}
+
+/* Opcional: Garante que a lista de resultados seja scrollável dentro do box */
+#search-results-overlay.from-footer #search-results-list {
+    overflow-y: auto;
+    max-height: calc(80vh - 100px); /* Ajuste baseado na altura do box header */
+}
+
+
+/* Garante a responsividade horizontal em telas pequenas */
+@media (max-width: 600px) {
+    #search-results-overlay.from-footer #search-results-box {
+        /* Alinha a caixa de resultados à esquerda/centro em mobile (onde a busca é centralizada/full-width) */
+        margin-right: 0; 
+        margin-left: 0;
+        max-width: 90%;
+        width: 90%;
     }
 }

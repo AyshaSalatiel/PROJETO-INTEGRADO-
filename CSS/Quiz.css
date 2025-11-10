@@ -4,36 +4,96 @@ ESTILOS ESPECÍFICOS DO QUIZ
 ====================================
 */
 
-/* 1. Reset Básico (Melhor Prática) */
-*, *::before, *::after {
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+/* 1. CONFIGURAÇÃO DE BACKGROUND ADAPTÁVEL */
+
+body {
+    /* *** ATENÇÃO: SUBSTITUA PELO SEU CAMINHO CORRETO DA IMAGEM! *** */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('../Imagens/ibmquizamo.jpg'); 
+    
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    transition: background-color 0.5s, color 0.5s; 
+    color: #000000; 
 }
 
-/* 2. Conteúdo principal do quiz - LARGURA AUMENTADA */
+/* Modo Escuro (Dark Mode) - Escurece a IMAGEM DE FUNDO AINDA MAIS */
+.dark-mode {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                      url('../Imagens/ibmquizamo.jpg');
+    
+    color: #e0e0e0; 
+    background-color: #121212; 
+}
+
+/* 2. Reset Básico (Melhor Prática) */
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+/* 3. Conteúdo principal do quiz - LARGURA AUMENTADA */
 .quiz-container {
-    max-width: 1000px; /* Aumenta a largura máxima */
+    max-width: 1000px; 
     margin: 60px auto 100px auto;
     padding: 20px;
-    position: relative; /* Necessário para posicionamento do botão de topo, etc. */
+    position: relative; 
+    /* CORREÇÃO: Garante que o conteúdo dentro do quiz-container esteja centralizado */
+    text-align: center; 
 }
 
-/* 3. Estética do Header do Quiz (`.Introducao`) */
+/* 4. Estética do Header do Quiz (`.Introducao`) */
 .quiz-header-section {
     padding: 40px 30px;
     margin-bottom: 30px;
     border-radius: 12px;
-    text-align: center;
+    /* Manter text-align center, já que o container já é centralizado */
+    text-align: center; 
     min-height: auto; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* No modo escuro, o background virá do Global.css ou da própria seção */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+    transition: background-color 0.5s, box-shadow 0.5s;
+    
+    /* CENTRALIZAÇÃO VERTICAL (se o quiz for apresentado em tela cheia) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Remove a necessidade de min-height fixo e permite o crescimento */
 }
 
+/* Fundo do Header no Modo Escuro (Dark Mode) */
+.dark-mode .quiz-header-section {
+    background-color: #282828; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* CORREÇÃO: TIPOGRAFIA H1 */
 .quiz-header-section h1 {
     font-size: 2.5em;
     font-weight: 900;
-    margin-bottom: 15px;
+    /* AJUSTE DE ESPAÇAMENTO 1: Título para Parágrafo (15px -> 20px) */
+    margin-bottom: 20px; 
     color: #00BFFF; /* Ciano/Azul */
+    /* NOVA TIPOGRAFIA PARA H1 */
+    font-family: 'Merriweather', 'Georgia', serif;
 }
+
+/* CORREÇÃO: TIPOGRAFIA PÁRAGRAFOS DO HEADER */
+.quiz-header-section p {
+    /* NOVA TIPOGRAFIA PARA P */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    /* AJUSTE DE ESPAÇAMENTO 2: Parágrafo para Botão (10px -> 12px) */
+    margin-bottom: 12px;
+    max-width: 600px; /* Limita a largura do texto para melhor leitura */
+    /* AUMENTO DO TAMANHO DA FONTE */
+    font-size: 1.2em; 
+}
+
 
 .quiz-score-display {
     font-size: 1.1em;
@@ -54,16 +114,20 @@ ESTILOS ESPECÍFICOS DO QUIZ
     width: 80%;
     max-width: 400px;
     height: 10px;
-    background-color: #444;
+    background-color: #ccc; 
     border-radius: 5px;
     margin: 15px auto 0;
     overflow: hidden;
 }
 
+.dark-mode .progress-bar-container {
+    background-color: #444; 
+}
+
 .progress-bar {
     height: 100%;
     width: 0%;
-    background-color: #00BFFF; /* Ciano/Azul */
+    background-color: #00BFFF; 
     transition: width 0.5s ease-in-out;
     border-radius: 5px;
 }
@@ -71,12 +135,11 @@ ESTILOS ESPECÍFICOS DO QUIZ
 /* --- LAYOUT DE SLIDES (Uma pergunta por vez) --- */
 #quiz-slides {
     position: relative;
-    overflow: hidden; /* Garante que apenas o slide ativo seja visível */
-    min-height: 400px; /* Altura mínima para evitar 'pulos' */
+    overflow: hidden; 
+    min-height: 400px; 
 }
 
 .question-block {
-    /* TRANSFORMA CADA BLOCO EM UM SLIDE */
     position: absolute;
     top: 0;
     left: 0;
@@ -86,19 +149,26 @@ ESTILOS ESPECÍFICOS DO QUIZ
     transform: translateX(100%);
     transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
     
-    /* Estilos existentes */
-    background-color: #282828; /* Fundo escuro sutil para cada pergunta (Dark Mode) */
+    background-color: #ffffff; 
     padding: 25px;
-    margin-bottom: 0; /* Remove margem desnecessária em slides */
+    margin-bottom: 0; 
     border-radius: 8px;
-    border-left: 5px solid #00BFFF; /* Detalhe azul/ciano */
+    border-left: 5px solid #00BFFF; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+
+/* Bloco de Pergunta no Dark Mode */
+.dark-mode .question-block {
+    background-color: #282828; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
 }
 
 .question-block.active {
     opacity: 1;
     visibility: visible;
-    position: relative; /* Traz o slide ativo para o fluxo normal */
+    position: relative; 
     transform: translateX(0);
 }
 
@@ -106,14 +176,14 @@ ESTILOS ESPECÍFICOS DO QUIZ
     font-size: 1.6em;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #FFFFFF;
+    color: inherit; 
 }
 
 /* 5. Opções de Resposta (Label e Radio) */
 .option-label {
     display: block;
-    background-color: #3a3a3a;
-    color: #ffffff;
+    background-color: #ededed; 
+    color: #333333;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 6px;
@@ -121,6 +191,11 @@ ESTILOS ESPECÍFICOS DO QUIZ
     transition: background-color 0.2s, box-shadow 0.2s, border 0.2s;
     font-size: 1.1em;
     border: 2px solid transparent; 
+}
+
+.dark-mode .option-label {
+    background-color: #3a3a3a; 
+    color: #ffffff;
 }
 
 /* Garante que o input escondido não atrapalhe */
@@ -134,27 +209,35 @@ ESTILOS ESPECÍFICOS DO QUIZ
     pointer-events: none;
 }
 
-/* 6. REALCE DA OPÇÃO SELECIONADA (ANTES DO FEEDBACK) - DARK MODE */
+/* 6. REALCE DA OPÇÃO SELECIONADA (ANTES DO FEEDBACK) */
 .option-label.selected:not(.correct):not(.incorrect) {
-    background-color: #4a4a4a; /* Fundo mais escuro */
-    border: 2px solid #00BFFF; /* Borda ciano (Dark Mode) */
+    border: 2px solid #00BFFF; 
+}
+
+.dark-mode .option-label.selected:not(.correct):not(.incorrect) {
+    background-color: #4a4a4a; 
     box-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
 }
 
-/* 7. Feedback Visual (IMEDIATO) - DARK MODE */
+body:not(.dark-mode) .option-label.selected:not(.correct):not(.incorrect) {
+    background-color: #e5f4ff; 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* 7. Feedback Visual (IMEDIATO) */
 .option-label.correct {
-    background-color: #4CAF50; /* Verde */
-    color: white;
+    background-color: #4CAF50 !important; 
+    color: white !important;
     font-weight: 700;
-    border-color: #4CAF50;
+    border-color: #4CAF50 !important;
     animation: pulse-correct 0.3s ease-in-out;
 }
 
 .option-label.incorrect {
-    background-color: #F44336; /* Vermelho */
-    color: white;
+    background-color: #F44336 !important; 
+    color: white !important;
     font-weight: 700;
-    border-color: #F44336;
+    border-color: #F44336 !important;
     animation: pulse-incorrect 0.3s ease-in-out;
 }
 
@@ -177,13 +260,22 @@ ESTILOS ESPECÍFICOS DO QUIZ
     margin-top: 25px;
     padding: 15px 20px;
     border-radius: 6px;
-    background-color: #1a1a1a;
     border-left: 3px solid #00BFFF;
-    color: #D0D0D0;
     font-style: italic;
     font-size: 0.95em;
     display: none; 
 }
+
+.dark-mode .explanation {
+    background-color: #1a1a1a;
+    color: #D0D0D0;
+}
+
+body:not(.dark-mode) .explanation {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
 
 /* 8. Botões e Resultados */
 .btn-submit, .btn-restart {
@@ -199,13 +291,8 @@ ESTILOS ESPECÍFICOS DO QUIZ
     transition: background-color 0.3s;
 }
 
-.btn-submit {
-    background-color: #00BFFF; /* Ciano/Azul padrão para Dark Mode */
-    color: #1a1a1a;
-}
-
 .btn-submit:hover:not(:disabled) {
-    background-color: #009ACD; /* Um tom mais escuro para hover no Dark Mode */
+    background-color: #009ACD; 
 }
 
 .btn-submit:disabled {
@@ -215,7 +302,7 @@ ESTILOS ESPECÍFICOS DO QUIZ
 }
 
 .btn-restart {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4CAF50; 
     color: white;
 }
 
@@ -224,11 +311,19 @@ ESTILOS ESPECÍFICOS DO QUIZ
 }
 
 .quiz-results {
-    background-color: #282828;
     padding: 30px;
     margin-top: 30px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .quiz-results {
+    background-color: #282828;
+}
+
+body:not(.dark-mode) .quiz-results {
+    background-color: #ffffff;
 }
 
 .quiz-results h2 {
@@ -244,82 +339,14 @@ ESTILOS ESPECÍFICOS DO QUIZ
     display: none !important;
 }
 
-/* --- MODO CLARO AJUSTES (Sobrescreve o Dark Mode) --- */
 
-body:not(.dark-mode) .quiz-header-section h1 {
-    color: var(--primary-blue);
-}
+/*
+====================================
+AJUSTES ESPECÍFICOS DE LAYOUT
+====================================
+*/
 
-body:not(.dark-mode) .progress-bar-container {
-    background-color: #ccc;
-}
-body:not(.dark-mode) .progress-bar {
-    background-color: var(--primary-blue);
-}
-
-body:not(.dark-mode) .question-block {
-    background-color: #ffffff;
-    border-left: 5px solid var(--primary-blue);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-body:not(.dark-mode) .question-block h3 {
-    color: #000000;
-}
-
-body:not(.dark-mode) .option-label {
-    background-color: #ededed;
-    color: #333333;
-    border-color: transparent;
-}
-
-body:not(.dark-mode) .option-label:hover {
-    background-color: #e0e0e0;
-}
-
-/* 6. REALCE DA OPÇÃO SELECIONADA (ANTES DO FEEDBACK) - CLARO */
-body:not(.dark-mode) .option-label.selected:not(.correct):not(.incorrect) {
-    background-color: #e5f4ff; /* Fundo mais claro para selecionado */
-    border: 2px solid var(--primary-blue); /* Borda AZUL */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-}
-
-/* 7. Feedback Visual (IMEDIATO) - CORREÇÃO MODO CLARO */
-body:not(.dark-mode) .option-label.correct {
-    background-color: #4CAF50 !important; /* Verde */
-    color: white !important;
-    font-weight: 700;
-    border-color: #4CAF50 !important;
-}
-
-body:not(.dark-mode) .option-label.incorrect {
-    background-color: #F44336 !important; /* Vermelho */
-    color: white !important;
-    font-weight: 700;
-    border-color: #F44336 !important;
-}
-
-body:not(.dark-mode) .explanation {
-    background-color: #f0f0f0;
-    color: #333333;
-    border-left-color: var(--primary-blue);
-}
-
-body:not(.dark-mode) .quiz-results {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-body:not(.dark-mode) .quiz-results strong {
-    color: #4CAF50;
-}
-
-/* 8. Ajuste para o botão submit no modo claro */
-body:not(.dark-mode) .btn-submit {
-    background-color: var(--primary-blue); /* Usa a variável para a cor do header */
-    color: white; /* Cor do texto do botão no modo claro */
-}
-
-body:not(.dark-mode) .btn-submit:hover:not(:disabled) {
-    background-color: var(--primary-blue-darker); /* Se tiver uma variável para hover, use-a */
+/* Esconde o footer na tela de introdução (default) */
+.hidden-footer {
+    display: none !important;
 }

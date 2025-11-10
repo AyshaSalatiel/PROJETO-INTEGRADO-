@@ -1,0 +1,298 @@
+/* ==================================== */
+/* 1. CONFIGURAÇÕES BASE E GERAIS       */
+/* ==================================== */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f5f5f5;
+    /* Estilos de fundo (Modo Claro) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url('../Imagens/IBM-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Container Principal (A Grande Caixa Branca) */
+#content {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    max-width: 1350px;
+    margin: 90px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+/* ==================================== */
+/* 2. ESTILOS DE BLOCOS DE CONTEÚDO     */
+/* ==================================== */
+
+/* Introdução (Cinza Mais Escuro) - Cor 1 */
+.introducao-tema, .introducao, .info-box, .hardware-software {
+    background-color: #e8e8e8; /* Cinza Mais Escuro */
+    padding: 60px 70px; 
+    text-align: left; 
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Subtemas (Conteúdo Interno) - Cor Padrão e Padding */
+.subtema, .origens, .hardware-software, .secao-impacto {
+    padding: 50px 70px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: justify;
+    animation: fadeIn 0.7s ease forwards;
+}
+
+/* Lógica de Cores Alternadas e Específicas: */
+.origens { background-color: #f8f8f8; } /* Contexto Histórico */
+.secao-impacto { background-color: #f8f8f8; } /* Impacto */
+
+/* ==================================== */
+/* 3. ESTILOS DE TIPOGRAFIA             */
+/* ==================================== */
+
+/* Título H1 (Estilo Principal Sublinhado) */
+.introducao-tema h1, .introducao h1, .info-box h1, .content h1, .secao-impacto h1 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif;
+    display: inline-block;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* Títulos H2 (Linha Lateral Preta - Estilo Simon) */
+.introducao-tema h2, .introducao h2, .info-box h2, .subtema h2, 
+.origens h2, .hardware-software h2, .secao-impacto h2 {
+    font-size: 2rem; 
+    color: #000;
+    margin-top: 30px; 
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 5px solid #000; 
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif; 
+    text-align: left; 
+}
+
+/* Parágrafos e Destaques */
+.introducao-tema p, .introducao p, .info-box p { font-size: 1.3rem; color: #444; margin: 15px 20px 15px 0; max-width: 100%; text-align: justify; }
+.subtema p, .origens p, .hardware-software p, .secao-impacto p { font-size: 1.2rem; margin-bottom: 18px; text-align: justify; line-height: 1.9; }
+strong { color: #000; font-weight: 700; }
+.subtema p strong { background-color: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+
+/* ==================================== */
+/* 4. GALERIA DE IMAGENS (Apenas para o contexto da timeline) */
+/* ==================================== */
+
+.gallery img {
+    /* ... (Estilos de imagem não repetidos para concisão) ... */
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+
+/* ==================================== */
+/* 5. LINHA DO TEMPO (TIMELINE)         */
+/* ==================================== */
+
+.timeline {
+    width: 100%; 
+    max-width: 1350px; 
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-x: auto; 
+    margin: 40px auto; /* Adicionado margin para melhor visualização */
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    right: 30px;
+    height: 4px;
+    background: linear-gradient(to right, #666, #999, #ccc, #ccc, #999, #666); 
+    z-index: 1;
+    border-radius: 2px;
+}
+.timeline-item {
+    flex: 1;
+    min-width: 150px; 
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #333; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
+    background: linear-gradient(45deg, #007bff, #c93b76); /* Gradiente colorido */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #fff; 
+}
+.timeline-icon svg { fill: white; }
+.timeline-label { font-size: 15px; font-weight: 700; line-height: 1.2; color: #000; position: absolute; left: 50%; transform: translateX(-50%); width: 100%; }
+.timeline-year { font-size: 12px; font-weight: 500; color: #666; position: absolute; left: 50%; transform: translateX(-50%); width: 100%; }
+
+/* Posições ODD e EVEN */
+.odd .timeline-label { top: calc(50% + 30px); }
+.odd .timeline-year { top: calc(50% + 70px); }
+.odd .timeline-icon { top: calc(50% - 90px); }
+.even .timeline-label { top: calc(50% - 60px); }
+.even .timeline-year { top: calc(50% - 100px); }
+.even .timeline-icon { top: calc(50% + 50px); }
+
+
+/* ==================================== */
+/* 6. RESPONSIVIDADE GERAL              */
+/* ==================================== */
+
+@media (max-width: 1400px) {
+    #content { margin: 40px auto; }
+}
+ 
+@media (max-width: 768px) {
+    #content { margin: 20px auto; border-radius: 0; }
+    .introducao-tema, .introducao, .info-box, .subtema, .origens, .hardware-software, .secao-impacto, .timeline { padding: 30px 20px; }
+    
+    .introducao h1 { font-size: 2rem; }
+    .introducao h2, .subtema h2 { font-size: 1.6rem; margin-top: 20px; margin-bottom: 15px; }
+
+    .introducao p { font-size: 1.05rem; line-height: 1.7; }
+    .subtema p { font-size: 1rem; line-height: 1.7; }
+
+    .timeline { flex-wrap: nowrap; justify-content: flex-start; height: 250px; margin: 40px auto; padding: 0 10px; }
+    .timeline a.timeline-item { flex: 0 0 120px; min-width: 120px; }
+    /* Ajuste de Posições na Timeline em Mobile */
+    .odd .timeline-label { top: calc(50% + 25px); font-size: 13px; }
+    .odd .timeline-year { top: calc(50% + 60px); font-size: 11px; }
+    .odd .timeline-icon { top: calc(50% - 70px); }
+    .even .timeline-label { top: calc(50% - 50px); font-size: 13px; }
+    .even .timeline-year { top: calc(50% - 85px); font-size: 11px; }
+    .even .timeline-icon { top: calc(50% + 40px); }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =================================================== */
+/* === AJUSTES PARA O MODO ESCURO (dark-mode) === */
+/* =================================================== */
+
+body.dark-mode {
+    background-color: #111 !important; 
+    /* ATENÇÃO: Verifique se o nome do arquivo 'lua-background.jpg' está correto! */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                       url('../Imagens/lua-background.jpg') !important; 
+    color: #f0f0f0 !important;
+}
+
+body.dark-mode #content {
+    background-color: #222 !important; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); 
+}
+
+/* Blocos de Conteúdo e Cores Alternadas (Modo Escuro) */
+body.dark-mode .introducao-tema, 
+body.dark-mode .introducao, 
+body.dark-mode .info-box, 
+body.dark-mode .hardware-software { 
+    background-color: #333 !important; 
+    border-bottom: 1px solid #444 !important;
+}
+body.dark-mode .origens, 
+body.dark-mode .secao-impacto {
+    background-color: #2a2a2a !important;
+    border-bottom: 1px solid #444 !important;
+}
+
+/* Tipografia (Modo Escuro) */
+body.dark-mode h1 {
+    color: #f0f0f0 !important;
+    border-bottom: 3px solid #555 !important;
+}
+body.dark-mode h2 {
+    color: #ffffff !important; /* Branco Puro para Títulos H2 */
+    border-left: 5px solid #ffffff !important; /* Linha de Destaque Branca */
+}
+body.dark-mode p { color: #ddd !important; }
+
+/* Correção Negrito/Destaque */
+body.dark-mode strong { color: #fff !important; }
+body.dark-mode .subtema p strong { 
+    background-color: #3a3a3a !important; 
+    color: #fff !important; 
+}
+
+/* --- Linha do Tempo (Timeline) no Modo Escuro - AJUSTADO CONFORME SOLICITADO --- */
+
+body.dark-mode .timeline {
+    background-color: #2a2a2a !important; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
+}
+body.dark-mode .timeline::before {
+    background: linear-gradient(to right, #444, #777, #aaa, #aaa, #777, #444) !important;
+}
+body.dark-mode .timeline-point {
+    background-color: #2a2a2a !important;
+    border: 4px solid #fff !important; 
+}
+body.dark-mode .timeline-label {
+    color: #fff !important; 
+}
+body.dark-mode .timeline-year {
+    color: #ccc !important;
+}
+/* Ícones da Timeline no Modo Escuro (Cores Neutras/Brancas) */
+body.dark-mode .timeline-icon {
+    /* Gradiente neutro para imitar o branco dos títulos */
+    background: linear-gradient(45deg, #444, #555) !important; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5) !important; 
+    border: 3px solid #f0f0f0 !important; /* Borda branca para destaque */
+}
+body.dark-mode .timeline-icon svg { 
+    fill: white !important; /* Ícone interno branco */
+}

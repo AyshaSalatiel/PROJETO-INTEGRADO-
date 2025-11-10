@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="home">Do Circuito Integrado à Lua</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+     <link rel="stylesheet" href="../CSS/Lua.css">
+    <style>
+   
+    </style>
+</head>
+
+<body>
+<!--MENU-->
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="Home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor </a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">    
+             <li><a href="(6.2) Simon.html" data-key="disco">Simon, o primeiro kit pessoal</a></li>
+             <li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+             <li><a href="(6.4) UNIVAC.html" data-key="disco">Primeiro computadores comerciais</a></li>
+             <li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+             <li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+             <li><a href="(6.16) Disco Magnético.html" data-key="disco">Disco Magnético</a></li>
+            </ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+           <ul class="submenu">
+                <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="primeira-geracao">Compartilhamento de Tempo</a></li>
+                <li><a href="(7.13) BASIC.html" data-key="revolucao-transistor">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="apollo guidance">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="Arpanet">Arpanet</a></li> 
+                <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo guidance">Apollo Guidance Computer</a></li>
+                </ul> </li>
+        
+        
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<!--Botões do Header-->
+    <div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<!--Logo e  Carrosel-->
+    <div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+        
+    <!--Introdução-->
+  <section id="content">
+     <div class="introducao">
+      <h1>Introdução</h1>
+    <p>Os circuitos integrados (CIs), também chamados de chips ou microchips, são pequenos componentes eletrônicos que reúnem em um único pedaço de silício uma grande quantidade de elementos, como transistores, resistores e capacitores.</p>
+    <p>Essa integração permite que o chip execute diferentes funções — como processar sinais, armazenar informações ou amplificar correntes elétricas — e é utilizada em uma imensa variedade de dispositivos, desde equipamentos simples do dia a dia até sistemas avançados de computação.</p>
+  </div>
+
+  <!--Contexto Histórico-->
+  <div class="subtema">
+    <h2>Contexto Histórico da Época</h2>
+    <p>Este período foi dominado pela rivalidade entre os Estados Unidos e a União Soviética. O foco das tensões deslocou-se para a Guerra do Vietnã (1955–1975). A escalada militar americana, especialmente após a Resolução do Golfo de Tonkin em 1964 e a Ofensiva do Tet em 1968, gerou um imenso desgaste interno e internacional. O Vietnã não apenas moldou a política externa americana, mas também incendiou um movimento antiguerra massivo.</p>
+    <p>No campo da Corrida Espacial, o mundo vivia o auge da competição tecnológica. A década atingiu seu clímax com o sucesso da missão Apollo 11 em julho de 1969, que levou Neil Armstrong e Buzz Aldrin à Lua. Este feito não só demonstrou a superioridade tecnológica americana, mas também injetou um otimismo sem precedentes no futuro da ciência e da engenharia.</p>
+    <p>A sociedade ocidental passava por uma revolução cultural. Nos Estados Unidos, o Movimento dos Direitos Civis alcançou vitórias cruciais, consolidando a legislação de direitos civis (1964) e direitos de voto (1965), embora a luta contra a segregação e a discriminação racial continuasse feroz, marcada por figuras como Martin Luther King Jr. e Malcolm X.</p>
+    <p>Paralelamente, o movimento hippie, ou contracultura, florescia, especialmente com o Verão do Amor em 1967, desafiando os valores tradicionais e o establishment. O ano de 1968 foi particularmente convulso, com protestos estudantis globais, como o Maio de 68 na França, e as manifestações contra a Guerra do Vietnã, que culminaram no festival de Woodstock em 1969.</p>
+    <p>O feminismo também ganhava força, com a Segunda Onda demandando igualdade no trabalho e na vida pessoal.</p>
+   </div>
+   
+
+ <!--Impacto-->
+  <div class="subtema">
+    <h2>Impacto</h2>
+     <p>Transformação na sociedade moderna</p>
+     <p>Os microchips, presentes em praticamente todos os dispositivos eletrônicos atuais, tiveram um impacto profundo e transformador na sociedade moderna. Eles foram essenciais para o avanço da computação, das comunicações, da medicina, da indústria e de inúmeras outras áreas tecnológicas.</p>
+    <p>Graças a eles, tornaram-se possíveis invenções que mudaram o mundo, como o computador pessoal, os celulares, o sistema GPS e a própria internet, que dependem diretamente dessa tecnologia.</p>
+    <h4>Origens e evolução</h4>
+    <p>O desenvolvimento dos microchips começou na década de 1950, logo após a invenção do transistor nos Laboratórios Bell, em 1948. Naquela época, os transistores já representavam um grande avanço em relação às válvulas eletrônicas, sendo usados em rádios, televisores e computadores.</p>
+    <p>Para que a eletrônica pudesse evoluir ainda mais, era necessário miniaturizar os circuitos, tornando-os mais rápidos, eficientes e acessíveis. A montagem manual de milhares de componentes limitava o progresso, o que motivou a busca por integração em um único chip.</p>
+     <h4>Impacto na era digital</h4>
+    <p>Engenheiros criaram maneiras de integrar vários elementos em um único chip. Essa inovação deu origem aos circuitos integrados, que reduziram o tamanho e o custo dos equipamentos, aumentaram o desempenho e popularizaram o acesso à tecnologia.</p>
+    <p>O impacto foi tão grande que os circuitos integrados redefiniram o rumo da computação e da economia global, criando uma indústria multibilionária e possibilitando o surgimento da era digital.</p>
+    <p>Sem eles, o mundo atual — com seus dispositivos inteligentes, comunicação instantânea e sistemas automatizados — simplesmente não existiria.</p>
+  </div>
+  
+   <!--/Contexto Histórico-->
+
+   <!-- Botões de Próximo e Anterior -->
+
+<!--Linha do Tempo-->
+    <div class="timeline">
+    <div class="timeline-item odd">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.5) Compartilhamento de Tempo.html">
+            <div class="timeline-label">Compartilhamento do Tempo</div>
+            <div class="timeline-year">(1961)</div>
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/>
+     </svg> </div> </a> </div>
+
+    <div class="timeline-item even">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.13) BASIC.html">
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                </svg>
+            </div>
+            <div class="timeline-label">Basic</div>
+            <div class="timeline-year">(1964)</div></a> </div>
+
+    <div class="timeline-item odd">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.14) IBM 360.html">
+            <div class="timeline-label">IBM-360</div>
+            <div class="timeline-year">(1964)</div>
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 6h16v12H4V6z"/>
+                </svg> </div> </a> </div>
+
+    <div class="timeline-item even">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.32) Microprocessador.html">
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 4h7v5h5v11H6V4zm10 15H8v-1h8v1zm0-3H8v-1h8v1zm0-3H8v-1h8v1z"/>
+                </svg> </div>
+            <div class="timeline-label">Microprocessador</div>
+            <div class="timeline-year">(1968)</div> </a> </div>
+
+            <div class="timeline-item odd">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.38) Apollo Guidance Computer.html">  
+            <div class="timeline-label">Apollo Guidance Computer</div>
+            <div class="timeline-year">(1969)</div>
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 6h16v12H4V6z"/>
+                </svg> </div> </a> </div>
+
+    <div class="timeline-item even">
+        <div class="timeline-point"></div>
+        <div class="timeline-connector"></div>
+        <a href="(7.34) ARPANET.html">
+            <div class="timeline-label">Arpanet</div>
+            <div class="timeline-year">(1969)</div>
+            <div class="timeline-icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 9l-9 9z"/>
+                </svg> </div> </a> </div> </div>
+    </section>
+
+    
+
+    <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+
+        
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form></div></div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+
+</body>
+</html>

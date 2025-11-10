@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title-simon">Simon</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Global2.css">
+
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 10px; 
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            width: 300px; 
+            height: auto; 
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+<li><a href="(6.2) Simon.html" data-key="simon-kit">Simon, o primeiro kit pessoal</a></li>
+<li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+<li><a href="(6.4) UNIVAC.html" data-key="primeiro-comercial">Primeiro computadores comerciais</a></li>
+<li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+<li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+<li><a href="(6.16) Disco Magnético.html" data-key="disco-magnetico">Disco Magnético</a></li>
+</ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+                <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="compartilhamento-tempo">Compartilhamento de Tempo</a></li>
+                <li><a href="(7.13) BASIC.html" data-key="basic">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="ibm360">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="arpanet">Arpanet</a></li> 
+                <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo-guidance">Apollo Guidance Computer</a></li>
+</ul>
+        
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            data-key="search-placeholder"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" data-key="search-button-label" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            data-key="translation-title"
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+    
+<section id="content">
+    <div class="introducao">
+        <h1>Simon: O Primeiro Kit de Computador Pessoal (1950)</h1>
+        <p>O <strong>Simon</strong>, lançado em 1950, foi um marco na história da computação por ser considerado
+            o <strong>primeiro kit de computador pessoal</strong>. Diferente das grandes e inacessíveis máquinas da época,
+            ele foi criado para ser didático, simples e montado por qualquer pessoa interessada em aprender os princípios básicos de um computador.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Criador e Objetivo Educacional</h2>
+        <p>O Simon foi idealizado por <strong>Edmund Callis Berkeley</strong> (1909–1988), cientista da computação
+            e cofundador da <em>Association for Computing Machinery (ACM)</em> em 1947. Berkeley acreditava que os computadores deveriam ser desmistificados e acessíveis às pessoas comuns,
+            não apenas a cientistas e militares.</p>
+        <p>A ideia surgiu após a publicação de seu livro <em>"Giant Brains, or Machines That Think"</em>
+            (Grandes Cérebros, ou Máquinas que Pensam), lançado em <strong>novembro de 1949</strong>. Nesse livro, ele propôs a construção de uma máquina simples que explicasse de forma prática
+            como funcionava um computador. O nome “Simon” foi inspirado em “Simple Simon” (João Simples),personagem da <em>Mother Goose</em>, reforçando sua proposta educativa.</p>
+        <p> O Simon foi apresentado ao público por meio de uma série de <strong>13 artigos</strong> publicados na revista <strong>Radio-Electronics</strong> entre <strong>outubro de 1950 e 1951</strong>.
+            A edição de outubro ganhou destaque ao exibir o Simon na capa como o<strong>"Menor Cérebro Eletrônico do Mundo"</strong>. </p>
+
+        <p>Berkeley disponibilizou plantas, esquemas e instruções completas para montagem, e cerca de <strong>400 cópias</strong> foram vendidas como um verdadeiro kit de computador pessoal.
+            O custo de construção variava entre <strong>US$300 e US$600</strong>, o que, para a época, era considerado acessível para entusiastas, universidades e estudantes.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>Construção e Colaboradores</h2>
+        <p>O primeiro modelo funcional do Simon foi construído na <strong>Universidade de Columbia</strong>,com a colaboração dos estudantes de pós-graduação em Engenharia Elétrica
+            <strong>Robert A. Jensen</strong> e <strong>Andrew Vall</strong>, além do maquinista <strong>William A. Porter</strong>, que ajudaram a aprimorar o design e o funcionamento da máquina. </p>
+        <h2>Estrutura Técnica e Funcionamento</h2>
+        <p>O Simon era baseado na <strong>arquitetura de Harvard</strong> e totalmente construído com <strong>relés eletromecânicos</strong>, totalizando <strong>129 relés</strong>.
+            Sua capacidade era extremamente limitada:
+        </p>
+
+        <ul>
+            <li>Armazenava apenas <strong>2 bits</strong> por vez (valores de 0 a 3);</li>
+            <li>Inserção de dados via <strong>fita de papel perfurada de cinco linhas</strong> ou <strong>cinco teclas frontais</strong>;</li>
+            <li> Resultados exibidos por meio de <strong>cinco lâmpadas</strong>;</li>
+            <li>Executava operações básicas como <strong>adição, negação, comparação (maior que) e seleção</strong>.</li>
+        </ul>
+        <p> Possuía tamanho aproximado de <strong>60 x 38 x 15 cm</strong> e peso de cerca de <strong>18 kg</strong>.</p>
+        <div class="gallery">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Simon_1_relay_logic_machine.agr.jpg" alt="[Imagem do Computador Simon]">
+            <img src="https://www.vintagecomputer.net/images/thm_radio-electronics_1950_Oct.jpg" alt="[Capa da Revista Radio-Electronics de Outubro de 1950]">
+            <img src="https://www.vintagecomputer.net/images/thm_simon1.jpg" alt="[Outra Imagem do Computador Simon]">
+        </div>
+    </div>
+
+    <div class="subtema">
+        <h2>Importância Histórica</h2>
+        <p>Apesar de limitado, o Simon foi extremamente inovador pois transformou a ideia de computador em algo pessoal e educacional. Ele inspirou estudantes, técnicos e pesquisadores, sendo um precursor direto da
+            noção de computador doméstico que viria a se popularizar nas décadas seguintes.</p>
+        <p>Assim, o Simon abriu caminho para a democratização da computação, aproximando a tecnologia do público comum e incentivando futuras gerações de inventores.
+        </p>
+    </div>
+</section> <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+</button>
+
+</div> <footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" data-key="search-placeholder" placeholder="Pesquisar..."> 
+                <button type="submit" data-key="search-button-label" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6P7nJb5tM4iTz9IeY5bK6JzBvNnB3sT3fG2vA9WjL4z0x2e0u4e0g5v5a7H3D" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+
+</body>
+</html>

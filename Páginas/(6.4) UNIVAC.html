@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title-comerciais">Primeiros Computadores Comerciais</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Global2.css">
+    <style>
+    .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;          
+    margin: 50px auto;
+    flex-wrap: wrap;          
+    max-width: 1200px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 370px;         
+    height: 250px;           
+    object-fit: cover;      
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .gallery img {
+        max-width: 90%;
+        height: auto;
+    }
+}        
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;          
+    margin: 50px auto;
+    flex-wrap: wrap;          
+    max-width: 1200px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 370px;         
+    height: 250px;           
+    object-fit: cover;      
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.gallery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .gallery img {
+        max-width: 90%;
+        height: auto;
+    }
+}        
+
+    </style>
+</head>
+
+<body>
+<div id="search-results-overlay" style="display: none;">
+</div>
+
+<div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+</div>
+
+<div id="main-content-wrapper"> 
+
+    <header>
+    <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <nav id="menu" class="menu">
+    <ul>
+        <li><a href="Home.html" data-key="home" class="menu-main-link">Home</a></li>
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+             <ul class="submenu">    
+             <li><a href="(6.2) Simon.html" data-key="simon-kit">Simon, o primeiro kit pessoal</a></li>
+             <li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+             <li><a href="(6.4) UNIVAC.html" data-key="primeiro-comercial">Primeiro computadores comerciais</a></li>
+             <li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+             <li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+             <li><a href="(6.16) Disco Magnético.html" data-key="disco-magnetico">Disco Magnético</a></li>
+             </ul> </li>
+        
+        <li class="dropdown-menu-item">
+            <div class="menu-item-wrapper">
+                <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                    <i class="bi bi-chevron-down"></i>
+                </span> </div>
+            <ul class="submenu">
+                <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="compartilhamento-tempo">Compartilhamento de Tempo</a></li>
+                <li><a href="(7.13) BASIC.html" data-key="basic">Basic</a></li>
+                <li><a href="(7.14) IBM 360.html" data-key="ibm360">IBM-360</a></li>
+                <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                <li><a href="(7.34) ARPANET.html" data-key="arpanet">Arpanet</a></li> 
+                <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo-guidance">Apollo Guidance Computer</a></li>
+</ul>
+        
+        
+        <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+        <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+        <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+</nav>
+
+<div class="header-buttons">
+        <form id="header-search-form" class="header-search-inline">
+        <div id="search-suggestions" class="search-suggestions hidden"></div> 
+        <input
+            id="header-search-input"
+            type="text"
+            data-key="search-placeholder"
+            placeholder="Pesquisar..."
+            aria-label="Campo de busca"
+        />
+        <button type="submit" data-key="search-button-label" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+        </button>
+        </form>
+        <button 
+            id="translation-icon" 
+            aria-label="Alternar Idioma" 
+            data-key="translation-title"
+            title="Tradução (Clique para Inglês)">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
+<div class="logo">
+        <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+        </a>
+    </div>
+</header>
+      
+<section id="content">
+        <div class="introducao">
+            <h1 data-key="comerciais-title">Primeiros Computadores Comerciais</h1> 
+            <h2 id="univac" data-key="univac-title">UNIVAC (1951)</h2>
+            <p data-key="univac-p1">A chegada do computador <strong>UNIVAC I</strong> ao <em>Census Bureau</em> dos EUA em 30 de março de 1951 marcou o início de uma nova era para o processamento de grandes volumes de dados.</p>
+            <p data-key="univac-p2">Até aquele momento, o órgão de censo americano dependia de máquinas de tabulação, versões aprimoradas da invenção de Hollerith. O desenvolvimento acelerado de computadores eletrônicos durante a Segunda Guerra Mundial fez com que a equipe do Census Bureau percebesse que essas máquinas tinham um potencial gigante para superar as capacidades das calculadoras antigas.</p>
+            <p data-key="univac-p3">Foi a partir dessa percepção que o Census Bureau se aproximou dos criadores do histórico <strong>ENIAC</strong> para avaliar como a tecnologia poderia ser usada em aplicações civis.</p>
+        </div>
+
+        
+        <div class="subtema">
+            <p data-key="univac-p4">Com a conclusão do ENIAC em 1946, nasceu o projeto do <strong>UNIVAC</strong> (UNIVersal Automatic Computer). A meta era criar um computador de "uso geral", focado em tarefas administrativas e aritméticas mais simples, e não apenas em cálculos científicos ou militares. O UNIVAC I se tornaria o primeiro computador desse tipo a ser fabricado nos EUA.</p>
+            <p data-key="univac-p5">O projeto foi liderado por John Adam Presper Eckert Jr. e John William Mauchly, os mesmos gênios por trás do ENIAC. Embora o cronograma inicial previsse seis meses, o trabalho se estendeu por quase dois anos. A construção começou em 1948, mas só foi finalizada após a empresa dos criadores, a Eckert–Mauchly Computer Corporation (EMCC), ser vendida para a Remington Rand.</p>
+            <p data-key="univac-p6">O UNIVAC I era uma máquina monumental. Pesava quase 8 toneladas e, para funcionar, consumia impressionantes 125 quilowatts de eletricidade. Suas cinco mil válvulas eletrônicas permitiam que ele realizasse cerca de 1.905 operações a cada segundo, utilizando uma memória principal que conseguia guardar mil "palavras" de doze dígitos cada.</p>
+            <p data-key="univac-p7">No Census Bureau, o UNIVAC I foi rapidamente colocado para analisar os dados do censo de 1950 e censos econômicos posteriores. Apesar do sucesso no governo, a fabricante Remington Rand enfrentava dificuldades para vender o UNIVAC para outras empresas.</p>
+            <p data-key="univac-p8">Tudo mudou em 1952, graças a uma parceria com a emissora de TV CBS. O UNIVAC foi usado para calcular estatísticas e prever o resultado da eleição presidencial americana, prevendo corretamente a vitória de Dwight David Eisenhower.</p>
+            <p data-key="univac-p9">Esse feito catapultou o UNIVAC para o estrelato, tornando-o uma celebridade nacional e mudando para sempre a percepção pública sobre o poder dos computadores.</p>
+
+            <div class="gallery">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Univac_I_Census_dedication.jpg/1200px-Univac_I_Census_dedication.jpg" alt="img1">
+            <img src="https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.84326710.7055475/1759169.jpg" alt="img2">
+            <img src="https://images.computerhistory.org/revonline/images/102667576p-03-01.jpg?w=600" alt="img3">
+            </div>
+        </div>
+
+    <div class="subtema">
+        <h2 id="ibm701" data-key="ibm701-titulo">IBM – 701</h2>
+        <p data-key="ibm701-p1">Em 21 de maio de 1952, a IBM entrou de vez na era da computação eletrônica ao apresentar sua primeira máquina do tipo: o <strong>IBM 701 Electronic Data Processing Machine</strong>.</p>
+        <p data-key="ibm701-p2">O computador foi estrategicamente apelidado de "Calculadora de Defesa" (Defense Calculator) pelo presidente da empresa na época, Thomas J. Watson. A intenção era clara: aproveitar o clima da Guerra da Coreia e posicionar a máquina como o sistema de alta velocidade mais avançado para cálculos científicos de grande escala.</p>
+        <p data-key="ibm701-p3">Essa foi a estreia da IBM no mercado de computadores de grande porte (Mainframes) eletrônicos e o primeiro modelo que a empresa ofereceu para aluguel.</p>
+    </div>
+
+    <div class="subtema">
+        <p data-key="ibm701-p4">O IBM 701 era um verdadeiro gigante modular. Um sistema completo era composto por até 14 caixas interligadas, cada uma com uma função específica. Havia a unidade central (CPU), módulos de memória que usavam tubos de raios catódicos (o chamado "Tubo de Williams"), além de unidades separadas para ler e perfurar cartões e para processar fitas magnéticas, que eram a forma de armazenamento da época.</p>
+        <p data-key="ibm701-p5">Por dentro, ele dependia de válvulas eletrônicas para funcionar. Apesar de serem peças antigas, o 701 era considerado muito rápido para o seu tempo: capaz de realizar milhares de operações de adição e subtração por segundo.</p>
+        <p data-key="ibm701-p6">O público-alvo principal era o governo americano e as indústrias ligadas à defesa, como as fabricantes de aviões. A estratégia de marketing da "Calculadora de Defesa" funcionou excepcionalmente bem. A IBM esperava vender apenas cinco unidades, mas o apelo da máquina em um momento de guerra levou a empresa a fechar 19 pedidos, vendendo o sistema para o governo, forças armadas, empresas aeronáuticas e universidades de prestígio.</p>
+        <p data-key="ibm701-p7">O sucesso do IBM 701 deu à empresa o primeiro passo crucial para se tornar líder absoluta no segmento de grandes computadores nas décadas seguintes, inaugurando uma linha de produtos (a Série 700) que evoluiria e dominaria o mercado.</p>
+
+        <div class="gallery">
+        <img src="https://cdn-blog.adafruit.com/uploads/2023/02/x-3.png" alt="img1">
+        <img src="https://images.squarespace-cdn.com/content/v1/5c647bc99b7d150fe925ea5c/1671254924256-LQRN7J4RC5VD0AKZVB0T/us__en_us__ibm100__700_series__701_a__620x350.jpg?format=1000w" alt="img2">
+        <img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/arc/cf/ul/g/5c/04/1953c_701withmanatconsole-copy.jpg/_jcr_content/renditions/cq5dam.web.3840.3840.jpeg" alt="img3">
+        </div>
+    </div>
+</div>
+</section>
+
+
+    <button id="back-to-top" title="Voltar ao Topo">
+        &#9650; 
+    </button>
+    
+    <div id="accessibility-menu-container">
+        <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+            <i class="bi bi-ear-fill"></i> 
+        </button>
+        <div id="accessibility-options" class="hidden-options">
+            
+            <button 
+                id="translation-icon-floating" 
+                data-key="translation-title"
+                title="Tradução (Clique para Inglês)"
+                aria-label="Alternar Idioma">
+                <i class="bi bi-translate"></i>
+            </button>
+            
+            <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1.0" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+            </select>
+            
+            <button 
+                id="speech-toggle" 
+                title="Ouvir Conteúdo (Leitor de Áudio)"
+                aria-label="Ativar Leitor de Áudio"
+                data-action="play">
+                <i class="bi bi-volume-up-fill"></i> 
+            </button>
+        </div>
+    </div>
+        
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-section brand-info">
+            <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+            </a>
+            <div class="social-links">
+                <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+            </div>
+        </div>
+        
+        <div class="footer-section footer-links-section">
+            <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                <a href="Home.html" data-key="home">Home</a>
+                <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                <a href="Quiz.Html" data-key="quiz-titulo">Teste Seus Conhecimentos</a>
+            </nav>
+        </div>
+        
+        <div class="footer-section footer-search-section">
+            <h4 data-key="search-button">Busca</h4> 
+            <form id="footer-search-form" class="footer-search"> 
+                <input id="footer-search-input" type="text" placeholder="Pesquisar..." data-key="search-placeholder"> 
+                <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                </button>
+            </form> 
+        </div>
+    </div>
+    
+    <div class="footer-bottom" data-key="footer-copy">
+        &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+    </div>
+</footer>
+    
+</div> 
+<script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../JS/Global.js"></script>
+<script src="../JS/Translations.js"></script>
+
+</body>
+</html>

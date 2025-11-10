@@ -1,14 +1,36 @@
-/*
+ /*
 ==================================================================================
-ARQUIVO: home.css
-CONTEÚDO: CARROSSEL, CARDS e SEÇÕES (Layouts e estilos que SÓ EXISTEM na HOME)
-A ideia é manter este arquivo focado na HOME, sem misturar com outros temas.
+0. DEFINIÇÃO GLOBAL DE FONTES (APLICADO A TODO O SITE)
 ==================================================================================
 */
+/* 1. Define Inter como a fonte base para todo o texto */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 2. Força Merriweather para todos os títulos, sobrepondo qualquer estilo padrão */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Georgia', serif !important;
+}
+
+/* 3. Garante que os parágrafos usem Inter, se houver sobreposição */
+p, .card-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* NOVO: Força h4 dentro do footer a usar a mesma tipografia do parágrafo ('Inter') */
+footer h4 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* NOVO: Força h5 (título do card) a usar a mesma tipografia do parágrafo ('Inter') */
+.card-body h5 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
 
 /*
 ==================================================================================
-1. CORES DE FUNDO DAS SEÇÕES
+1. ESTILOS DE BACKGROUNDS (MODO CLARO E ESCURO)
 ==================================================================================
 */
 
@@ -17,29 +39,25 @@ A ideia é manter este arquivo focado na HOME, sem misturar com outros temas.
 /* Seção 1: Da Válvula ao Transistor */
 .section-content {
     background-color: #C0C0C0;
-    transition: background-color 0.3s ease;
-    
+ transition: background-color 0.3s ease;
 }
 
 /* Seção 2: Conteúdo do Site / Sobre */
 .info-section {
     background-color: #D8D8D8;
-    transition: background-color 0.3s ease;
-    
+ transition: background-color 0.3s ease;
 }
 
 /* Seção 3: Do Circuito Integrado à Lua */
 .section-lua {
     background-color: #EAEAEA;
-    transition: background-color 0.3s ease;
-    
+ transition: background-color 0.3s ease;
 }
 
 /* Seção 4: Cards de Navegação */
 .card-container {
     background-color: #C0C0C0;
-    transition: background-color 0.3s ease;
-   
+ transition: background-color 0.3s ease;
 }
 
 
@@ -141,19 +159,13 @@ body.dark-mode .bg-section-darkest {
 /* --- CARROSSEL --- */
 #carouselExampleAutoplaying {
     width: 100%;
-    height: 60vh;
+    height: 85vh;
     overflow: hidden;
     position: relative; 
-    border-bottom: 10px solid white;
-    transition: border-bottom-color 0.3s;
-}
-
-body.dark-mode #carouselExampleAutoplaying {
-    border-bottom-color: white;
-}
-
+   transition: border-bottom-color 0.3s;
+ }
 #carouselExampleAutoplaying .carousel-inner,
-#carouselExampleAutoplaying .carousel-item,
+#carouselExampleAutosliding .carousel-item,
 #carouselExampleAutoplaying img {
     height: 100%;
     width: 100%;
@@ -185,10 +197,12 @@ body.dark-mode #carouselExampleAutoplaying {
     margin: 0;
 }
 
+/* CORRIGIDO: Aplica Merriweather ao título estático do carrossel */
 .static-carousel-title span { 
     font-size: 2.5rem; 
     font-weight: 800;
     display: block;
+    font-family: 'Merriweather', 'Georgia', serif !important; 
 }
 
 .carousel-control-prev,
@@ -200,21 +214,17 @@ body.dark-mode #carouselExampleAutoplaying {
 /* --- CARDS --- */
 .card-container {
     display: flex;
-    gap: 30px;
-    padding: 20px;
-    justify-content: center;
-    border-top: 3px solid white;
+    gap: 10px;
+    /* ALTERAÇÃO ANTERIOR: Aumenta o padding lateral e muda a distribuição */
+    padding: 20px 150px; 
+    justify-content: space-between; 
     padding-top: 40px;
     transition: border-top-color 0.3s;
     flex-wrap: wrap; 
-}
-
-body.dark-mode .card-container {
-    border-top-color: white;
-}
-
+ }
 .card {
-    width: 18rem;
+    /* AJUSTE: Largura diminuída para 20rem para melhor espaçamento nas laterais */
+    width: 20rem; 
     min-height: 400px;
     border-radius: 10px;
     overflow: hidden;
@@ -253,6 +263,7 @@ body.dark-mode .card-container {
     flex-grow: 1;
 }
 
+/* Já está coberto pelo seletor P global, mas mantém a clareza */
 .card-text {
     flex-grow: 1;
 }
@@ -287,7 +298,7 @@ body.dark-mode .card .btn:hover {
 
 /*
 ==================================================================================
-4. ESTILOS DE SEÇÕES (SECTION-CONTENT, INFO-SECTION, SECTION-LUA)
+4. ESTILOS DE SEÇÕES (SECTION-CONTENT, INFO-SECTION, SECTION-LUA) - LAYOUT
 ==================================================================================
 */
 
@@ -298,12 +309,18 @@ body.dark-mode .card .btn:hover {
     justify-content: center;
     gap: 100px;
     padding: 60px 80px;
-    border-bottom: 9px solid white;
-    transition: border-bottom-color 0.3s;
+    border-bottom: 10px ;
 }
 
-body.dark-mode .section-content {
-    border-bottom-color: white;
+/* CLASSE PRINCIPAL DA PRIMEIRA SEÇÃO (DA VÁLVULA AO TRANSISTOR) */
+.valvulas-ao-transistor {
+    /* ESTILOS DE LAYOUT ABAIXO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 60px 80px;
+    /* SEM BORDAS AQUI */
 }
 
 .section-content img {
@@ -314,7 +331,8 @@ body.dark-mode .section-content {
 }
 
 .section-text {
-    max-width: 50%;
+    /* NOTA: Este 50% é o valor padrão que será sobrescrito abaixo */
+    max-width: 50%; 
     text-align: center;
     margin-top: 0;
     display: flex;
@@ -322,28 +340,129 @@ body.dark-mode .section-content {
     align-items: center;
 }
 
+
 /* --- INFO SECTION (Layout) --- */
+
 .info-section {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 60px;
-    padding: 80px 60px;
-    text-align: center;
-    border-bottom: 9px solid white;
-}
-
-.info-box {
-    flex: 1;
-    max-width: 600px;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    min-height: 400px; 
+    gap: 40px; 
+    padding: 80px 50px; 
+    /* SEM BORDAS AQUI */
+    transition: border-color 0.3s;
 }
 
 /* --- SECTION LUA (Layout) --- */
+.section-lua {
+    /* SEM BORDAS AQUI */
+    transition: border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 60px 80px;
+}
+
+
+/* =========================================== */
+/* ESTILOS DE DUAS COLUNAS (FLEXBOX) - VERSÃO FINAL 3.0 (AJUSTE DE ESPAÇO E FONTE) */
+/* =========================================== */
+
+/* Contêiner principal para as duas colunas - Empurra para as laterais */
+.info-columns-container {
+    display: flex; 
+    width: 90%; 
+    justify-content: space-between; 
+    gap: 80px; 
+    /* CORREÇÃO: Centraliza as colunas verticalmente para alinhamento visual */
+    align-items: center; 
+    margin: 0 auto;
+}
+
+/* Estilo para cada coluna individual - Centraliza os elementos em bloco (como h2 e p) */
+.info-box-column {
+    flex: 1; 
+    text-align: center; /* Centraliza o H2 e o bloco P */
+}
+
+/* REAPROVEITANDO E AJUSTANDO ESTILOS */
+/* 1. TÍTULO E ESPAÇAMENTO */
+.info-box-column h2 {
+    /* Usando a fonte global: Merriweather */
+    margin-bottom: 0; 
+    /* **AJUSTE:** Redução do espaço para o parágrafo */
+    padding-bottom: 25px; 
+    font-size: 2.5rem; 
+    text-align: center; 
+}
+
+/* 2. CORREÇÃO DA LARGURA E ALINHAMENTO DO TEXTO (PÁRAGRAFOS) */
+.info-box-column p {
+    /* **REFORÇO:** Garante que a fonte Inter seja usada, sobrepondo o que for necessário */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    /* Largura limitada (mantida para centralização visual) */
+    max-width: 650px; 
+    /* Centraliza o bloco de texto (P) dentro da coluna */
+    margin: 0 auto 20px auto; 
+    
+    /* **AJUSTE:** Aumento do tamanho da fonte */
+    font-size: 1.1rem; 
+    line-height: 1.7; 
+    font-weight: normal; 
+    font-style: normal;
+    
+    /* Alinha o texto ao centro */
+    text-align: center; 
+}
+
+
+/* 3. Ajuste fino de margem para o último parágrafo */
+.info-box-column p:last-child {
+    margin-bottom: 0; 
+}
+
+/* 4. Ajustes de formatação */
+.info-box-column p strong, 
+.info-box-column p b {
+    font-weight: bold !important;
+    /* **AJUSTE:** Garante que o texto em negrito use o novo tamanho de fonte */
+    font-size: 1.1rem; 
+}
+
+/* Nova classe para garantir espaçamento vertical entre parágrafos na seção de texto principal */
+.section-main-text p {
+    /* **REFORÇO:** Garante Inter */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    margin-bottom: 20px; 
+    line-height: 1.7; 
+}
 
 
 /*
 ==================================================================================
-5. RESPONSIVIDADE LOCAL (Ajustes de CONTEÚDO)
+5. AJUSTE SUTIL DE IMAGENS PARA DARK MODE
+==================================================================================
+*/
+
+/* Escurece levemente (10% de redução) todas as imagens no Dark Mode */
+body.dark-mode img {
+    filter: brightness(90%); /* Escurece 10% */
+    transition: filter 0.3s ease;
+}
+
+/* Remove o filtro do logo para que ele mantenha a cor original (Lâmpada Acesa) */
+body.dark-mode #lamp-logo,
+body.dark-mode #lamp-logo-footer {
+    filter: none;
+}
+
+
+/*
+==================================================================================
+6. RESPONSIVIDADE LOCAL (Ajustes de CONTEÚDO)
 ==================================================================================
 */
 
@@ -356,12 +475,31 @@ body.dark-mode .section-content {
 @media (max-width: 992px) {
     /* Layout de conteúdo em coluna */
     .section-content,
-    .section-lua,
-    .info-section {
+    .section-lua { 
         flex-direction: column;
         gap: 40px;
         padding: 40px;
         text-align: center;
+    }
+
+    /* Regra específica para empilhar as colunas na seção de informação */
+    .info-columns-container {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%; /* Ocupa a largura total em mobile */
+        padding: 0 20px; /* Adiciona padding interno */
+    }
+
+    /* Ajuste o alinhamento do texto em mobile, se necessário */
+    .info-box-column {
+        padding: 0; 
+    }
+
+    /* **CORREÇÃO:** Centraliza o texto em telas menores para melhor visualização */
+    .info-box-column h2,
+    .info-box-column .info-subtitle,
+    .info-box-column p {
+        text-align: center !important; 
     }
     
     .section-content img {
@@ -389,19 +527,26 @@ body.dark-mode .section-content {
     .static-carousel-title span {
         font-size: 2rem;
     }
+
+    /* Ajuste para mobile em telas menores que 992px: */
+    .card-container {
+        /* Remove o padding lateral extra em telas pequenas, para usar a largura total */
+        padding: 20px 20px; 
+        justify-content: center; /* Centraliza novamente em telas pequenas para quebrar melhor */
+    }
     
-    .info-box {
-        max-width: 100%;
+    .card {
+        width: 100%; /* Permite que o card ocupe 100% da largura em telas menores */
     }
 }
 
 @media (max-width: 600px) {
     /* Títulos menores em mobile */
-    .section-text h2, .info-box h2, .lua-texto h2 {
+    .section-text h2, .info-box-column h2, .lua-texto h2 {
         font-size: 1.8rem;
     }
 
-    .section-text p, .info-box p, .lua-texto p {
+    .section-text p, .info-box-column p, .lua-texto p {
         font-size: 1rem;
     }
     
@@ -412,117 +557,158 @@ body.dark-mode .section-content {
     .section-content, .info-section, .section-lua {
         padding: 30px 15px;
     }
+    
+    /* Ajuste para mobile */
+    .info-box-column h2 {
+        /* CORREÇÃO DE ESPAÇAMENTO: Ajusta o padding para telas menores */
+        padding-bottom: 20px;
+    }
+}
+    
+/* ==================================================================================
+7. ESTILOS DE SEPARAÇÃO (BORDAS DE 10PX) - CONSOLIDAÇÃO FINAL E ISOLAMENTO
+==================================================================================
+*/
+
+/* --- 0. GARANTIA DE ISOLAMENTO (Elementos Dinâmicos) --- */
+
+/* Força os elementos que tem transição de background a não terem bordas móveis */
+.section-content, 
+.section-lua {
+    border-top: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* --- SEPARAÇÃO DE CORES (LINHA DE 10PX) --- */
+
+/* 1. SEPARAÇÃO CARROSSEL / VÁLVULA (SECTION-CONTENT) */
+/* Borda no elemento estático de cima (Carrossel) */
+#carouselExampleAutoplaying {
+    border-bottom: 10px solid white;
+}
+body.dark-mode #carouselExampleAutoplaying {
+    border-bottom-color: white;
+}
+
+
+/* 2. SEPARAÇÃO VÁLVULA (SECTION-CONTENT) / INFO-SECTION (E INFO-SECTION / LUA) */
+/* O elemento .info-section é estático e deve segurar as duas bordas */
+.info-section {
+    /* Borda superior: Separa Válvula de Info */
+    border-top: -5px solid white; 
+    transition: border-top-color 0.3s, border-bottom-color 0.3s;
+    
+    /* Borda inferior: Separa Info de Lua */
+    border-bottom: 10px solid white; 
+}
+body.dark-mode .info-section {
+    border-top-color: white;
+    border-bottom-color: white; 
+}
+
+
+/* 3. SEPARAÇÃO LUA (SECTION-LUA) / CARDS (CARD-CONTAINER) */
+/* A linha é definida na parte superior do elemento ESTÁTICO inferior (.card-container) */
+.card-container {
+    border-top: 10px solid white; 
+    border-bottom: none;
+}
+body.dark-mode .card-container {
+    border-top-color: white;
+}
+
+
+/* ==================================================================================
+8. CORREÇÕES FINAIS DE PESO DE FONTE E LAYOUT
+==================================================================================
+*/
+
+/* 1. CORREÇÃO DE PESO DE FONTE: GARANTE QUE OS PARÁGRAFOS NÃO ESTEJAM EM NEGRITO */
+
+/* **ALVO 1: Seção Lua (Segundo Parágrafo) - MODO CLARO** */
+.section-lua .section-text p.texto-lua {
+    font-weight: 400 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+/* **ALVO 2: Seção Válvula (Primeiro Parágrafo) - MODO CLARO** */
+.valvulas-ao-transistor .section-text p.texto-lua {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* **ALVO 3: MODO ESCURO (Para garantir que não quebre)** */
+body.dark-mode .section-lua .section-text p.texto-lua,
+body.dark-mode .valvulas-ao-transistor .section-text p.texto-lua {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+    font-weight: 400 !important;
+}
+
+/* 2. REGRAS PARA DESTAQUE: Garante que APENAS as palavras-chave (strong/b) tenham o peso semi-negrito (600) */
+.section-lua strong, 
+.section-lua b,
+.valvulas-ao-transistor strong, 
+.valvulas-ao-transistor b {
+    font-weight: 600 !important; 
+}
+
+
+/* 3. REGRAS DE LARGURA (MANTIDAS) */
+
+/* Seção: Do Circuito Integrado à Lua */
+.section-lua .lua-conteudo.section-text {
+    text-align: left; 
+    max-width: 92%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    float: none; 
+}
+
+/* Seção: Da Válvula ao Transistor */
+.valvulas-ao-transistor .valvulas-aos-transistores.section-text {
+    max-width: 92%; 
+    text-align: right; 
+    margin-left: auto; 
+    margin-right: 0;
+ }
+
+/* --- CARROSSEL --- */
+#carouselExampleAutoplaying {
+    width: 100%;
+    /* Mantenha a altura base, mas com um limite máximo para evitar excesso em telas muito grandes, se necessário */
+    height: 85vh; 
+    max-height: 800px; /* Exemplo: limite máximo para telas grandes */
+    overflow: hidden;
+    position: relative; 
+    transition: border-bottom-color 0.3s;
+ }
+
+ /* Garante que os itens internos e a imagem cubram o carrossel, adaptando-se */
+#carouselExampleAutoplaying .carousel-inner,
+#carouselExampleAutoplaying .carousel-item,
+#carouselExampleAutoplaying img {
+    height: 100%;
+    width: 100%;
+    /* O object-fit: cover é crucial para garantir que a imagem cubra toda a área 
+       sem ser esticada, cortando o necessário para o ajuste. */
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* 📱 Ajuste para Dispositivos Móveis (telas de até 768px, que englobam a maioria dos tablets e celulares) */
+@media (max-width: 768px) {
+    #carouselExampleAutoplaying {
+        /* Reduza a altura para um valor mais adequado a telas menores 
+           para que o carrossel não consuma a tela inteira. */
+        height: 60vh; /* Exemplo: 60% da altura da viewport */
+        min-height: 300px; /* Adicione uma altura mínima para evitar que fique muito pequeno */
+    }
+    
+    .static-carousel-title span { 
+        /* Reduza o tamanho da fonte para o título não quebrar ou ficar muito grande */
+        font-size: 1.8rem; 
+    }
 }
  
-.timeline {
-    width: 100vw;
-    height: 300px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 0 30px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    right: 30px;
-    height: 4px;
-    background: linear-gradient(to right, #333, #666, #999, #ccc, #fff);
-    z-index: 1;
-    border-radius: 2px;
-}
-.timeline-item {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.timeline-item:hover {
-    transform: scale(1.05);
-}
-.timeline-point {
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border: 4px solid #666;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-}
-.timeline-connector {
-    width: 2px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ccc;
-    z-index: 2;
-}
-.timeline-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    background: linear-gradient(135deg, #666, #ccc);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.timeline-label, .timeline-year {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.timeline-label {
-    font-size: 14px;
-    font-weight: bold;
-}
-.timeline-year {
-    font-size: 11px;
-    font-weight: bold;
-    color: #666;
-}
-
-/* ODD - Texto acima, ícone abaixo */
-.odd .timeline-connector {
-    top: calc(50% - 10px);
-    height: 80px;
-}
-.odd .timeline-label {
-    top: calc(50% - 110px);
-}
-.odd .timeline-year {
-    top: calc(50% - 90px);
-}
-.odd .timeline-icon {
-    top: calc(50% + 50px);
-}
-
-/* EVEN - Texto abaixo, ícone acima */
-.even .timeline-connector {
-    top: calc(50% + 10px);
-    height: 80px;
-}
-.even .timeline-label {
-    top: calc(50% + 90px);
-}
-.even .timeline-year {
-    top: calc(50% + 110px);
-}
-.even .timeline-icon {
-    top: calc(50% - 90px);
-}

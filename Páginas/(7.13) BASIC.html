@@ -1,0 +1,447 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title data-key="home">BASIC</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/Global.css">
+        <link rel="stylesheet" href="../CSS/Global2.css">
+        <style>
+        /* ==================================== */
+/* 2. ESTILOS DE BLOCOS E TIPOGRAFIA    */
+/* (ADAPTADO PARA: #basic, .introducao, .subtema) */
+/* ==================================== */
+
+/* Container Principal (APLICA-SE AO ID #basic) */
+#basic {
+    /* Manter estilos de layout e sombra, mas preparar para o modo escuro */
+    background-color: #fff; /* Cor de fundo Padrão (Light Mode) */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    max-width: 1350px;
+    margin: 90px auto; 
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição para suavizar a mudança */
+}
+
+/* 1. ESTILO DA INTRODUÇÃO */
+.introducao { 
+    /* REQUISITO: Fundo escuro na primeira seção no Modo Escuro */
+    background-color: #e8e8e8; /* Cinza Mais Escuro (Padrão Light Mode) */
+    padding: 60px 70px; 
+    text-align: left; 
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* 2. ESTILO DOS SUBTEMAS (Alternância de Fundo) */
+.subtema {
+    padding: 50px 70px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: justify;
+    animation: fadeIn 0.7s ease forwards;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Alternância de Cor de Fundo para os SUBTEMAS dentro da seção #basic (Light Mode) */
+#basic .subtema:nth-of-type(1) { background-color: #fff; } /* Primeiro subtema */
+#basic .subtema:nth-of-type(2) { background-color: #f8f8f8; }
+#basic .subtema:nth-of-type(3) { background-color: #fff; }
+#basic .subtema:nth-of-type(4) { background-color: #f8f8f8; }
+
+
+/* Títulos H1 e H2 (Estilos Base - Cores Padrão) */
+.introducao h1 {
+    font-size: 2.8rem;
+    color: #111; /* Cor do texto no Light Mode */
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+    border-bottom: 3px solid #ccc; /* Linha inferior do H1 */
+    padding-bottom: 8px;
+    transition: color 0.3s, border-color 0.3s;
+}
+.introducao h2, .subtema h2 {
+    font-size: 2rem; 
+    color: #000; /* Cor do texto no Light Mode */
+    margin-top: 30px; 
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 5px solid #000; /* Cor do traço lateral no Light Mode */
+    transition: color 0.3s, border-left 0.3s;
+}
+
+/* Parágrafos (Cores Padrão) */
+.introducao p {
+    font-size: 1.3rem;
+    color: #444; /* Cor do texto no Light Mode */
+    margin: 15px 20px 15px 0; 
+    text-align: justify;
+    transition: color 0.3s;
+}
+.subtema p {
+    font-size: 1.2rem;
+    color: #444; /* Cor do texto no Light Mode */
+    margin-bottom: 18px;
+    text-align: justify;
+    line-height: 1.9;
+    transition: color 0.3s;
+}
+.subtema p strong {
+    /* REQUISITO: Texto preto em destaques brancos */
+    background-color: #f0f0f0; /* Cor do fundo do destaque (Branco/Cinza Claro) */
+    color: #000; /* Cor do texto dentro do destaque (Preto) */
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* ==================================== */
+/* 🌙 ESTILOS PARA O MODO ESCURO 🌙     */
+/* ==================================== */
+
+/* Container Principal no Modo Escuro */
+.dark-mode #basic {
+    background-color: #1e1e1e; /* Fundo mais escuro para o container */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Introdução no Modo Escuro */
+.dark-mode .introducao { 
+    /* REQUISITO: Fundo escuro para a primeira seção */
+    background-color: #2b2b2b; /* Fundo escuro (Cinza Escuro) */
+    border-bottom: 1px solid #3a3a3a;
+}
+/* Cores do texto da Introdução no Modo Escuro */
+.dark-mode .introducao h1 {
+    color: #f0f0f0; /* Texto claro */
+    border-bottom: 3px solid #666; /* Linha de separação mais clara */
+}
+.dark-mode .introducao p {
+    color: #c0c0c0; /* Texto claro/cinza claro */
+}
+
+
+/* Subtemas no Modo Escuro */
+.dark-mode .subtema {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/* Alternância de Cor de Fundo para os SUBTEMAS (Dark Mode) */
+.dark-mode #basic .subtema:nth-of-type(1) { background-color: #1e1e1e; }
+.dark-mode #basic .subtema:nth-of-type(2) { background-color: #242424; }
+.dark-mode #basic .subtema:nth-of-type(3) { background-color: #1e1e1e; }
+.dark-mode #basic .subtema:nth-of-type(4) { background-color: #242424; }
+
+
+/* Títulos H2 no Modo Escuro */
+.dark-mode .introducao h2, .dark-mode .subtema h2 {
+    color: #f0f0f0; /* Texto claro */
+    /* REQUISITO: Traço lateral branco */
+    border-left: 5px solid #fff; 
+}
+
+/* Parágrafos e Destaques no Modo Escuro */
+.dark-mode .subtema p {
+    color: #c0c0c0; /* Texto claro/cinza claro */
+}
+.dark-mode .subtema p strong {
+    /* REQUISITO: Fundo branco e texto preto nos destaques */
+    background-color: #f0f0f0; /* Fundo do destaque branco */
+    color: #000; /* Texto do destaque preto */
+}
+
+
+/* ==================================== */
+/* 3. GALERIA DE IMAGENS (.gallery)     */
+/* (Manter estilo Light Mode, adicionar transições) */
+/* ==================================== */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 30px; 
+    margin: 40px auto;
+    max-width: 1350px;
+    padding: 0 70px;
+}
+.gallery img {
+    flex: 1 1 calc(33.33% - 20px); 
+    min-width: 250px; 
+    max-width: 400px; 
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+.gallery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Inverte as cores da imagem levemente para se adequar ao fundo escuro */
+.dark-mode .gallery img {
+    filter: brightness(0.9) contrast(1.1);
+}
+.dark-mode .gallery img:hover {
+    filter: brightness(1) contrast(1.2);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+
+/* ==================================== */
+/* 6. RESPONSIVIDADE GERAL              */
+/* (Manter responsividade, mas garantir que as cores do dark mode sejam aplicadas) */
+/* ==================================== */
+
+/* ... (O restante do seu CSS de responsividade, que não precisa de grandes alterações) ... */
+
+@media (max-width: 768px) {
+    /* ... (Mantenha seu código de responsividade aqui) ... */
+    #basic {
+        margin: 40px auto; 
+        border-radius: 0; 
+    }
+    .introducao, .subtema {
+        padding: 30px 20px; 
+    }
+    .introducao h1 { font-size: 2rem; }
+    .introducao h2, .subtema h2 { 
+        font-size: 1.6rem; 
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .introducao p { font-size: 1.05rem; }
+    .subtema p { font-size: 1rem; line-height: 1.7; }
+    .gallery { 
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0 20px; 
+        gap: 20px;
+    }
+    .gallery img { 
+        min-width: 100%; 
+        flex: none; 
+        max-width: 100%;
+    }
+}
+</style>
+    </head>
+
+    <body>
+    <!--MENU-->
+    <div id="search-results-overlay" style="display: none;">
+    </div>
+
+    <div id="notification-toast" class="toast-message" role="alert" aria-live="polite">
+    </div>
+
+    <div id="main-content-wrapper"> 
+
+        <header>
+        <button id="menu-button" class="hamburguer-icon" aria-label="Abrir Menu">
+            <i class="bi bi-list"></i>
+        </button>
+        
+        <nav id="menu" class="menu">
+        <ul>
+            <li><a href="Home.html" data-key="Home" class="menu-main-link">Home</a></li>
+            <li class="dropdown-menu-item">
+                <div class="menu-item-wrapper">
+                    <a href="(6) Da Válvula ao Transistor.html" data-key="valvulas-transistor" class="menu-main-link">Da Válvula ao Transistor </a>
+                    <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                        <i class="bi bi-chevron-down"></i>
+                    </span> </div>
+            <ul class="submenu">    
+                <li><a href="(6.2) Simon.html" data-key="disco">Simon, o primeiro kit pessoal</a></li>
+                <li><a href="(6.3) Ferranti Mark I.html" data-key="ferranti">Ferranti Mark I</a></li>
+                <li><a href="(6.4) UNIVAC.html" data-key="disco">Primeiro computadores comerciais</a></li>
+                <li><a href="(6.9) Compilador A-0.html" data-key="compilador">Compilador A-0</a></li>
+                <li><a href="(6.15) Harwell Cadet.html" data-key="harwell">Harwell Cadet</a></li>
+                <li><a href="(6.16) Disco Magnético.html" data-key="disco">Disco Magnético</a></li>
+                </ul> </li>
+            
+            <li class="dropdown-menu-item">
+                <div class="menu-item-wrapper">
+                    <a href="(7) Do Circuito Integrado à Lua.html" data-key="ci-ate-lua" class="menu-main-link">Do Circuito Integrado à Lua</a>
+                    <span class="dropdown-toggle-menu" aria-label="Mostrar subtemas">
+                        <i class="bi bi-chevron-down"></i>
+                    </span> </div>
+                <ul class="submenu">
+                    <li><a href="(7.5) Compartilhamento de Tempo.html" data-key="primeira-geracao">Compartilhamento de Tempo</a></li>
+                    <li><a href="(7.14) IBM 360.html" data-key="apollo guidance">IBM-360</a></li>
+                    <li><a href="(7.32) Microprocessador.html" data-key="processador">Microprocessador</a></li>
+                    <li><a href="(7.34) ARPANET.html" data-key="Arpanet">Arpanet</a></li> 
+                    <li><a href="(7.38) Apollo Guidance Computer.html" data-key="apollo guidance">Apollo Guidance Computer</a></li>
+                    </ul> </li>
+            
+            
+            <li><a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a></li>
+            <li><a href="Capa.html" data-key="capa-do-livro">Capa do livro</a></li>
+            <li><a href="Quiz.html" data-key="quiz">Quiz</a></li> </ul>
+    </nav>
+
+    <!--Botões do Header-->
+        <div class="header-buttons">
+            <form id="header-search-form" class="header-search-inline">
+            <div id="search-suggestions" class="search-suggestions hidden"></div> 
+            <input
+                id="header-search-input"
+                type="text"
+                placeholder="Pesquisar..."
+                aria-label="Campo de busca"
+            />
+            <button type="submit" aria-label="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
+            </form>
+            <button 
+                id="translation-icon" 
+                aria-label="Alternar Idioma" 
+                title="Tradução (Clique para Inglês)">
+                <i class="bi bi-translate"></i>
+            </button>
+        </div>
+    <!--Logo e  Carrosel-->
+        <div class="logo">
+            <a href="#" title="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+                <img id="lamp-logo" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro">
+            </a>
+        </div>
+    </header>
+        
+    <section id="content">
+    <div class="introducao">
+        <h1>BASIC (1964)</h1>
+        <p>Em 1º de maio de 1964, os matemáticos <strong>John George Kemeny</strong> (que também havia sido assistente de <strong>Albert Einstein</strong>) e <strong>Thomas Eugene Kurtz</strong>, da <strong>Dartmouth College</strong>, nos Estados Unidos, executaram o primeiro programa escrito em BASIC, marcando um dos momentos mais importantes e democratizantes da história da computação.</p>
+        <p>O projeto da linguagem e do sistema operacional associado nasceu da visão de que todo estudante, independentemente de sua área de estudo, deveria ter acesso à computação, superando a elitização que o computador centralizado impunha nas universidades e centros de pesquisa da época.</p>
+        <p>Tudo começou quando Kemeny conseguiu recursos substanciais, incluindo uma doação da <strong>National Science Foundation</strong>, para levar à universidade um computador <strong>General Electric GE-225</strong> (posteriormente substituído pelo GE-235, mais rápido), com a intenção de criar um sistema de tempo compartilhado que pudesse ser utilizado por vários usuários simultaneamente — o <strong>Dartmouth Time Sharing System (DTSS)</strong>.</p>
+        <p>No entanto, surgiu um obstáculo prático: os alunos não dominavam as complexas linguagens de programação existentes, como o <strong>FORTRAN</strong> e o <strong>ALGOL</strong>, o que dificultava o uso generalizado do sistema. A necessidade de uma linguagem simples e acessível tornou-se, assim, o ponto central do projeto.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>As Origens do Projeto e as Primeiras Experiências</h2>
+        <p>Acreditando que, no futuro, o conhecimento em informática seria essencial para a sociedade, Kemeny e Kurtz começaram, ainda em 1956, a buscar linguagens de programação mais simples e didáticas, voltadas para iniciantes e para o uso interativo em ambiente educacional.</p>
+        <p>Antes do BASIC, eles desenvolveram e testaram linguagens experimentais chamadas <strong>Darsimco</strong> (<em>Dartmouth Simplified Code</em>) e <strong>Dope</strong> (<em>Dartmouth Oversimplified Programming Experiment</em>), que eram tentativas iniciais de simplificar o processo de programação.</p>
+        <p>Essas linguagens, porém, ainda estavam muito presas à lógica de <strong>processamento em lote</strong>, exigindo que o usuário esperasse o resultado apenas após a execução completa do programa. Isso limitava a interação e o aprendizado, principalmente entre os estudantes de outras áreas.</p>
+        <p>Foi a partir dessas limitações que, em 1963, Kemeny e Kurtz decidiram criar uma nova linguagem voltada à interação direta e imediata com o computador, de modo que a programação se tornasse “tão fácil quanto escrever em inglês”.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>O Nascimento do BASIC e o DTSS</h2>
+        <p>No ano seguinte, com o apoio de alguns alunos de graduação — como <strong>John McGeachie</strong> e <strong>Michael Busch</strong>, que ajudaram a desenvolver partes do sistema operacional —, Kemeny e Kurtz conseguiram dar vida à nova linguagem.</p>
+        <p>Assim nasceu o <strong>BASIC</strong>, sigla para <em>Beginner’s All-purpose Symbolic Instruction Code</em> (Código de Instruções Simbólicas de Uso Geral para Iniciantes). O BASIC unia simplicidade e eficiência, sendo ideal para o ensino e o aprendizado de programação.</p>
+        <p>Junto com a linguagem, surgiu o <strong>Dartmouth Time Sharing System (DTSS)</strong>, considerado o primeiro sistema de tempo compartilhado comercialmente bem-sucedido, que permitia que vários usuários acessassem o computador simultaneamente.</p>
+        <p>O DTSS utilizava uma arquitetura inovadora com dois processadores: o <strong>GE-235</strong>, responsável pela execução dos programas, e o <strong>Datanet-30</strong>, que atuava como “front-end” para gerenciar a comunicação e os terminais conectados, tornando o sistema interativo e eficiente.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>A Popularização do BASIC e Seu Impacto Global</h2>
+        <p>O BASIC destacou-se rapidamente por ser uma linguagem de alto nível interpretada, fácil de aprender e ideal para uso educacional e interativo. Seus comandos eram simples e baseados no inglês comum, como <strong>PRINT</strong>, <strong>GOTO</strong> e <strong>IF...THEN</strong>, o que a tornava acessível até para quem nunca havia programado antes.</p>
+        <p>Essa simplicidade, aliada à sua portabilidade, fez com que o BASIC se tornasse o padrão de fato nos primeiros <strong>microcomputadores pessoais</strong> das décadas de 1970 e 1980. Muitos computadores iniciavam diretamente em um “prompt” BASIC, exigindo que o usuário soubesse, pelo menos, alguns comandos básicos para interagir com a máquina.</p>
+        <p>Uma das decisões mais importantes de Kemeny e Kurtz foi a de <strong>não patentear</strong> o BASIC. Eles optaram por distribuí-lo gratuitamente para escolas e empresas, o que facilitou sua disseminação e permitiu o surgimento de inúmeros dialetos e versões da linguagem em todo o mundo.</p>
+        <p>Entre essas versões, uma se destacou e mudou o rumo da história: o <strong>Altair BASIC</strong>, criado pela recém-fundada <strong>Microsoft</strong> (de <strong>Bill Gates</strong> e <strong>Paul Allen</strong>) para o microcomputador <strong>Altair 8800</strong>. Esse foi o primeiro produto comercial da empresa, abrindo o caminho para o domínio da Microsoft no mercado de computadores pessoais.</p>
+    </div>
+
+    <div class="subtema">
+        <h2>O Legado Duradouro do BASIC</h2>
+        <p>Com o sucesso do Altair BASIC, a Microsoft lançou diversas variações da linguagem, como o <strong>MBASIC</strong> e o <strong>GW-BASIC</strong>, que passaram a ser incluídas no firmware e nos sistemas de vários PCs, incluindo o influente <strong>IBM PC</strong>.</p>
+        <p>O BASIC consolidou-se, assim, como a linguagem que introduziu milhões de pessoas à programação, tornando o ato de programar algo acessível a estudantes, professores e curiosos de todo o mundo.</p>
+        <p>Mais do que uma linguagem, o BASIC simbolizou a transição da computação elitista e restrita para uma computação pessoal, interativa e democrática, moldando toda uma geração de programadores e entusiastas.</p>
+        <p>Mesmo após o surgimento de linguagens mais modernas, o espírito do BASIC permanece vivo em ambientes de aprendizado e em linguagens inspiradas nele, como o <strong>Visual Basic</strong> e suas variações, perpetuando o legado de Kemeny e Kurtz na história da informática.</p>
+
+        <div class="gallery">
+            <img src="https://time.graphics/uploadedFiles/500/dc/c2/dcc221372e49cf8e7c5499504c53a6f5.jpg" alt="">
+            <img src="https://ethw.org/w/images/thumb/d/da/BASIC-Kemeny-Dartmouth.jpg/300px-BASIC-Kemeny-Dartmouth.jpg" alt="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrxVBq8r6pGz1KZORJBQveUNxoK51Gi4XSKnbGSEFU2q2gRlia1H9OCVYyxTvYwm-zqL0&usqp=CAU" alt="">
+        </div>
+    </div>
+    </section>
+
+
+        <button id="back-to-top" title="Voltar ao Topo">
+            &#9650; 
+        </button>
+        
+        <div id="accessibility-menu-container">
+            <button id="accessibility-toggle" title="Menu de Acessibilidade" aria-label="Menu de Acessibilidade">
+                <i class="bi bi-ear-fill"></i> 
+            </button>
+            <div id="accessibility-options" class="hidden-options">
+                
+                <button 
+                    id="translation-icon-floating" 
+                    title="Tradução (Clique para Inglês)"
+                    aria-label="Alternar Idioma">
+                    <i class="bi bi-translate"></i>
+                </button>
+                
+                <select id="speed-rate" title="Velocidade de Leitura" aria-label="Velocidade de Leitura">
+                    <option value="0.5">0.5x</option>
+                    <option value="0.75">0.75x</option>
+                    <option value="1.0" selected>1x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                </select>
+                
+                <button 
+                    id="speech-toggle" 
+                    title="Ouvir Conteúdo (Leitor de Áudio)"
+                    aria-label="Ativar Leitor de Áudio"
+                    data-action="play">
+                    <i class="bi bi-volume-up-fill"></i> 
+                </button>
+            </div>
+        </div>
+            
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-section brand-info">
+                <a href="#" id="lamp-logo-footer-link" title="Logo: Lâmpada Acesa - Clique para Modo Escuro"> 
+                    <img id="lamp-logo-footer" src="../Imagens/Luz_Acessa-removebg-preview.png" alt="Logo: Lâmpada Acesa - Clique para Modo Escuro" class="footer-logo"> 
+                </a>
+                <div class="social-links">
+                    <a href="https://github.com/AyshaSalatiel" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a> 
+                </div>
+            </div>
+            
+            <div class="footer-section footer-links-section">
+                <h4 data-key="quick-links">LINKS RÁPIDOS</h4> <nav class="footer-links-list">
+                    <a href="Home.html" data-key="home">Home</a>
+                    <a href="Sobre nós.html" data-key="sobre-nos">Sobre nós</a>
+                    <a href="Capa.html" data-key="capa-do-livro">Releitura da Capa</a>
+                    <a href="Quiz.Html" data-key="card4-titulo">Teste Seus Conhecimentos</a>
+                </nav>
+            </div>
+            
+            <div class="footer-section footer-search-section">
+                <h4 data-key="search-button">Busca</h4> 
+                <form id="footer-search-form" class="footer-search"> 
+                    <input id="footer-search-input" type="text" placeholder="Pesquisar..."> 
+                    <button type="submit" data-key="search-button" aria-label="Buscar"><i class="bi bi-search"></i>
+                    </button>
+                </form> 
+            </div>
+        </div>
+        
+        <div class="footer-bottom" data-key="footer-copy">
+            &copy; 2024 [Nome do Seu Projeto/Grupo]. Todos os direitos reservados.
+        </div>
+    </footer>
+        
+    </div> 
+    <script src="" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../JS/Global.js"></script>
+    <script src="../JS/Translations.js"></script>
+    </body>
+    </html>

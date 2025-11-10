@@ -1,0 +1,286 @@
+/* ========================================================================= */
+/* 1. VARIÁVEIS DE PADRONIZAÇÃO (Modo Claro Padrão) */
+/* ========================================================================= */
+
+:root {
+    /* Cores de Fundo */
+    --cor-fundo-principal: #fff;       
+    --cor-cinza-escuro: #e8e8e8;       
+    --cor-cinza-claro: #f8f8f8;        
+    --cor-fundo-corpo: #f5f5f5;        
+    
+    /* Cores de Texto */
+    --cor-texto-principal: #000;       
+    --cor-texto-secundario: #000;      
+    --cor-destaque: #000;              
+    
+    /* Bordas */
+    --espessura-borda-secao: 2px;      
+    --cor-borda: #e0e0e0;              
+    --cor-borda-titulo: #ccc;          
+
+    /* Spacing */
+    --padding-vertical: 50px;
+    --padding-horizontal: 70px;
+    --padding-mobile: 35px;
+}
+
+/* ========================================================================= */
+/* 2. REGRAS DE MODO ESCURO (.dark-mode) */
+/* ========================================================================= */
+
+.dark-mode {
+    /* VARIÁVEIS DE FUNDO (USANDO AS CORES ESPECIFICADAS PELO USUÁRIO) */
+    --cor-fundo-principal: #222222; /* Mantido como o cinza de base de componentes (pode ser ajustado se necessário) */
+    --cor-cinza-escuro: #2a2a2a;    /* Mantido para componentes secundários */
+    --cor-cinza-claro: #333333;     /* Mantido para destaques de texto */
+    --cor-fundo-corpo: #181818;     /* Mantido como o fundo mais escuro (body) */
+    
+    /* VARIÁVEIS DE SEÇÃO DO MODO ESCURO (Solicitadas pelo usuário) */
+    --fundo-sec1-escuro: #121212; 
+    --fundo-sec2-escuro: #1A1A1A; 
+    --fundo-sec3-escuro: #0D0D0D; 
+    --fundo-sec4-escuro: #242424; 
+
+    /* Cores de Texto (Ajustadas na última iteração) */
+    --cor-texto-principal: #e0e0e0;
+    --cor-texto-secundario: #c0c0c0;
+    --cor-destaque: #fff;
+    
+    /* Bordas (Ajustadas na última iteração) */
+    --cor-borda: #3b3b3b;
+    --cor-borda-titulo: #555555;
+}
+
+/* ========================================================================= */
+/* 3. ESTILOS BASE DO BODY E PRINCIPAL */
+/* ========================================================================= */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-corpo);
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url('../Imagens/lua-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-mode body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+    url('../Imagens/lua-background.jpg');
+}
+
+#content, #content-wrapper, #disco-magnetico, .info-section, section#content {
+    background-color: var(--cor-fundo-principal);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    max-width: 1350px;
+    margin: 90px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.dark-mode #content, 
+.dark-mode #content-wrapper, 
+.dark-mode #disco-magnetico, 
+.dark-mode .info-section, 
+.dark-mode section#content {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================================================= */
+/* 4. ESTILOS DE BLOCOS DE CONTEÚDO (INTRODUÇÃO E SUBTEMAS) */
+/* ========================================================================= */
+
+.introducao { 
+    background-color: var(--cor-cinza-escuro); 
+    padding: var(--padding-vertical) var(--padding-horizontal); 
+    text-align: left; 
+    border-bottom: var(--espessura-borda-secao) solid var(--cor-borda);
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.subtema {
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    margin-bottom: 0;
+    border-bottom: var(--espessura-borda-secao) solid var(--cor-borda);
+    text-align: justify;
+    animation: fadeIn 0.7s ease forwards;
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+section#content .subtema:nth-of-type(odd) {
+    background-color: var(--cor-fundo-principal); 
+}
+section#content .subtema:nth-of-type(even) {
+    background-color: var(--cor-cinza-claro); 
+}
+
+/* ========================================================================= */
+/* 5. ESTILOS DE CABEÇALHOS (H1, H2) E TEXTO */
+/* ========================================================================= */
+
+/* Título H1 PRINCIPAL: TAMANHO REDUZIDO para 2.6rem */
+.introducao h1 {
+    font-size: 2.6rem; /* AJUSTADO */
+    color: var(--cor-destaque);
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif;
+    display: inline-block; /* Mantido para o sublinhado */
+    border-bottom: 3px solid var(--cor-borda-titulo);
+    padding-bottom: 8px;
+    transition: color 0.5s, border-color 0.5s;
+}
+
+/* Títulos H2 (Linha Lateral) */
+.introducao h2, .subtema h2 {
+    font-size: 2rem; 
+    color: var(--cor-destaque);
+    margin-top: 25px; 
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 5px solid var(--cor-destaque); 
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif; 
+    text-align: left; 
+    transition: color 0.5s, border-left-color 0.5s;
+}
+
+/* Parágrafos da Introdução (Maior) */
+.introducao p {
+    font-size: 1.3rem;
+    color: var(--cor-texto-principal);
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    max-width: 100%; 
+    text-align: justify;
+    transition: color 0.5s;
+}
+
+/* Parágrafos dos Subtemas (Padrão) */
+.subtema p {
+    font-size: 1.2rem;
+    margin-bottom: 25px; 
+    text-align: justify;
+    line-height: 1.9;
+    color: var(--cor-texto-principal);
+}
+
+/* Parágrafos de Listas */
+.subtema ul {
+    margin: 25px 0 25px 40px;
+}
+
+.subtema ul li {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    color: var(--cor-texto-principal);
+}
+
+/* Destaques e Ênfases */
+strong {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+.subtema p strong {
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-destaque);
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+em {
+    color: var(--cor-texto-secundario);
+}
+
+/* ========================================================================= */
+/* 6. GALERIA DE IMAGENS (.gellery) */
+/* ========================================================================= */
+
+.gellery { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: stretch;
+    gap: 30px; 
+    margin: 40px auto;
+    max-width: 1350px;
+    padding: 0 var(--padding-horizontal);
+}
+
+.gellery img {
+    display: block;
+    flex: 1 1 calc(33.33% - 40px);
+    min-width: 250px; 
+    max-width: 400px; 
+    aspect-ratio: 16 / 10;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .gellery img {
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+}
+
+.gellery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.dark-mode .gellery img:hover {
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================================================= */
+/* 7. RESPONSIVIDADE E ANIMAÇÕES */
+/* ========================================================================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .introducao, .subtema {
+        padding: var(--padding-mobile);
+    }
+    
+    /* H1 PRINCIPAL AJUSTADO PARA MOBILE TAMBÉM */
+    .introducao h1 { 
+        font-size: 2rem; 
+        font-size: calc(1.8rem + 0.5vw); /* Ajuste responsivo extra */
+    }
+
+    .introducao h2, .subtema h2 { font-size: 1.6rem; }
+    
+    .introducao p { font-size: 1.1rem; margin: 15px 0; }
+    .subtema p { margin-bottom: 20px; }
+    .subtema p, .subtema ul li { font-size: 1.05rem; }
+
+    .gellery {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 var(--padding-mobile);
+    }
+
+    .gellery img {
+        max-width: 100%;
+        flex: 1 1 auto;
+        aspect-ratio: auto;
+    }
+}
+

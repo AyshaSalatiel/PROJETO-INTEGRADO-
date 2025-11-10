@@ -1,0 +1,403 @@
+/* ==================================== */
+/* 1. CONFIGURAÇÕES BASE E GERAIS       */
+/* ==================================== */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f5f5f5;
+    /* Seus estilos de fundo (Modo Claro) */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url('../Imagens/IBM-background.jpg'); /* Verifique o nome da imagem! */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Container Principal (A Grande Caixa Branca) */
+#content {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    max-width: 1350px;
+    margin: 90px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ==================================== */
+/* 2. ESTILOS DE BLOCOS DE CONTEÚDO     */
+/* ==================================== */
+
+/* Introdução (Cinza Mais Escuro) - Cor Padrão */
+.introducao { 
+    background-color: #e8e8e8; /* Cinza Mais Escuro */
+    padding: 60px 70px; 
+    text-align: left; 
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Subtemas (Conteúdo Interno) */
+.subtema {
+    padding: 50px 70px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: justify;
+    animation: fadeIn 0.7s ease forwards;
+}
+
+/* Lógica de Alternância de Cor para os 6 blocos .subtema */
+#content .subtema:nth-of-type(1) { background-color: #fff; }        /* Benefícios e impacto */
+#content .subtema:nth-of-type(2) { background-color: #f8f8f8; }    /* Impacto */
+#content .subtema:nth-of-type(3) { background-color: #fff; }        /* Origens e evolução */
+#content .subtema:nth-of-type(4) { background-color: #f8f8f8; }    /* Impacto na era digital */
+#content .subtema:nth-of-type(5) { background-color: #fff; }        /* Contexto Histórico da Época */
+#content .subtema:nth-of-type(6) { background-color: #f8f8f8; }    /* Transformação Social e Movimentos de Direitos */
+
+
+/* ==================================== */
+/* 3. ESTILOS DE TIPOGRAFIA             */
+/* ==================================== */
+
+/* Título H1 (Estilo Principal Sublinhado) */
+.introducao h1 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif;
+    display: inline-block;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 8px;
+}
+
+/* Títulos H2 (Linha Lateral Preta - Estilo Simon) */
+.introducao h2, .subtema h2 {
+    font-size: 2rem; 
+    color: #000;
+    margin-top: 30px; 
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 5px solid #000; 
+    font-weight: 700;
+    font-family: 'Merriweather', 'Georgia', serif; 
+    text-align: left; 
+}
+
+/* Parágrafos e Destaques */
+.introducao p { font-size: 1.3rem; color: #444; margin: 15px 20px 15px 0; max-width: 100%; text-align: justify; }
+.subtema p { font-size: 1.2rem; margin-bottom: 18px; text-align: justify; line-height: 1.9; }
+strong { color: #000; font-weight: 700; }
+.subtema p strong { background-color: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+
+/* Estilo para a Lista (ul) */
+.subtema ul {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 20px 0 20px 40px; 
+    color: #333;
+    list-style-type: square; 
+    font-family: 'Inter', sans-serif;
+}
+.subtema ul li {
+    margin-bottom: 8px;
+}
+
+
+/* ==================================== */
+/* 4. GALERIA DE IMAGENS (.gellery)     */
+/* ==================================== */
+/* Se houver galeria em alguma dessas seções, estes estilos serão aplicados. */
+.gellery { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 30px; 
+    margin: 40px auto;
+    max-width: 1350px;
+    padding: 0 70px;
+}
+.gellery img {
+    flex: 1 1 calc(33.33% - 20px); 
+    min-width: 250px; 
+    max-width: 400px; 
+    aspect-ratio: 16 / 10;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gellery img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+
+/* ==================================== */
+/* 5. LINHA DO TEMPO (TIMELINE)         */
+/* ==================================== */
+
+.timeline {
+    width: 100%; 
+    max-width: 1350px; 
+    height: 300px; 
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-x: auto; 
+    margin: 90px auto; 
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    right: 30px;
+    height: 4px;
+    background: linear-gradient(to right, #666, #999, #ccc, #ccc, #999, #666); 
+    z-index: 1;
+    border-radius: 2px;
+}
+.timeline-item {
+    flex: 1;
+    min-width: 150px; 
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+    transform: scale(1.05);
+}
+.timeline-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 4px solid #333; 
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); 
+    background: linear-gradient(45deg, #007bff, #c93b76); 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #fff; 
+}
+.timeline-icon svg { fill: white; }
+.timeline-label, .timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; 
+}
+.timeline-label {
+    font-size: 15px; 
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+    font-family: 'Merriweather', 'Georgia', serif;
+}
+.timeline-year {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    font-family: 'Inter', sans-serif;
+}
+/* Posições ODD e EVEN */
+.odd .timeline-label { top: calc(50% + 30px); }
+.odd .timeline-year { top: calc(50% + 70px); }
+.odd .timeline-icon { top: calc(50% - 90px); }
+.even .timeline-label { top: calc(50% - 60px); }
+.even .timeline-year { top: calc(50% - 100px); }
+.even .timeline-icon { top: calc(50% + 50px); }
+
+
+/* ==================================== */
+/* 6. RESPONSIVIDADE GERAL              */
+/* ==================================== */
+
+@media (max-width: 1400px) {
+    #content { margin: 40px auto; }
+}
+ 
+@media (max-width: 768px) {
+    /* Container Principal */
+    #content { margin: 20px auto; border-radius: 0; }
+    
+    /* Padding e Margens */
+    .introducao, .subtema, .gellery { padding: 30px 20px; }
+
+    /* Títulos */
+    .introducao h1 { font-size: 2rem; }
+    .introducao h2, .subtema h2 { font-size: 1.6rem; margin-top: 20px; margin-bottom: 15px; }
+
+    /* Parágrafos e Listas */
+    .introducao p { font-size: 1.05rem; line-height: 1.7; }
+    .subtema p, .subtema ul { font-size: 1rem; line-height: 1.7; }
+    .subtema ul { margin: 20px 0 20px 20px; }
+
+    /* Galeria (Empilhamento) */
+    .gellery { flex-direction: column; align-items: center; padding: 0 20px; }
+    .gellery img { min-width: 100%; max-width: 100%; flex: none; }
+    
+    /* Linha do Tempo (Scroll Horizontal) */
+    .timeline {
+        flex-wrap: nowrap; 
+        justify-content: flex-start;
+        height: 250px; 
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+    .timeline a.timeline-item { flex: 0 0 120px; min-width: 120px; }
+    .timeline-icon { width: 50px; height: 50px; }
+    
+    /* Ajuste de Posições na Timeline em Mobile */
+    .odd .timeline-label { top: calc(50% + 25px); font-size: 13px; }
+    .odd .timeline-year { top: calc(50% + 60px); font-size: 11px; }
+    .odd .timeline-icon { top: calc(50% - 70px); }
+    .even .timeline-label { top: calc(50% - 50px); font-size: 13px; }
+    .even .timeline-year { top: calc(50% - 85px); font-size: 11px; }
+    .even .timeline-icon { top: calc(50% + 40px); }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================================== */
+/* 7. ESTILOS DO MODO ESCURO (DARK MODE) */
+/* ==================================== */
+
+/* 7.1. Body e Container Principal */
+body.dark-mode {
+    /* Fundo Escuro com Imagem Correta */
+    background-color: #111 !important; 
+    /* ATENÇÃO: Verifique se o nome do arquivo 'lua-background.jpg' está correto no seu projeto! */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                       url('../Imagens/lua-background.jpg') !important; 
+    color: #f0f0f0 !important;
+}
+
+body.dark-mode #content {
+    background-color: #222 !important; /* Fundo do container principal mais escuro */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* Sombra mais clara */
+}
+
+
+/* 7.2. Blocos de Conteúdo */
+
+/* Introdução (Cinza Mais Escuro -> Cinza Escuro) */
+body.dark-mode .introducao { 
+    background-color: #333 !important; 
+    color: #ddd !important;
+    border-bottom: 1px solid #444 !important;
+}
+
+/* Blocos .subtema e Alternância de Cor */
+/* Os subtemas serão alternados entre #222 e #2a2a2a */
+body.dark-mode .subtema {
+    color: #ddd !important;
+    border-bottom: 1px solid #444 !important;
+}
+
+body.dark-mode #content .subtema:nth-of-type(1), 
+body.dark-mode #content .subtema:nth-of-type(3), 
+body.dark-mode #content .subtema:nth-of-type(5) { 
+    background-color: #222 !important; /* Blocos 'Ímpares' */
+} 
+
+body.dark-mode #content .subtema:nth-of-type(2), 
+body.dark-mode #content .subtema:nth-of-type(4), 
+body.dark-mode #content .subtema:nth-of-type(6) { 
+    background-color: #2a2a2a !important; /* Blocos 'Pares' */
+} 
+
+
+/* 7.3. Tipografia (Cores do Texto) */
+
+/* Título H1 */
+body.dark-mode .introducao h1 {
+    color: #f0f0f0 !important;
+    border-bottom: 3px solid #555 !important;
+}
+
+/* Títulos H2 */
+body.dark-mode .introducao h2, 
+body.dark-mode .subtema h2 {
+    color: #ffffff !important; /* Cor de destaque para H2 no modo escuro */
+    border-left: 5px solid #ffffff !important; /* Linha de destaque para H2 */
+}
+
+/* Parágrafos e Destaques */
+body.dark-mode .introducao p,
+body.dark-mode .subtema p,
+body.dark-mode .subtema ul,
+body.dark-mode .subtema ul li { 
+    color: #ddd !important; 
+}
+
+/* **CORREÇÃO NEGRITO E DESTAQUE** */
+body.dark-mode strong { 
+    color: #fff !important; /* Cor branca para o negrito */
+    font-weight: 700 !important; 
+}
+
+body.dark-mode .subtema p strong { 
+    background-color: #3a3a3a !important; /* Fundo escuro sutil para destaque */
+    color: #fff !important; /* Garante o texto branco no destaque */
+}
+
+
+/* 7.4. Linha do Tempo (Timeline) */
+
+body.dark-mode .timeline {
+    background-color: #2a2a2a !important; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
+}
+body.dark-mode .timeline::before {
+    background: linear-gradient(to right, #444, #777, #aaa, #aaa, #777, #444) !important;
+}
+body.dark-mode .timeline-point {
+    background-color: #2a2a2a !important;
+    border: 4px solid #fff !important; 
+}
+body.dark-mode .timeline-label {
+    color: #fff !important; 
+}
+body.dark-mode .timeline-year {
+    color: #ccc !important;
+}
+body.dark-mode .timeline-icon {
+    border: 3px solid #2a2a2a !important; 
+    /* Mantenha o gradiente de cor para o ícone, se desejado */
+}
